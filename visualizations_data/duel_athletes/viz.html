@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Athlete Duel by Year</title>
+<style>
+body{
+    background:#111;
+    color:white;
+    font-family:Arial, sans-serif;
+    margin:0;
+    padding:30px;
+}
+
+h1,p{
+    text-align:center;
+}
+
+.controls{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin:20px 0 40px 0;
+    flex-wrap:wrap;
+}
+
+select{
+    padding:10px 14px;
+    font-size:16px;
+    border-radius:8px;
+    border:none;
+}
+
+.duel-container{
+    display:flex;
+    justify-content:center;
+    align-items:stretch;
+    gap:40px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.card{
+    background:#1b1b1b;
+    border:1px solid #333;
+    border-radius:18px;
+    padding:30px;
+    width:380px;
+    text-align:center;
+    box-shadow:0 6px 20px rgba(0,0,0,0.35);
+}
+
+.year{
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:15px;
+    color:#ddd;
+}
+
+.name{
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.value{
+    font-size:64px;
+    font-weight:900;
+    margin:20px 0;
+}
+
+.meta{
+    font-size:18px;
+    color:#bbb;
+    margin-top:8px;
+}
+
+.vs{
+    font-size:42px;
+    font-weight:900;
+    align-self:center;
+    color:#888;
+}
+</style>
+</head>
+<body>
+
+<h1>Athlete Duel by Year</h1>
+<p id="subtitle">Loading…</p>
+
+<div class="controls">
+    <select id="eventSelect"></select>
+
+    <select id="sexSelect">
+        <option value="male">male</option>
+        <option value="female">female</option>
+    </select>
+
+    <select id="year1Select"></select>
+    <select id="year2Select"></select>
+
+    <select id="modeSelect">
+        <option value="best">record</option>
+        <option value="mean">mean</option>
+    </select>
+</div>
+
+<div class="duel-container">
+    <div class="card">
+        <div class="year" id="year1Label"></div>
+        <div class="name" id="name1"></div>
+        <div class="value" id="value1"></div>
+        <div class="meta" id="count1"></div>
+    </div>
+
+    <div class="vs">VS</div>
+
+    <div class="card">
+        <div class="year" id="year2Label"></div>
+        <div class="name" id="name2"></div>
+        <div class="value" id="value2"></div>
+        <div class="meta" id="count2"></div>
+    </div>
+</div>
+
+<script>
+let allData = {};
+
+const eventSelect = document.getElementById("eventSelect");
+const sexSelect = document.getElementById("sexSelect");
+const year1Select = document.getElementById("year1Select");
+const year2Select = document.getElementById("year2Select");
+const modeSelect = document.getElementById("modeSelect");
+const subtitle = document.getElementById("subtitle");
+
+function makeKey(eventName, sex){
+    return `${eventName}___${sex}`;
+}
+
+function getChampionForYear(block, year, mode){
+    const yearBlock = block.yearly_data[String(year)];
+    if(!yearBlock) return null;
+
+    const competitors = yearBlock.competitors || [];
+    const values = yearBlock[mode] || [];
+    const counts = yearBlock.count || [];
+
+    if(competitors.length === 0 || values.length === 0) return null;
+
+    let bestIndex = 0;
+
+    for(let i = 1; i < values.length; i++){
+        if(block.event_type === "track"){
+            if(values[i] < values[bestIndex]) bestIndex = i;
+        } else {
+            if(values[i] > values[bestIndex]) bestIndex = i;
+        }
+    }
+
+    return {
+        competitor: competitors[bestIndex],
+        value: values[bestIndex],
+        count: counts[bestIndex] ?? null
+    };
+}
+
+function fillYears(){
+    const key = makeKey(eventSelect.value, sexSelect.value);
+    const block = allData[key];
+
+    year1Select.innerHTML = "";
+    year2Select.innerHTML = "";
+
+    if(!block || !Array.isArray(block.years) || block.years.length === 0){
+        subtitle.textContent = "No data available.";
+        return;
+    }
+
+    block.years.forEach(year => {
+        const opt1 = document.createElement("option");
+        opt1.value = year;
+        opt1.textContent = year;
+        year1Select.appendChild(opt1);
+
+        const opt2 = document.createElement("option");
+        opt2.value = year;
+        opt2.textContent = year;
+        year2Select.appendChild(opt2);
+    });
+
+    year1Select.value = block.years[0];
+    year2Select.value = block.years[block.years.length - 1];
+
+    updateView();
+}
+
+function formatPerformance(value, unit){
+
+    if(unit !== "s"){
+        return value.toFixed(2) + " m";
+    }
+
+    // secondes
+    if(value < 60){
+        return value.toFixed(2) + " s";
+    }
+
+    // minutes
+    if(value < 3600){
+
+        const minutes = Math.floor(value / 60);
+        const seconds = (value % 60).toFixed(2).padStart(5,"0");
+
+        return `${minutes}:${seconds}`;
+    }
+
+    // heures
+    const hours = Math.floor(value / 3600);
+    const minutes = Math.floor((value % 3600) / 60);
+    const seconds = Math.floor(value % 60);
+
+    return `${hours}:${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
+}
+
+function updateView(){
+
+    const key = makeKey(eventSelect.value, sexSelect.value);
+    const block = allData[key];
+
+    if(!block){
+        subtitle.textContent = "No data available.";
+        return;
+    }
+
+    const year1 = year1Select.value;
+    const year2 = year2Select.value;
+    const mode = modeSelect.value;
+
+    const year1Data = block.yearly_data[String(year1)];
+    const year2Data = block.yearly_data[String(year2)];
+
+    if(!year1Data || !year2Data){
+        subtitle.textContent = "No data for selected years.";
+        return;
+    }
+
+    let value1;
+    let value2;
+
+    if(mode === "mean"){
+
+        value1 = year1Data.mean;
+        value2 = year2Data.mean;
+
+        document.getElementById("name1").textContent = "Year average";
+        document.getElementById("name2").textContent = "Year average";
+
+    } else {
+
+        value1 = year1Data.record;
+        value2 = year2Data.record;
+
+        document.getElementById("name1").textContent = "World Record";
+        document.getElementById("name2").textContent = "World Record";
+    }
+
+    subtitle.textContent = `${block.event} (${block.sex}) — ${mode} — unit: ${block.unit}`;
+
+    document.getElementById("year1Label").textContent = year1;
+    document.getElementById("year2Label").textContent = year2;
+
+    document.getElementById("value1").textContent = formatPerformance(value1, block.unit);
+    document.getElementById("value2").textContent = formatPerformance(value2, block.unit);
+}
+
+fetch("data.json?v=2")
+    .then(response => response.json())
+    .then(data => {
+        allData = data;
+
+        const events = [...new Set(Object.values(allData).map(d => d.event))].sort();
+
+        eventSelect.innerHTML = "";
+        events.forEach(eventName => {
+            const opt = document.createElement("option");
+            opt.value = eventName;
+            opt.textContent = eventName;
+            eventSelect.appendChild(opt);
+        });
+
+        eventSelect.addEventListener("change", fillYears);
+        sexSelect.addEventListener("change", fillYears);
+        year1Select.addEventListener("change", updateView);
+        year2Select.addEventListener("change", updateView);
+        modeSelect.addEventListener("change", updateView);
+
+        fillYears();
+    })
+    .catch(error => {
+        console.error("Error loading data:", error);
+        subtitle.textContent = "Failed to load data.json";
+    });
+</script>
+
+</body>
+</html>

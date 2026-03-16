@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gap to Record by Unit</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .chart-wrapper {
+            width: 95%;
+            max-width: 1400px;
+            height: 700px;
+            margin: 40px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Difference Between Normal Performance and Record</h1>
+
+    <h2>Track Events — Gap in Seconds</h2>
+    <div class="chart-wrapper">
+        <canvas id="chartSeconds"></canvas>
+    </div>
+
+    <h2>Field Events — Gap in Meters</h2>
+    <div class="chart-wrapper">
+        <canvas id="chartMeters"></canvas>
+    </div>
+
+    <script>
+        function createChart(canvasId, dataPath, chartTitle) {
+            fetch(dataPath)
+                .then(response => response.json())
+                .then(data => {
+                    const ctx = document.getElementById(canvasId).getContext('2d');
+
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: data.labels,
+                            datasets: [{
+                                label: 'Gap to record',
+                                data: data.gap,
+                                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: chartTitle,
+                                    color: 'white',
+                                    font: {
+                                        size: 24
+                                    }
+                                },
+                                legend: {
+                                    labels: {
+                                        color: 'white'
+                                    }
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const i = context.dataIndex;
+                                            return `Gap: ${data.gap[i]} ${data.unit[i]}`;
+                                        },
+                                        afterLabel: function(context) {
+                                            const i = context.dataIndex;
+                                            return [
+                                                `Normal: ${data.normal_perf[i]} ${data.unit[i]}`,
+                                                `Record: ${data.record_perf[i]} ${data.unit[i]}`
+                                            ];
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    ticks: {
+                                        color: 'white',
+                                        autoSkip: false,
+                                        maxRotation: 90,
+                                        minRotation: 45
+                                    },
+                                    grid: {
+                                        color: 'rgba(255,255,255,0.1)'
+                                    }
+                                },
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        color: 'white'
+                                    },
+                                    grid: {
+                                        color: 'rgba(255,255,255,0.1)'
+                                    }
+                                }
+                            }
+                        }
+                    });
+                })
+                .catch(error => console.error(`Error loading ${dataPath}:`, error));
+        }
+
+        createChart(
+            "chartSeconds",
+            "data_seconds.json",
+            "Track Events — Gap in Seconds"
+        );
+
+        createChart(
+            "chartMeters",
+            "data_meters.json",
+            "Field Events — Gap in Meters"
+        );
+    </script>
+
+</body>
+</html>
