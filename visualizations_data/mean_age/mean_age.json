@@ -1,0 +1,273 @@
+[
+  {
+    "event": "2000 Metres Steeplechase",
+    "male": 25.4,
+    "female": 21.8,
+    "all": 22.2
+  },
+  {
+    "event": "30 Kilometres Race Walk",
+    "male": 23.6,
+    "all": 23.6
+  },
+  {
+    "event": "200 Metres",
+    "male": 24.1,
+    "female": 23.8,
+    "all": 23.9
+  },
+  {
+    "event": "10 Kilometres Race Walk",
+    "male": 25.2,
+    "female": 23.9,
+    "all": 24.1
+  },
+  {
+    "event": "300 Metres",
+    "male": 24.0,
+    "female": 24.8,
+    "all": 24.1
+  },
+  {
+    "event": "5 Kilometres Race Walk",
+    "male": 26.7,
+    "female": 24.0,
+    "all": 24.2
+  },
+  {
+    "event": "400 Metres",
+    "male": 23.8,
+    "female": 24.7,
+    "all": 24.3
+  },
+  {
+    "event": "100 Metres",
+    "male": 24.6,
+    "female": 24.4,
+    "all": 24.5
+  },
+  {
+    "event": "3000 Metres Steeplechase",
+    "male": 25.3,
+    "female": 24.2,
+    "all": 24.6
+  },
+  {
+    "event": "5000 Metres",
+    "male": 24.4,
+    "female": 25.0,
+    "all": 24.6
+  },
+  {
+    "event": "20000 Metres Race Walk",
+    "male": 25.0,
+    "female": 24.8,
+    "all": 24.8
+  },
+  {
+    "event": "600 Metres",
+    "male": 24.1,
+    "female": 25.0,
+    "all": 24.8
+  },
+  {
+    "event": "High Jump",
+    "male": 24.6,
+    "female": 25.7,
+    "all": 24.8
+  },
+  {
+    "event": "Heptathlon",
+    "female": 24.9,
+    "all": 24.9
+  },
+  {
+    "event": "1000 Metres",
+    "male": 24.3,
+    "female": 25.7,
+    "all": 25.0
+  },
+  {
+    "event": "Hammer Throw",
+    "male": 27.4,
+    "female": 24.0,
+    "all": 25.0
+  },
+  {
+    "event": "Long Jump",
+    "male": 24.7,
+    "female": 25.8,
+    "all": 25.0
+  },
+  {
+    "event": "Pole Vault",
+    "male": 25.4,
+    "female": 24.6,
+    "all": 25.0
+  },
+  {
+    "event": "Two Miles",
+    "male": 24.5,
+    "female": 25.8,
+    "all": 25.0
+  },
+  {
+    "event": "10 Kilometres",
+    "male": 24.5,
+    "female": 26.1,
+    "all": 25.1
+  },
+  {
+    "event": "3000 Metres",
+    "male": 24.8,
+    "female": 25.3,
+    "all": 25.1
+  },
+  {
+    "event": "400 Metres Hurdles",
+    "male": 24.8,
+    "female": 25.7,
+    "all": 25.1
+  },
+  {
+    "event": "10000 Metres",
+    "male": 24.8,
+    "female": 25.8,
+    "all": 25.2
+  },
+  {
+    "event": "20 Kilometres Race Walk",
+    "male": 25.4,
+    "female": 25.0,
+    "all": 25.2
+  },
+  {
+    "event": "800 Metres",
+    "male": 24.4,
+    "female": 25.7,
+    "all": 25.2
+  },
+  {
+    "event": "Decathlon",
+    "male": 25.3,
+    "all": 25.3
+  },
+  {
+    "event": "10000 Metres Race Walk",
+    "male": 25.2,
+    "female": 26.0,
+    "all": 25.4
+  },
+  {
+    "event": "1500 Metres",
+    "male": 24.9,
+    "female": 25.9,
+    "all": 25.4
+  },
+  {
+    "event": "15 Kilometres",
+    "male": 24.2,
+    "female": 26.8,
+    "all": 25.5
+  },
+  {
+    "event": "20 Kilometres",
+    "male": 25.4,
+    "female": 25.8,
+    "all": 25.5
+  },
+  {
+    "event": "2000 Metres",
+    "male": 25.3,
+    "female": 26.1,
+    "all": 25.5
+  },
+  {
+    "event": "110 Metres Hurdles",
+    "male": 25.6,
+    "all": 25.6
+  },
+  {
+    "event": "3000 Metres Race Walk",
+    "male": 25.8,
+    "female": 25.2,
+    "all": 25.6
+  },
+  {
+    "event": "Half Marathon",
+    "male": 25.3,
+    "female": 26.5,
+    "all": 25.6
+  },
+  {
+    "event": "Triple Jump",
+    "male": 25.2,
+    "female": 26.0,
+    "all": 25.6
+  },
+  {
+    "event": "One Mile",
+    "male": 25.4,
+    "female": 26.6,
+    "all": 25.7
+  },
+  {
+    "event": "5 Kilometres",
+    "male": 25.8,
+    "female": 26.0,
+    "all": 25.8
+  },
+  {
+    "event": "5000 Metres Race Walk",
+    "male": 26.0,
+    "female": 25.5,
+    "all": 25.8
+  },
+  {
+    "event": "100 Metres Hurdles",
+    "female": 25.9,
+    "all": 25.9
+  },
+  {
+    "event": "10 Miles Road",
+    "male": 24.2,
+    "female": 27.7,
+    "all": 26.1
+  },
+  {
+    "event": "Javelin Throw",
+    "male": 26.4,
+    "female": 26.0,
+    "all": 26.1
+  },
+  {
+    "event": "Shot Put",
+    "male": 26.6,
+    "female": 26.7,
+    "all": 26.6
+  },
+  {
+    "event": "35 Kilometres Race Walk",
+    "male": 27.3,
+    "female": 27.7,
+    "all": 27.6
+  },
+  {
+    "event": "Discus Throw",
+    "male": 28.0,
+    "female": 26.8,
+    "all": 27.8
+  },
+  {
+    "event": "50 Kilometres Race Walk",
+    "male": 28.1,
+    "female": 27.6,
+    "all": 28.0
+  },
+  {
+    "event": "Marathon",
+    "male": 28.2,
+    "female": 28.4,
+    "all": 28.3
+  }
+]

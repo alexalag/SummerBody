@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mean Age by Event — World Athletics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #f5f2eb;
+  --ink:     #1a1612;
+  --card:    #ffffff;
+  --muted:   #8a8070;
+  --border:  #e0d9cf;
+  --red:     #d4460a;
+  --green:   #1a6b3a;
+  --blue:    #1a4a8a;
+  --ff-head: 'Bebas Neue', sans-serif;
+  --ff-body: 'DM Sans', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--ff-body);
+  min-height: 100vh;
+  padding: 3rem 2rem 5rem;
+}
+
+.page { max-width: 1000px; margin: 0 auto; }
+
+/* ── Header ── */
+header {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+}
+.eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--red); margin-bottom: .3rem;
+}
+h1 {
+  font-family: var(--ff-head);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: .95; text-transform: uppercase;
+}
+h1 span { color: var(--red); }
+.subtitle {
+  margin-top: .5rem;
+  font-size: 14px; color: var(--muted);
+}
+
+/* ── Controls ── */
+.controls {
+  display: flex; align-items: center; gap: 1rem;
+  flex-wrap: wrap; margin-bottom: 1.75rem;
+}
+.controls label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+}
+.pill-group { display: flex; gap: 6px; }
+.pill {
+  font-size: 12px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  padding: 7px 18px; border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--card); color: var(--muted);
+  cursor: pointer; transition: all .15s;
+}
+.pill:hover { border-color: var(--ink); color: var(--ink); }
+.pill.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.legend { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--ink); }
+.legend-dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+
+/* ── Chart card ── */
+.chart-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.75rem 1.75rem 1.25rem;
+}
+.chart-wrap {
+  /* height grows with number of events: each bar ~32px + padding */
+  position: relative;
+}
+
+/* ── Error/loading ── */
+#status {
+  text-align: center; padding: 4rem;
+  font-family: var(--ff-head); font-size: 1.8rem;
+  color: var(--muted); letter-spacing: .08em; text-transform: uppercase;
+}
+
+.footnote {
+  margin-top: 1.5rem;
+  font-size: 12px; color: var(--muted); line-height: 1.6;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="eyebrow">World Athletics · Data Explorer</div>
+    <h1>Mean age <span>by event</span></h1>
+    <p class="subtitle">Average age of athletes at the time of their recorded performance</p>
+  </header>
+
+  <div class="controls">
+    <div class="legend">
+      <span class="legend-dot" style="background:#e6be00"></span><span>Male</span>
+      <span class="legend-dot" style="background:#823cb4; margin-left:1rem"></span><span>Female</span>
+    </div>
+    <label style="margin-left:auto">Sort by</label>
+    <div class="pill-group">
+      <button class="pill active" onclick="setSort(this,'all')">Overall</button>
+      <button class="pill"        onclick="setSort(this,'male')">Male age</button>
+      <button class="pill"        onclick="setSort(this,'female')">Female age</button>
+      <button class="pill"        onclick="setSort(this,'name')">Name</button>
+    </div>
+  </div>
+
+  <div id="status">Loading…</div>
+
+  <div class="chart-card" id="chart-card" style="display:none">
+    <div class="chart-wrap" id="chart-wrap">
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+
+  <p class="footnote">
+    Age = years between date of birth and date of performance. Mean computed across all
+    performances per event. Run <code>python generate_mean_age.py</code> to regenerate
+    <code>mean_age.json</code>, then serve with <code>python -m http.server</code>.
+  </p>
+
+</div>
+
+<script>
+let DATA    = [];
+let SORT    = 'all';
+let myChart = null;
+
+// ── Load JSON ─────────────────────────────────────────────────────────────────
+fetch('mean_age.json')
+  .then(r => { if (!r.ok) throw new Error('Cannot load mean_age.json'); return r.json(); })
+  .then(json => {
+    DATA = json;
+    document.getElementById('status').style.display = 'none';
+    document.getElementById('chart-card').style.display = 'block';
+    renderChart();
+  })
+  .catch(err => {
+    document.getElementById('status').textContent =
+      err.message + ' — serve with: python -m http.server';
+  });
+
+// ── Render ────────────────────────────────────────────────────────────────────
+function renderChart() {
+  // Keep events that have at least one gender value
+  let rows = DATA.filter(r => r.male != null || r.female != null);
+
+  // Sort
+  if (SORT === 'name') {
+    rows.sort((a, b) => a.event.localeCompare(b.event));
+  } else if (SORT === 'male') {
+    rows.sort((a, b) => (a.male ?? 99) - (b.male ?? 99));
+  } else if (SORT === 'female') {
+    rows.sort((a, b) => (a.female ?? 99) - (b.female ?? 99));
+  } else {
+    // overall: sort by mean of available values
+    rows.sort((a, b) => {
+      const ma = [a.male, a.female].filter(v => v != null);
+      const mb = [b.male, b.female].filter(v => v != null);
+      const avgA = ma.reduce((s,v) => s+v, 0) / ma.length;
+      const avgB = mb.reduce((s,v) => s+v, 0) / mb.length;
+      return avgA - avgB;
+    });
+  }
+
+  const labels      = rows.map(r => r.event);
+  const malePts     = rows.map(r => r.male   ?? null);
+  const femalePts   = rows.map(r => r.female ?? null);
+
+  // Height: two bars per event + small gap
+  const barHeight = 8;
+  const chartH    = Math.max(300, rows.length * barHeight * 2 + 80);
+  document.getElementById('chart-wrap').style.height = chartH + 'px';
+
+  if (myChart) myChart.destroy();
+  const ctx = document.getElementById('myChart').getContext('2d');
+
+  myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Male',
+          data: malePts,
+          backgroundColor: 'rgba(230,190,0,0.85)',
+          borderColor:     '#b8960a',
+          borderWidth: 1,
+          borderRadius: 2,
+          barThickness: 5,
+        },
+        {
+          label: 'Female',
+          data: femalePts,
+          backgroundColor: 'rgba(130,60,180,0.85)',
+          borderColor:     '#6b2fa0',
+          borderWidth: 1,
+          borderRadius: 2,
+          barThickness: 5,
+        }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: { duration: 350 },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: items => items[0].label,
+            label: item  => `  ${item.dataset.label}: ${item.raw} yrs`,
+          },
+          backgroundColor: '#1a1612',
+          titleFont: { family: "'DM Sans'", size: 13, weight: '700' },
+          bodyFont:  { family: "'DM Sans'", size: 13 },
+          padding: 12,
+        }
+      },
+      scales: {
+        x: {
+          min: 15,
+          grid:  { color: 'rgba(0,0,0,0.06)' },
+          ticks: {
+            font: { family: "'DM Sans'", size: 12 },
+            color: '#8a8070',
+            callback: v => v + ' yrs',
+          },
+          title: {
+            display: true, text: 'Mean age (years)',
+            font: { family: "'DM Sans'", size: 11, weight: '700' },
+            color: '#8a8070',
+          }
+        },
+        y: {
+          grid: { display: false },
+          ticks: {
+            font: { family: "'DM Sans'", size: 11 },
+            color: '#1a1612',
+            crossAlign: 'far',
+          }
+        }
+      }
+    }
+  });
+}
+
+// ── Sort toggle ───────────────────────────────────────────────────────────────
+function setSort(btn, sort) {
+  SORT = sort;
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  renderChart();
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #f5f2eb;
+  --ink:     #1a1612;
+  --card:    #ffffff;
+  --muted:   #8a8070;
+  --border:  #e0d9cf;
+  --red:     #d4460a;
+  --green:   #1a6b3a;
+  --blue:    #1a4a8a;
+  --ff-head: 'Bebas Neue', sans-serif;
+  --ff-body: 'DM Sans', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--ff-body);
+  min-height: 100vh;
+  padding: 3rem 2rem 5rem;
+}
+
+.page { max-width: 1000px; margin: 0 auto; }
+
+/* ── Header ── */
+header {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+}
+.eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--red); margin-bottom: .3rem;
+}
+h1 {
+  font-family: var(--ff-head);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: .95; text-transform: uppercase;
+}
+h1 span { color: var(--red); }
+.subtitle {
+  margin-top: .5rem;
+  font-size: 14px; color: var(--muted);
+}
+
+/* ── Controls ── */
+.controls {
+  display: flex; align-items: center; gap: 1rem;
+  flex-wrap: wrap; margin-bottom: 1.75rem;
+}
+.controls label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+}
+.pill-group { display: flex; gap: 6px; }
+.pill {
+  font-size: 12px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  padding: 7px 18px; border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--card); color: var(--muted);
+  cursor: pointer; transition: all .15s;
+}
+.pill:hover { border-color: var(--ink); color: var(--ink); }
+.pill.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.legend { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--ink); }
+.legend-dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+
+/* ── Chart card ── */
+.chart-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.75rem 1.75rem 1.25rem;
+}
+.chart-wrap {
+  /* height grows with number of events: each bar ~32px + padding */
+  position: relative;
+}
+
+/* ── Error/loading ── */
+#status {
+  text-align: center; padding: 4rem;
+  font-family: var(--ff-head); font-size: 1.8rem;
+  color: var(--muted); letter-spacing: .08em; text-transform: uppercase;
+}
+
+.footnote {
+  margin-top: 1.5rem;
+  font-size: 12px; color: var(--muted); line-height: 1.6;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="eyebrow">World Athletics · Data Explorer</div>
+    <h1>Mean age <span>by event</span></h1>
+    <p class="subtitle">Average age of athletes at the time of their recorded performance</p>
+  </header>
+
+  <div class="controls">
+    <div class="legend">
+      <span class="legend-dot" style="background:#e6be00"></span><span>Male</span>
+      <span class="legend-dot" style="background:#823cb4; margin-left:1rem"></span><span>Female</span>
+    </div>
+    <label style="margin-left:auto">Sort by</label>
+    <div class="pill-group">
+      <button class="pill active" onclick="setSort(this,'all')">Overall</button>
+      <button class="pill"        onclick="setSort(this,'male')">Male age</button>
+      <button class="pill"        onclick="setSort(this,'female')">Female age</button>
+      <button class="pill"        onclick="setSort(this,'name')">Name</button>
+    </div>
+  </div>
+
+  <div id="status">Loading…</div>
+
+  <div class="chart-card" id="chart-card" style="display:none">
+    <div class="chart-wrap" id="chart-wrap">
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+
+  <p class="footnote">
+    Age = years between date of birth and date of performance. Mean computed across all
+    performances per event. Run <code>python generate_mean_age.py</code> to regenerate
+    <code>mean_age.json</code>, then serve with <code>python -m http.server</code>.
+  </p>
+
+</div>
+
+<script>
+let DATA    = [];   // full array from JSON
+let VIEW    = 'all';
+let myChart = null;
+
+const BAR_COLOR = {
+  all:    { bg: 'rgba(26,22,18,0.7)',    border: '#1a1612' },
+  male:   { bg: 'rgba(26,74,138,0.75)',  border: '#1a4a8a' },
+  female: { bg: 'rgba(212,70,10,0.75)',  border: '#d4460a' },
+};
+
+// ── Load JSON ─────────────────────────────────────────────────────────────────
+fetch('mean_age.json')
+  .then(r => {
+    if (!r.ok) throw new Error('Cannot load mean_age.json');
+    return r.json();
+  })
+  .then(json => {
+    DATA = json;
+    document.getElementById('status').style.display = 'none';
+    document.getElementById('chart-card').style.display = 'block';
+    renderChart();
+  })
+  .catch(err => {
+    document.getElementById('status').textContent =
+      err.message + ' — serve with: python -m http.server';
+  });
+
+// ── Render ────────────────────────────────────────────────────────────────────
+function renderChart() {
+  // Filter out events that have no data for the selected sex
+  const rows = DATA.filter(r => r[VIEW] != null);
+
+  // Sort by mean age ascending
+  rows.sort((a, b) => a[VIEW] - b[VIEW]);
+
+  const labels = rows.map(r => r.event);
+  const values = rows.map(r => r[VIEW]);
+  const color  = BAR_COLOR[VIEW];
+
+  // Dynamically size canvas height so bars don't get squashed
+  const barHeight = 18;
+  const chartH    = Math.max(300, rows.length * barHeight + 60);
+  document.getElementById('chart-wrap').style.height = chartH + 'px';
+
+  if (myChart) myChart.destroy();
+
+  const ctx = document.getElementById('myChart').getContext('2d');
+
+  myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        data: values,
+        backgroundColor: color.bg,
+        borderColor:     color.border,
+        borderWidth: 1.5,
+        borderRadius: 2,
+        barThickness: 5,
+      }]
+    },
+    options: {
+      indexAxis: 'y',          // horizontal bars — easier to read long event names
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: { duration: 400 },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: items => items[0].label,
+            label: item  => `  Mean age: ${item.raw}`,
+          },
+          backgroundColor: '#1a1612',
+          titleFont: { family: "'DM Sans'", size: 13, weight: '700' },
+          bodyFont:  { family: "'DM Sans'", size: 13 },
+          padding: 12,
+        }
+      },
+      scales: {
+        x: {
+          min: 15,
+          grid:  { color: 'rgba(0,0,0,0.06)' },
+          ticks: {
+            font: { family: "'DM Sans'", size: 12 },
+            color: '#8a8070',
+            callback: v => v + ' yrs',
+          },
+          title: {
+            display: true, text: 'Mean age (years)',
+            font: { family: "'DM Sans'", size: 11, weight: '700' },
+            color: '#8a8070',
+          }
+        },
+        y: {
+          grid: { display: false },
+          ticks: {
+            font: { family: "'DM Sans'", size: 11 },
+            color: '#1a1612',
+            crossAlign: 'far',
+          }
+        }
+      }
+    }
+  });
+}
+
+// ── Sex filter ────────────────────────────────────────────────────────────────
+function setView(btn, view) {
+  VIEW = view;
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  renderChart();
+}
+</script>
+</body>
+</html>

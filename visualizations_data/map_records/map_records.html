@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolution of Track & Field world record across the world and time</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            overflow: hidden; /* Empêche le scroll de la page */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        #container {
+            position: relative;
+            width: 100vw;
+            height: calc(100vh - 80px);
+            overflow: hidden;
+        }
+
+        .map-wrapper {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #wrapper-female {
+            z-index: 1;
+        }
+
+        #wrapper-male {
+            z-index: 0;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+            background-color: #e0f3f8; /* eau */
+        }
+
+        .country {
+            stroke: #fff;
+            stroke-width: 0.5px;
+            transition: fill 0.2s;
+        }
+
+        .country:hover {
+            stroke: #333;
+            stroke-width: 1.5px;
+        }
+
+        .sex-label {
+            position: absolute;
+            top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            pointer-events: none;
+            z-index: 10;
+            padding: 5px 10px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.7);
+        }
+        #label-male { left: 50px; color: #FFDD00; }
+        #label-female { right: 50px; color: #9A5ADA; }
+
+        #separator {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #333;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: ew-resize;
+            z-index: 20;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        #separator::after {
+            content: "⬚";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #333;
+            color: white;
+            padding: 10px 5px;
+            border-radius: 4px;
+            font-size: 18px;
+        }
+
+        .tooltip {
+            position: absolute;
+            opacity: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            font-size: 14px;
+            z-index: 30;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+        }
+
+        #controls-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: white;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 40;
+        }
+
+        #timeline-container {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            margin-right: 30px;
+        }
+
+        #year-display {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-right: 15px;
+            width: 80px;
+        }
+
+        #slider {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        #legend-container {
+            width: 250px;
+            text-align: center;
+        }
+        .legend-title { font-size: 12px; margin-bottom: 5px; color: #666; }
+        .legend-svg { width: 100%; height: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>Where are the world record holders from ?</h1>
+
+    <div id="container">
+        <div id="wrapper-male" class="map-wrapper">
+            <div id="label-male" class="sex-label">Hommes</div>
+            <svg id="svg-male"></svg>
+        </div>
+
+        <div id="wrapper-female" class="map-wrapper">
+            <div id="label-female" class="sex-label">Femmes</div>
+            <svg id="svg-female"></svg>
+        </div>
+
+        <div id="separator"></div>
+        
+        <div class="tooltip" id="tooltip"></div>
+    </div>
+
+    <div id="controls-bar">
+        <div id="timeline-container">
+            <div id="year-display"></div>
+            <input type="range" id="slider" step="1">
+        </div>
+        
+        <div id="legend-container">
+            <div class="legend-title">Nb de records détenus (cumul)</div>
+            <svg class="legend-svg" id="legend-svg"></svg>
+        </div>
+    </div>
+
+    <script>
+        const dataPath = 'records_history.json';
+        const topojsonUrl = 'https://unpkg.com/world-atlas@2.0.2/countries-110m.json';
+
+        // Variables globales
+        let currentData = null;
+        let countriesGeo = null;
+        let years = [];
+        let currentYearIndex = 0;
+        let isDraggingSeparator = false;
+
+        const colorScaleMale = d3.scaleLinear()
+            .range(["#FFED7B", "#FFDD00"]) // male
+            .interpolate(d3.interpolateHcl);
+
+        const colorScaleFemale = d3.scaleLinear()
+            .range(["#D4AAFF", "#9A5ADA"]) // female
+            .interpolate(d3.interpolateHcl);
+
+        const colorNoData = "#e0e0e0"; // grey for absence of data
+
+        const projection = d3.geoMercator()
+            .scale(150)
+            .translate([window.innerWidth / 2, window.innerHeight / 1.7]);
+        
+        const pathGenerator = d3.geoPath().projection(projection);
+
+        const tooltip = d3.select("#tooltip");
+
+        Promise.all([
+            d3.json(topojsonUrl),
+            d3.json(dataPath)
+        ]).then(([topoData, recordsData]) => {
+            currentData = recordsData;
+            
+            years = Object.keys(currentData).sort();
+            if (years.length === 0) {
+                document.body.innerHTML = "<h1>Erreur: Aucune donnée trouvée dans le JSON.</h1>";
+                return;
+            }
+            currentYearIndex = years.length - 1;
+
+            countriesGeo = topojson.feature(topoData, topoData.objects.countries).features;
+
+            setupSliders();
+            
+            let maxRecords = 1;
+            Object.values(recordsData).forEach(yearData => {
+                Object.values(yearData.M).forEach(list => maxRecords = Math.max(maxRecords, list.length));
+                Object.values(yearData.F).forEach(list => maxRecords = Math.max(maxRecords, list.length));
+            });
+            
+            colorScaleMale.domain([0, maxRecords]);
+            colorScaleFemale.domain([0, maxRecords]);
+
+            drawMap("male", colorScaleMale);
+            drawMap("female", colorScaleFemale);
+            drawLegend(maxRecords);
+
+            updateVisualization();
+            setupJuxtapose();
+
+            window.addEventListener('resize', () => {
+                location.reload(); 
+            });
+
+        }).catch(error => {
+            console.error("Erreur lors du chargement des données:", error);
+            document.body.innerHTML = `<h1>Erreur de chargement des données</h1><p>${error.message}</p><p>Vérifiez que vous servez ce fichier via un serveur web (http://localhost) et que le fichier JSON existe.</p>`;
+        });
+
+
+        function drawMap(sex, colorScale) {
+            const svg = d3.select(`#svg-${sex}`);
+            
+            svg.append("g")
+                .selectAll("path")
+                .data(countriesGeo)
+                .enter()
+                .append("path")
+                .attr("class", "country")
+                .attr("d", pathGenerator)
+                .attr("fill", colorNoData)
+                .on("mouseover", function(event, d) {
+                    handleMouseOver(event, d, sex);
+                })
+                .on("mousemove", function(event) {
+                    tooltip.style("top", (event.pageY - 10) + "px")
+                           .style("left", (event.pageX + 10) + "px");
+                })
+                .on("mouseout", handleMouseOut);
+        }
+
+        function updateVisualization() {
+            const year = years[currentYearIndex];
+            d3.select("#year-display").text(year);
+            
+            const dataDataCurrentYear = currentData[year];
+
+            updateMapColors("male", dataDataCurrentYear.M, colorScaleMale);
+            updateMapColors("female", dataDataCurrentYear.F, colorScaleFemale);
+        }
+
+        function updateMapColors(sex, yearRecords, colorScale) {
+            d3.select(`#svg-${sex}`)
+                .selectAll(".country")
+                .transition()
+                .duration(100)
+                .attr("fill", d => {
+                    const isoAlpha3 = d.properties.iso_a3 || getAlpha3FromNumeric(d.id); 
+                    // On regarde si on a une liste de records pour ce pays
+                    if (isoAlpha3 && yearRecords[isoAlpha3]) {
+                        const count = yearRecords[isoAlpha3].length; // On utilise la longueur de la liste
+                        return colorScale(count);
+                    } else {
+                        return colorNoData;
+                    }
+                });
+        }
+
+        function handleMouseOver(event, d, sex) {
+            const year = years[currentYearIndex];
+            const countryName = d.properties.name;
+            const isoAlpha3 = d.properties.iso_a3 || getAlpha3FromNumeric(d.id);
+            
+            const recordsData = currentData[year][sex === "male" ? "M" : "F"];
+            const countryRecords = (isoAlpha3 && recordsData[isoAlpha3]) ? recordsData[isoAlpha3] : [];
+
+            d3.select(event.currentTarget).style("stroke", "#333").style("stroke-width", "1.5px");
+
+            tooltip.transition().duration(100).style("opacity", 0.9);
+            
+            // On construit la liste des records en HTML
+            let recordsHtml = countryRecords.map(r => 
+                `<div style="font-size:12px; margin-top:4px;">🏅 <strong>${r.Event}</strong> : ${r.Competitor}</div>`
+            ).join("");
+
+            tooltip.html(`
+                <div style="border-bottom:1px solid #ccc; padding-bottom:5px; margin-bottom:5px;">
+                    <strong>${countryName}</strong> (${year})
+                </div>
+                ${countryRecords.length > 0 ? recordsHtml : "No record for this year"}
+            `);
+        }
+
+        function handleMouseOut(event, d) {
+            d3.select(event.currentTarget).style("stroke", "#fff").style("stroke-width", "0.5px");
+            tooltip.transition().duration(100).style("opacity", 0);
+        }
+
+        function setupSliders() {
+            const slider = d3.select("#slider");
+            slider
+                .attr("min", 0)
+                .attr("max", years.length - 1)
+                .attr("value", currentYearIndex)
+                .on("input", function() {
+                    currentYearIndex = +this.value;
+                    updateVisualization();
+                });
+        }
+
+        function setupJuxtapose() {
+            const container = d3.select("#container");
+            const separator = d3.select("#separator");
+            const wrapperFemale = d3.select("#wrapper-female");
+
+            function applyClip(xPosition) {
+                const width = window.innerWidth;
+                const pct = (xPosition / width) * 100;
+                
+                wrapperFemale.style("clip-path", `inset(0 0 0 ${pct}%)`);
+            }
+
+            applyClip(window.innerWidth / 2);
+
+            separator.on("mousedown", () => isDraggingSeparator = true);
+            
+            window.addEventListener("mouseup", () => isDraggingSeparator = false);
+            
+            window.addEventListener("mousemove", (e) => {
+                if (!isDraggingSeparator) return;
+
+                let x = e.clientX;
+                if (x < 50) x = 50;
+                if (x > window.innerWidth - 50) x = window.innerWidth - 50;
+
+                separator.style("left", x + "px");
+                applyClip(x);
+            });
+        }
+
+
+        function drawLegend(maxRecords) {
+            const svg = d3.select("#legend-svg");
+            const width = 250;
+            const height = 20;
+
+            const defs = svg.append("defs");
+
+            const gradM = defs.append("linearGradient").attr("id", "grad-male").attr("x1", "0%").attr("x2", "100%");
+            gradM.append("stop").attr("offset", "0%").attr("stop-color", colorScaleMale.range()[0]);
+            gradM.append("stop").attr("offset", "100%").attr("stop-color", colorScaleMale.range()[1]);
+
+            const gradF = defs.append("linearGradient").attr("id", "grad-female").attr("x1", "0%").attr("x2", "100%");
+            gradF.append("stop").attr("offset", "0%").attr("stop-color", colorScaleFemale.range()[0]);
+            gradF.append("stop").attr("offset", "100%").attr("stop-color", colorScaleFemale.range()[1]);
+
+            svg.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height/2).style("fill", "url(#grad-female)");
+            svg.append("rect").attr("x", 0).attr("y", height/2).attr("width", width).attr("height", height/2).style("fill", "url(#grad-male)");
+
+            svg.append("text").attr("x", 0).attr("y", height + 12).attr("font-size", "10px").text("1");
+            svg.append("text").attr("x", width).attr("y", height + 12).attr("font-size", "10px").attr("text-anchor", "end").text(maxRecords);
+        }
+
+        function getAlpha3FromNumeric(id) {
+        const map = {
+            840: "USA", 826: "GBR", 250: "FRA", 276: "DEU", 380: "ITA", 
+            392: "JPN", 724: "ESP", 156: "CHN", 578: "NOR", 752: "SWE", 
+            643: "RUS", 0o56: "BEL", 788: "TUN", 642: "ROU", 756: "CHE", 
+            620: "PRT", 0o76: "BRA", 616: "POL", 203: "CZE", 492: "MCO", 
+            528: "NLD", 191: "HRV", 0o36: "AUS", 410: "KOR",
+            
+            404: "KEN", 231: "ETH", 388: "JAM", 192: "CUB", 504: "MAR", 484: "MEX"
+        };
+        return map[Number(id)]; 
+}
+
+    </script>
+</body>
+</html>

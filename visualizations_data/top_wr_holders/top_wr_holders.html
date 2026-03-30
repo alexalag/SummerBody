@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 3 World Record Holders for each gender</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        #controls {
+            margin-bottom: 30px;
+        }
+
+        .btn-check {
+            display: none;
+        }
+
+        .btn-label {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #e0e0e0;
+            color: #333;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 0 5px;
+            font-weight: bold;
+        }
+
+        #label-m:hover { background-color: #FFDD00; }
+        #label-f:hover { background-color: #9A5ADA; }
+
+        #btn-m:checked + #label-m {
+            background-color: #FFDD00; /* Jaune male */
+            color: #333;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        #btn-f:checked + #label-f {
+            background-color: #9A5ADA; /* Mauve female */
+            color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        #podium-container {
+            width: 800px;
+            height: 500px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .athlete-rect {
+            stroke: #fff;
+            stroke-width: 2px;
+            rx: 5px; /* coins arrondis */
+            ry: 5px;
+        }
+
+        .athlete-label, .count-label {
+            text-anchor: middle;
+            font-weight: bold;
+            pointer-events: none;
+        }
+
+        .count-label {
+            font-size: 24px;
+        }
+
+        .athlete-label {
+            font-size: 14px;
+            fill: #333;
+        }
+
+        .tooltip-podium {
+            position: absolute;
+            opacity: 0;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            pointer-events: none;
+            font-size: 13px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            min-width: 150px;
+        }
+        .tooltip-title {
+            font-weight: bold;
+            border-bottom: 1px solid #555;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            color: #FFDD00; /* Jaune par défaut */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Top 3 Athlètes - Records du Monde</h1>
+
+    <div id="controls">
+        <input type="radio" id="btn-m" name="gender" class="btn-check" value="M" checked>
+        <label for="btn-m" id="label-m" class="btn-label">♂ Hommes</label>
+        
+        <input type="radio" id="btn-f" name="gender" class="btn-check" value="F">
+        <label for="btn-f" id="label-f" class="btn-label">♀ Femmes</label>
+    </div>
+
+    <div id="podium-container">
+        <svg id="svg-podium"></svg>
+    </div>
+
+    <script>
+        // --- Configuration ---
+        const dataPath = 'data.json';
+        const tooltip = d3.select("body").append("div").attr("class", "tooltip-podium");
+        const width = 800;
+        const height = 500;
+        const margin = {top: 50, right: 50, bottom: 80, left: 50};
+        const podiumHeight = height - margin.top - margin.bottom;
+
+        // Couleurs de tes échelles de carte
+        const colorMale = "#FFDD00";
+        const colorFemale = "#9A5ADA";
+
+        // Variables globales
+        let allData = null;
+        let currentGender = "M";
+
+        // Création de l'SVG
+        const svg = d3.select("#svg-podium")
+            .attr("width", width)
+            .attr("height", height);
+
+        const chartGroup = svg.append("g")
+            .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+        // Échelles
+        // x : Bande pour les 3 athlètes (Podium position : 2nd, 1er, 3ème)
+        const xScale = d3.scaleBand()
+            .domain([2, 1, 3]) // L'ordre visuel du podium
+            .range([0, width - margin.left - margin.right])
+            .padding(0.2);
+
+        // y : Hauteur linéaire pour le nombre de records
+        const yScale = d3.scaleLinear()
+            .range([podiumHeight, 0]); // Inversé : 0 records en bas
+
+        // --- Chargement des données ---
+        d3.json(dataPath).then(data => {
+            allData = data;
+            
+            // Calculer le maximum global pour figer l'échelle Y
+            let maxM = d3.max(data.M, d => d.Count) || 1;
+            let maxF = d3.max(data.F, d => d.Count) || 1;
+            const globalMax = Math.max(maxM, maxF);
+            
+            yScale.domain([0, globalMax]);
+
+            // Dessiner la première fois
+            updateVisualization();
+
+            // Gestionnaire d'événement pour les boutons
+            d3.selectAll(".btn-check").on("change", function() {
+                currentGender = this.value;
+                updateVisualization();
+            });
+
+        }).catch(error => {
+            console.error("Erreur de chargement:", error);
+            chartGroup.append("text").attr("x", 20).attr("y", 20).text("Erreur de chargement des données.");
+        });
+
+        function updateVisualization() {
+            const top3Data = allData[currentGender].slice(0, 3).map((d, i) => {
+                return {...d, podiumPosition: i + 1};
+            });
+
+            const transitionDuration = 750;
+            const color = currentGender === "M" ? colorMale : colorFemale;
+
+            const rects = chartGroup.selectAll(".athlete-rect")
+                .data(top3Data, d => d.Competitor);
+
+            rects.exit()
+                .transition().duration(transitionDuration)
+                .attr("y", podiumHeight)
+                .attr("height", 0)
+                .remove();
+
+            // 4. ENTER : Créer les nouveaux rectangles (partent du bas)
+            const enterRects = rects.enter()
+                .append("rect")
+                .attr("class", "athlete-rect")
+                .attr("x", d => xScale(d.podiumPosition))
+                .attr("width", xScale.bandwidth())
+                .attr("y", podiumHeight) // Part du bas
+                .attr("height", 0)
+                .attr("fill", color)
+                .attr("opacity", d => d.podiumPosition === 1 ? 1 : 0.8);
+
+        const selectionFull = enterRects.merge(rects);
+
+        selectionFull
+            .on("mouseover", function(event, d) {
+                d3.select(this).style("stroke", "#333").style("stroke-width", "3px");
+
+                const titleColor = currentGender === "M" ? "#FFDD00" : "#D4AAFF";
+                
+                // Sécurité au cas où Details serait absent
+                const details = d.Details || [];
+                let recordsHtml = details.map(r => 
+                    `<div style="margin-top:3px;"> ${r.Year} : <strong>${r.Event}</strong></div>`
+                ).join("");
+
+                tooltip.transition().duration(200).style("opacity", 1);
+                tooltip.html(`
+                    <div class="tooltip-title" style="color:${titleColor}">${d.Competitor}</div>
+                    ${recordsHtml}
+                `);
+            })
+            .on("mousemove", function(event) {
+                tooltip.style("left", (event.pageX + 15) + "px")
+                    .style("top", (event.pageY - 20) + "px");
+            })
+            .on("mouseout", function() {
+                d3.select(this).style("stroke", "#fff").style("stroke-width", "2px");
+                tooltip.transition().duration(200).style("opacity", 0);
+            });
+
+        selectionFull
+            .transition()
+            .duration(transitionDuration)
+            .attr("x", d => xScale(d.podiumPosition))
+            .attr("width", xScale.bandwidth())
+            .attr("y", d => yScale(d.Count))
+            .attr("height", d => podiumHeight - yScale(d.Count))
+            .attr("fill", color)
+            .attr("opacity", d => d.podiumPosition === 1 ? 1 : 0.8);
+
+            const counts = chartGroup.selectAll(".count-label")
+                .data(top3Data, d => d.Competitor);
+
+            counts.exit().remove();
+
+            counts.enter()
+                .append("text")
+                .attr("class", "count-label")
+                .attr("x", d => xScale(d.podiumPosition) + xScale.bandwidth() / 2)
+                .attr("y", podiumHeight) // Part du bas
+                .attr("fill", currentGender === "M" ? "#806F00" : "#5200A3") // Version foncée
+                .merge(counts)
+                .transition().duration(transitionDuration)
+                .attr("x", d => xScale(d.podiumPosition) + xScale.bandwidth() / 2)
+                .attr("y", d => yScale(d.Count) - 10) // Juste au-dessus de la barre
+                .text(d => d.Count);
+
+            const labels = chartGroup.selectAll(".athlete-label")
+                .data(top3Data, d => d.Competitor);
+
+            labels.exit().remove();
+
+            labels.enter()
+                .append("text")
+                .attr("class", "athlete-label")
+                .attr("x", d => xScale(d.podiumPosition) + xScale.bandwidth() / 2)
+                .attr("y", podiumHeight + 30)
+                .merge(labels)
+                .transition().duration(transitionDuration)
+                .attr("x", d => xScale(d.podiumPosition) + xScale.bandwidth() / 2)
+                .attr("y", podiumHeight + 30)
+                .text(d => d.Competitor);
+        }
+
+    </script>
+</body>
+</html>
