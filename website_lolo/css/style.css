@@ -1,0 +1,57 @@
+:root {
+  --bg: #050505;
+  --bg-soft: #101010;
+  --panel: rgba(15, 15, 15, 0.86);
+  --panel-border: rgba(255, 219, 77, 0.18);
+  --text: #f7f3e8;
+  --muted: #b7b1a2;
+  --yellow: #ffdb4d;
+  --yellow-strong: #ffd000;
+  --yellow-soft: rgba(255, 219, 77, 0.14);
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  --radius-xl: 32px;
+  --radius-lg: 22px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Manrope", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255, 208, 0, 0.16), transparent 28%),
+    radial-gradient(circle at 85% 18%, rgba(255, 219, 77, 0.1), transparent 24%),
+    linear-gradient(180deg, #080808 0%, #020202 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 95%);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}

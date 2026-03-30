@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summer Body - Athlete Selector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <main class="stack-layout">
+        <section class="hero-banner">
+          <h1>Draw your athlete</h1>
+          <p class="hero-subtitle">
+            Build a profile, launch the draw, and discover a real athlete match from the dataset.
+          </p>
+        </section>
+
+        <section class="selection-card selection-card-wide">
+          <div class="selection-column">
+            <div class="panel-heading">
+              <p class="panel-kicker">Build the profile</p>
+              <p class="panel-copy">Pick the traits you want, then let the interface do the draw.</p>
+            </div>
+            <form id="athlete-form" class="selection-form">
+              <div class="field">
+                <label for="sex">Gender</label>
+                <select id="sex" name="sex">
+                  <option value="">Any gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="age">Age</label>
+                <select id="age" name="age">
+                  <option value="">Any age</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="nat">Nationality</label>
+                <select id="nat" name="nat">
+                  <option value="">Any</option>
+                </select>
+              </div>
+
+              <button id="draw-button" type="submit">Start the draw</button>
+            </form>
+          </div>
+
+          <section class="visual-panel" aria-live="polite">
+            <div class="panel-topline">
+              <div>
+                <p class="panel-kicker">Live reveal</p>
+                <p class="panel-copy panel-copy-tight">A random athlete appears here after the draw.</p>
+              </div>
+              <p id="status" class="status-line">Loading data...</p>
+            </div>
+            <div class="fighter-stage">
+              <div id="empty-state" class="nameplate nameplate-empty">
+                <p class="result-label">Drafted athlete</p>
+                <h2 class="result-name result-name-empty">Ready to draw</h2>
+                <div class="result-meta">
+                  <span class="meta-pill meta-pill-empty">Country</span>
+                  <span class="meta-pill meta-pill-empty">Gender</span>
+                  <span class="meta-pill meta-pill-empty">Age</span>
+                </div>
+              </div>
+
+              <div id="result" class="nameplate" hidden>
+                <p class="result-label">Drafted athlete</p>
+                <h2 class="result-name" data-field="name"></h2>
+                <div class="result-meta">
+                  <span class="meta-pill" data-field="country"></span>
+                  <span class="meta-pill" data-field="gender"></span>
+                  <span class="meta-pill" data-field="age"></span>
+                </div>
+              </div>
+
+              <div class="athlete-figure" aria-hidden="true">
+                <div class="figure-aura"></div>
+                <div id="jersey-flag" class="jersey-flag" hidden>
+                  <img id="jersey-flag-image" src="" alt="" />
+                </div>
+                <img
+                  class="athlete-image"
+                  src="./assets/img/profile.png"
+                  alt=""
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="./js/home.js"></script>
+  </body>
+</html>
