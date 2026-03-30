@@ -8,8 +8,8 @@
 
 <style>
 body{
-    background:#111;
-    color:white;
+    background:#ffffff;
+    color:#1f1f1f;
     font-family:Arial, sans-serif;
     margin:0;
     padding:30px;
@@ -31,7 +31,9 @@ select{
     padding:10px 14px;
     font-size:16px;
     border-radius:8px;
-    border:none;
+    border:1px solid #cfcfcf;
+    background:#ffffff;
+    color:#1f1f1f;
 }
 
 .chart-wrapper{
@@ -120,12 +122,12 @@ function updateChart(){
                 title: {
                     display: true,
                     text: `Record progression — ${data.event} (${data.sex})`,
-                    color: "white",
+                    color: "#1f1f1f",
                     font: { size: 26 }
                 },
 
                 legend: {
-                    labels: { color: "white" }
+                    labels: { color: "#1f1f1f" }
                 },
 
                 tooltip: {
@@ -149,32 +151,32 @@ function updateChart(){
             scales: {
                 x: {
                     ticks: {
-                        color: "white",
+                        color: "#555",
                         maxRotation: 45,
                         minRotation: 0
                     },
                     grid: {
-                        color: "rgba(255,255,255,0.1)"
+                        color: "rgba(0,0,0,0.08)"
                     },
                     title: {
                         display: true,
                         text: "Date",
-                        color: "white"
+                        color: "#1f1f1f"
                     }
                 },
 
                 y: {
                     reverse: false,
                     ticks: {
-                        color: "white"
+                        color: "#555"
                     },
                     grid: {
-                        color: "rgba(255,255,255,0.1)"
+                        color: "rgba(0,0,0,0.08)"
                     },
                     title: {
                         display: true,
                         text: `Performance (${data.unit})`,
-                        color: "white"
+                        color: "#1f1f1f"
                     }
                 }
             }
