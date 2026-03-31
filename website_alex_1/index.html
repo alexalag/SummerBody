@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>World Athletics — Choose Your Athlete</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Figtree:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- SCREEN 1: PICK -->
+  <section id="s1" class="screen">
+    <div class="s1-left">
+      <div class="char-stage">
+        <canvas id="char-canvas" width="13" height="19"></canvas>
+        <span class="flag-pin" id="flag-s1">🏳️</span>
+      </div>
+      <div class="char-name" id="char-name">PRESS<br>RANDOMIZE</div>
+    </div>
+
+    <div class="s1-right">
+      <div class="eyebrow">World Athletics</div>
+      <h1>Choose your<br><em>athlete</em></h1>
+
+      <div class="frow">
+        <label>Sex</label>
+        <div class="pills">
+          <button class="pill on" onclick="setSex(this,'')">Any</button>
+          <button class="pill"    onclick="setSex(this,'male')">Male</button>
+          <button class="pill"    onclick="setSex(this,'female')">Female</button>
+        </div>
+      </div>
+
+      <div class="frow">
+        <label>Nationality</label>
+        <select id="nat-sel" onchange="poolChange()">
+          <option value="">Any</option>
+        </select>
+      </div>
+
+      <div class="frow">
+        <label>Birth year</label>
+        <div class="year-row">
+          <input type="number" id="yr-from" placeholder="From" min="1900" max="2010" oninput="poolChange()">
+          <span>—</span>
+          <input type="number" id="yr-to"   placeholder="To"   min="1900" max="2010" oninput="poolChange()">
+        </div>
+        <div class="pool-count" id="pool-count"></div>
+      </div>
+
+      <button class="btn-rand" onclick="randomize()">⚡ Randomize</button>
+
+      <div class="info-card" id="info-card">
+        <p class="info-hint">Set filters above then hit Randomize</p>
+      </div>
+
+      <button class="btn-go" id="btn-go" onclick="goRun()">GO! ▶</button>
+    </div>
+  </section>
+
+  <!-- SCREEN 2: RUN -->
+  <section id="s2" class="screen">
+    <div class="run-stage">
+      <canvas id="run-canvas" width="13" height="19"></canvas>
+      <span class="run-flag" id="flag-s2">🏳️</span>
+    </div>
+    <p class="run-label" id="run-label">RUNNING...</p>
+  </section>
+
+  <!-- SCREEN 3: RANKINGS -->
+  <section id="s3" class="screen">
+    <div class="podium-top">
+      <div>
+        <div class="eyebrow">Event Rankings</div>
+        <h2 id="ev-title">—</h2>
+      </div>
+      <div class="podium-you" id="podium-you" style="display:none">
+        <span class="you-flag" id="you-flag">🏳️</span>
+        <div>
+          <div class="you-name" id="you-name">—</div>
+          <div class="you-info" id="you-info">—</div>
+        </div>
+      </div>
+    </div>
+    <div class="rank-list" id="rank-list"></div>
+    <button class="btn-back" onclick="goBack()">◀ PICK AGAIN</button>
+  </section>
+
+  <script src="js/config.js"></script>
+  <script src="js/pixel.js"></script>
+  <script src="js/flags.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/animation.js"></script>
+  <script src="js/podium.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
