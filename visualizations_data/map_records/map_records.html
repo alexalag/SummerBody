@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evolution of Track & Field world record across the world and time</title>
+    <title>Evolution of Track & Field world records across the world and time</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://unpkg.com/topojson@3"></script>
     <style>
@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             background-color: #f4f7f6;
-            overflow: hidden; /* Empêche le scroll de la page */
+            overflow: hidden;
         }
 
         h1 {
@@ -140,6 +140,28 @@
             margin-right: 30px;
         }
 
+        #play-button {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+
+            font-size: 20px;
+            
+            cursor: pointer;
+            margin-right: 15px;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+    
+        }
+
+        #play-button.playing .icon {
+            font-size: 28px;
+        }
+
+
         #year-display {
             font-size: 1.5rem;
             font-weight: bold;
@@ -183,18 +205,19 @@
 
     <div id="controls-bar">
         <div id="timeline-container">
+            <button id="play-button"><span class="icon">&#x25B6;</span></button>
             <div id="year-display"></div>
             <input type="range" id="slider" step="1">
         </div>
         
         <div id="legend-container">
-            <div class="legend-title">Nb de records détenus (cumul)</div>
+            <div class="legend-title">Nb de records détenus</div>
             <svg class="legend-svg" id="legend-svg"></svg>
         </div>
     </div>
 
     <script>
-        const dataPath = 'records_history.json';
+        const dataPath = 'data.json';
         const topojsonUrl = 'https://unpkg.com/world-atlas@2.0.2/countries-110m.json';
 
         // Variables globales
@@ -238,6 +261,7 @@
             countriesGeo = topojson.feature(topoData, topoData.objects.countries).features;
 
             setupSliders();
+            setupPlayButton();
             
             let maxRecords = 1;
             Object.values(recordsData).forEach(yearData => {
@@ -274,6 +298,7 @@
                 .enter()
                 .append("path")
                 .attr("class", "country")
+                .attr("stroke", "none")
                 .attr("d", pathGenerator)
                 .attr("fill", colorNoData)
                 .on("mouseover", function(event, d) {
@@ -284,6 +309,7 @@
                            .style("left", (event.pageX + 10) + "px");
                 })
                 .on("mouseout", handleMouseOut);
+    
         }
 
         function updateVisualization() {
@@ -349,7 +375,7 @@
                 .attr("min", 0)
                 .attr("max", years.length - 1)
                 .attr("value", currentYearIndex)
-                .on("input", function() {
+                .on("input", function() {    
                     currentYearIndex = +this.value;
                     updateVisualization();
                 });
@@ -406,6 +432,39 @@
 
             svg.append("text").attr("x", 0).attr("y", height + 12).attr("font-size", "10px").text("1");
             svg.append("text").attr("x", width).attr("y", height + 12).attr("font-size", "10px").attr("text-anchor", "end").text(maxRecords);
+        }
+
+        // for play buttton function
+        let timer = null;
+        let isPlaying = false;
+
+        function setupPlayButton() {
+            const playButton = d3.select("#play-button");
+            const iconSpan = playButton.select(".icon");
+
+            playButton.on("click", function() {
+                if (isPlaying) {
+                    clearInterval(timer);
+                    iconSpan.html("&#9654;");
+                    playButton.classed("playing", false);
+                } else {
+                    playButton.classed("playing", true);
+                    iconSpan.html("&#9208;");
+                 
+                    timer = setInterval(() => {
+                        currentYearIndex++;
+                        
+                        if (currentYearIndex >= years.length) {
+                            currentYearIndex = 0;
+                        }
+                        
+                        d3.select("#slider").property("value", currentYearIndex);
+                        
+                        updateVisualization();
+                    }, 500);
+                }
+                isPlaying = !isPlaying;
+            });
         }
 
         function getAlpha3FromNumeric(id) {
