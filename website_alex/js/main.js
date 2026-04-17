@@ -63,9 +63,9 @@ function showError(msg) {
   document.getElementById('pool-count').textContent = '';
 }
 
-// ─── Navigate back to screen 1 ───────────────────────────────────────────────
 function goBack() {
   document.getElementById('s1').scrollIntoView({ behavior: 'smooth' });
   document.getElementById('run-label').classList.remove('show');
-  clearInterval(runTimer);
+  const sex = athlete ? athlete._sex : _idleSex;
+  startIdle(sex);   // ← replaces the single clearInterval(runTimer) line
 }

@@ -181,16 +181,18 @@ function drawChar(canvas, frameIdx, sex) {
   const isFemale = (sex || '').toLowerCase() === 'female';
 
   const palette = {
-    0: null,
-    1: HAIR_HI,   2: HAIR_SH,
-    3: SKIN_LT,   4: SKIN_SH,
-    5: isFemale ? SHIRT_FEMALE : SHIRT_MALE,
-    6: isFemale ? PATCH_FEMALE : PATCH_MALE,
-    7: SHORTS_C,  8: SHORTS_SH,
-    9: SOCK_C,    10: SHOE_C,
-    11: EYE_C,    12: PANTS_C,
-    13: PANTS_SH,
-  };
+  0: null,
+  1: HAIR_HI,   2: HAIR_SH,
+  3: SKIN_LT,   4: SKIN_SH,
+  5: isFemale ? SHIRT_FEMALE : SHIRT_MALE,
+  6: isFemale ? PATCH_FEMALE : PATCH_MALE,
+  7: SHORTS_C,  8: SHORTS_SH,
+  9: isFemale ? SOCK_FEMALE : SOCK_C,   // ← changed: sex-dynamic sock
+  10: isFemale ? SOCK_FEMALE : SHOE_C, 
+  11: EYE_C,                            // ← unchanged: same eye for both
+  12: PANTS_C,
+  13: PANTS_SH,
+};
 
   const frame = RUNNER_FRAMES[frameIdx % 4];
   const ctx   = canvas.getContext('2d');

@@ -11,10 +11,8 @@ function setCharStyle(btn, styleIdx) {
   _charStyle = styleIdx;
   document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
-
-  // Redraw current character with new style
   const sex = athlete ? athlete._sex : (sexFilter || 'male');
-  drawChar(document.getElementById('char-canvas'), 0, sex, _charStyle);
+  drawChar(document.getElementById('char-canvas'), frameIdx, sex);
 }
 
 // ─── Build filtered pool ──────────────────────────────────────────────────────
@@ -59,9 +57,6 @@ function randomize() {
     ? new Date(athlete.DOB).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
     : '—';
 
-  // Redraw character with current style
-  clearInterval(idleTimer);
-  frameIdx = 0;
   startIdle(sex);
 
   document.getElementById('flag-s1').textContent   = flag;

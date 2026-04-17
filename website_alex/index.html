@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>World Athletics — Choose Your Athlete</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Figtree:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,7 +15,7 @@
   <section id="s1" class="screen">
     <div class="s1-left">
       <div class="char-stage">
-        <canvas id="char-canvas" width="13" height="19"></canvas>
+        <canvas id="char-canvas" width="160" height="240"></canvas>
         <span class="flag-pin" id="flag-s1">🏳️</span>
       </div>
       <div class="char-name" id="char-name">PRESS<br>RANDOMIZE</div>
@@ -63,7 +64,7 @@
   <!-- SCREEN 2: RUN -->
   <section id="s2" class="screen">
     <div class="run-stage">
-      <canvas id="run-canvas" width="13" height="19"></canvas>
+      <canvas id="run-canvas" width="160" height="240"></canvas>
       <span class="run-flag" id="flag-s2">🏳️</span>
     </div>
     <p class="run-label" id="run-label">RUNNING...</p>
@@ -85,6 +86,30 @@
       </div>
     </div>
     <div class="rank-list" id="rank-list"></div>
+    <div class="s3-footer">
+      <button class="btn-back" onclick="goBack()">◀ PICK AGAIN</button>
+      <button class="btn-back btn-wr-link" onclick="goWorldRecords()">🏆 RECORDS</button>
+    </div>
+  </section>
+
+  <!-- SCREEN 4: WORLD RECORDS -->
+  <section id="s4" class="screen">
+    <div class="wr-header">
+      <div>
+        <div class="eyebrow">World Athletics</div>
+        <h2 class="wr-title">World Record<br><em>Holders</em></h2>
+      </div>
+      <div class="pills" id="wr-controls">
+        <button class="pill" id="wr-m"
+          style="background:#f0c520;border-color:#f0c520;color:#0b0c0e"
+          onclick="setWrGender(this,'M')">♂ Men</button>
+        <button class="pill" id="wr-f"
+          onclick="setWrGender(this,'F')">♀ Women</button>
+      </div>
+    </div>
+    <div class="wr-chart-wrap">
+      <svg id="svg-podium"></svg>
+    </div>
     <button class="btn-back" onclick="goBack()">◀ PICK AGAIN</button>
   </section>
 
@@ -96,5 +121,6 @@
   <script src="js/animation.js"></script>
   <script src="js/podium.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/worldrecords.js"></script>
 </body>
 </html>

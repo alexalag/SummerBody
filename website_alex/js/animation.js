@@ -1,22 +1,31 @@
 let idleTimer = null;
 let frameIdx  = 0;
 let runTimer  = null;
+let _idleSex  = 'male';            // ← new: persists across goBack
 
-// Idle: slow 2-frame cycle (frames 0 and 2 — both foot-plant poses)
 function startIdle(sex) {
+  _idleSex = sex || 'male';
   clearInterval(idleTimer);
+  clearInterval(runTimer);          // ← new: kills any in-flight run
+  runTimer = null;
+
   frameIdx = 0;
   const canvas = document.getElementById('char-canvas');
-  drawChar(canvas, 0, sex);
+  drawChar(canvas, 0, _idleSex);
+
   idleTimer = setInterval(() => {
-    frameIdx = frameIdx === 0 ? 2 : 0;
-    drawChar(canvas, frameIdx, sex);
+    frameIdx = (frameIdx === 0) ? 2 : 0;
+    drawChar(canvas, frameIdx, _idleSex);
   }, 550);
 }
 
-// Run: full 4-frame cycle
 function goRun() {
   if (!athlete) return;
+
+  clearInterval(idleTimer);         // ← key fix: stops idle before run
+  clearInterval(runTimer);
+  idleTimer = null;
+  runTimer  = null;
 
   const sex  = athlete._sex;
   const flag = flagEmoji(athlete.Nat);
@@ -33,21 +42,34 @@ function goRun() {
 
   setTimeout(() => {
     rl.classList.add('show');
-    let x    = -220;
-    let tick = 0;
-    const vw = window.innerWidth;
+
+    let x         = -220;
+    let runFrame  = 0;
+    const FRAME_MS  = 112;
+    const SPEED_PX  = 7;
+    const vw        = window.innerWidth;
+    let   lastFrameT = performance.now();
+
+    drawChar(rc, runFrame, sex);   // frame 0 immediately
+    runFrame = 1;
 
     clearInterval(runTimer);
     runTimer = setInterval(() => {
-      x    += 7;
-      tick++;
-      // Advance one frame every 6 ticks (~96ms) → full 4-frame cycle ≈ 384ms
-      drawChar(rc, Math.floor(tick / 6) % 4, sex);
+      const now = performance.now();
+      x += SPEED_PX;
+
+      if (now - lastFrameT >= FRAME_MS) {
+        drawChar(rc, runFrame, sex);
+        runFrame   = (runFrame + 1) % 4;
+        lastFrameT = now;
+      }
+
       rc.style.left = `${x}px`;
       rf.style.left = `${x + FLAG_CX}px`;
 
       if (x > vw + 220) {
         clearInterval(runTimer);
+        runTimer = null;
         setTimeout(() => {
           renderPodium();
           document.getElementById('s3').scrollIntoView({ behavior: 'smooth' });
