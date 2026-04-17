@@ -66,8 +66,8 @@ body {
 .flag-pin {
   position: absolute;
   font-size: 22px;
-  left: 64px;
-  top: 96px;
+  left: 80px;          /* centered on the 160px canvas, was 64px */
+  top: 218px;          /* was 96px — now at feet level */
   transform: translate(-50%, -50%);
   pointer-events: none;
   line-height: 1;
@@ -321,7 +321,7 @@ select { width: 100%; cursor: pointer; }
 .run-flag {
   position: absolute;
   font-size: 22px;
-  top: 106px;
+  top: 228px;          /* was 106px */
   left: -156px;
   transform: translate(-50%, -50%);
   pointer-events: none;
