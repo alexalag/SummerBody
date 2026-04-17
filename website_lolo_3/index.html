@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Athlete Storyline</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+
+    <div class="background-layer" aria-hidden="true">
+      <div class="background-gradient"></div>
+      <div class="background-circle circle-left"></div>
+      <div class="background-circle circle-right"></div>
+    </div>
+
+    <!-- Header-->
+    <header class="site-header">
+      <nav class="site-nav">
+        <span class="brand">SUMMER BODYYYY</span>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero-->
+      <section id="hero" class="section section-hero section-pt-lg">
+        <div class="section-content">
+          <div class="hero-layout">
+            <div class="hero-title-column">
+              <p class="hero-kicker">Balblablabla</p>
+              <h1 class="display-xl">
+                Choose
+                <br />
+                an Athlete
+              </h1>
+            </div>
+
+            <div class="hero-controls-column">
+              <div class="hero-filter-group">
+                <p class="micro-label">Refine the cast</p>
+
+                <div class="hero-filter-grid">
+                  <label class="input-stack">
+                    <span>Age</span>
+                    <select id="age-filter">
+                      <option value="Any">Any</option>
+                      <option value="Under 23">Under 23</option>
+                      <option value="23-27">23-27</option>
+                      <option value="28+">28+</option>
+                    </select>
+                  </label>
+
+                  <label class="input-stack">
+                    <span>Sex</span>
+                    <select id="sex-filter">
+                      <option value="Any">Any</option>
+                      <option value="Female">Female</option>
+                      <option value="Male">Male</option>
+                    </select>
+                  </label>
+
+                  <label class="input-stack">
+                    <span>Country</span>
+                    <select id="country-filter"></select>
+                  </label>
+                </div>
+              </div>
+
+              <div class="hero-cta-group">
+                <button id="hero-draw-button" class="draw-button draw-button-hero" type="button" disabled>
+                  Draw a Story
+                </button>
+                <p id="hero-status-text" class="hero-status-text"></p>
+                <p id="hero-micro-text" class="hero-micro-text"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div id="story-root"></div>
+    </main>
+
+
+    <script src="./js/vendor/papaparse.min.js"></script>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
