@@ -17,15 +17,15 @@ const SKIN_LT   = '#F1D991';   // 3  skin light / mid-tone
 const SKIN_SH   = '#E4A45C';   // 4  skin shadow
 const SHORTS_C  = '#C02030';   // 7  (kept for bib fallback)
 const SHORTS_SH = '#8B1020';   // 8
-const SHOE_C    = '#1E4196';   // 10  dark blue shoe (from sprite)
-const EYE_C     = '#080808';   // 11
+const SHOE_C    = '#b6af36';   // 10  yellow shoe (from sprite)
+const EYE_C     = '#375eb2';   // 11
 const PANTS_C   = '#29CC9F';   // 12  teal pants
 const PANTS_SH  = '#1B9E64';   // 13  dark green pants shadow
 const SOCK_C      = '#EEEEEE';   // existing — male sock (white)
 const SOCK_FEMALE = '#4a247b';   // new — female sock (darker purple)
 
 // Sex-dynamic colours (singlet + bib)
-const SHIRT_MALE   = '#5C9CE4';   // blue singlet (original sprite colour)
+const SHIRT_MALE   = '#e4e25c';   // blue singlet (original sprite colour)
 const SHIRT_FEMALE = '#9b5de5';   // purple singlet
-const PATCH_MALE   = '#A0C8FF';   // bib highlight male
+const PATCH_MALE   = '#d8c051';   // bib highlight male
 const PATCH_FEMALE = '#d8b0ff';   // bib highlight female

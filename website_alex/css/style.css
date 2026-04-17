@@ -225,6 +225,45 @@ select { width: 100%; cursor: pointer; }
 .btn-go:active { transform: scale(.98); }
 .btn-go.show   { display: block; }
 
+.btn-skip {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 14px 18px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--yellow);
+  border-radius: 0 8px 8px 0;
+  color: var(--muted);
+  font-family: 'Figtree', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+  transition: color .2s, background .2s, border-color .2s;
+}
+.btn-skip:hover {
+  color: var(--yellow);
+  background: rgba(240, 197, 32, .05);
+  border-color: var(--yellow);
+}
+.btn-skip .skip-arrow {
+  font-size: 16px;
+  opacity: .4;
+  transition: opacity .2s, transform .2s;
+}
+.btn-skip:hover .skip-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* s4 entrance */
+#s4 { opacity: 1; transition: opacity .4s; }
+#s4.wr-entering { opacity: 0; }
+
 /* ══════════════════════════════════════════════════════════
    SCREEN 2 — RUN
 ══════════════════════════════════════════════════════════ */
@@ -608,4 +647,92 @@ select { width: 100%; cursor: pointer; }
   color: var(--yellow);
   border-color: var(--yellow);
   background: rgba(240, 197, 32, .08);
+}
+
+
+/* ══ SCREEN 5 — WORLD MAP ══════════════════════════════════ */
+#s5 { position: relative; overflow: hidden; height: 100vh; min-height: 100vh; }
+
+#map-container {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 80px;
+  overflow: hidden;
+}
+
+.map-wrapper-half {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  overflow: hidden;
+}
+#map-wrap-female { z-index: 1; clip-path: inset(0 0 0 50%); }
+#map-wrap-male   { z-index: 0; }
+#map-wrap-male svg, #map-wrap-female svg {
+  width: 100%; height: 100%; background: #0d1f2d; display: block;
+}
+
+.map-sex-label {
+  position: absolute; top: 16px;
+  font-family: 'Press Start 2P', monospace; font-size: 9px;
+  letter-spacing: .1em; z-index: 5;
+  padding: 6px 10px; border-radius: 6px;
+  background: rgba(11,12,14,.75); pointer-events: none;
+}
+#map-label-male   { left: 40px;  color: #f0c520; }
+#map-label-female { right: 40px; color: #9b5de5; }
+
+#map-sep {
+  position: absolute; top: 0; bottom: 0; left: 50%;
+  width: 4px; background: var(--border);
+  transform: translateX(-50%);
+  cursor: ew-resize; z-index: 10;
+  box-shadow: 0 0 12px rgba(0,0,0,.6);
+}
+#map-sep::after {
+  content: '⬚'; position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  background: var(--border); color: var(--text);
+  padding: 10px 5px; border-radius: 4px; font-size: 16px;
+}
+
+.map-tip {
+  position: absolute; opacity: 0;
+  background: rgba(20,21,26,.97); border: 1px solid var(--border);
+  color: var(--text); padding: 10px 14px; border-radius: 8px;
+  pointer-events: none; font-family: 'Figtree', sans-serif;
+  font-size: 13px; font-weight: 600; z-index: 30;
+  min-width: 160px; box-shadow: 0 4px 20px rgba(0,0,0,.5);
+  transition: opacity .15s;
+}
+.map-tip-title {
+  font-size: 12px; font-weight: 800;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px; margin-bottom: 6px; color: var(--lime);
+}
+
+#map-controls {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+  background: var(--surface); border-top: 1px solid var(--border);
+  display: flex; align-items: center; gap: 16px; padding: 0 20px; z-index: 20;
+}
+#map-timeline { flex: 1; display: flex; align-items: center; gap: 12px; }
+
+#map-play {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1.5px solid var(--border); background: transparent;
+  color: var(--text); font-size: 16px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: border-color .15s;
+}
+#map-play:hover { border-color: var(--lime); }
+
+#map-year {
+  font-family: 'Press Start 2P', monospace; font-size: 14px;
+  color: var(--lime); width: 64px; flex-shrink: 0;
+}
+#map-slider { flex: 1; cursor: pointer; }
+
+#map-leg { text-align: center; flex-shrink: 0; }
+.map-leg-title {
+  font-size: 10px; color: var(--muted); font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px;
 }

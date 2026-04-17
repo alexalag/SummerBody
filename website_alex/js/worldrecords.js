@@ -30,19 +30,23 @@ function _wrDraw() {
   const isF  = _wrSex === 'F';
   const fill = isF ? '#9b5de5' : '#f0c520';
   const dark = isF ? '#6B35A0' : '#806F00';
-  const dur  = 700;
+  const dur  = 600;
+  const ease = d3.easeCubicOut;
   const g    = d3.select('.wr-g');
 
   _wrY.domain([0, d3.max(_wrData[_wrSex], d => d.Count) + 0.6]);
 
-  // ── Bars ──────────────────────────────────────────────────────────────────
+  // ── Bars — staggered rise from bottom ─────────────────────────────────────
   const bars = g.selectAll('.wr-bar').data(top3, d => d.Competitor);
-  bars.exit().transition().duration(dur).attr('y', _WR_IH).attr('height', 0).remove();
+
+  bars.exit()
+    .transition().duration(300).ease(d3.easeCubicIn)
+    .attr('y', _WR_IH).attr('height', 0).attr('opacity', 0).remove();
 
   bars.enter().append('rect').attr('class', 'wr-bar')
     .attr('rx', 6)
     .attr('x', d => _wrX(d.pos)).attr('width', _wrX.bandwidth())
-    .attr('y', _WR_IH).attr('height', 0)
+    .attr('y', _WR_IH).attr('height', 0).attr('opacity', 0)
     .merge(bars)
     .on('mouseover', function(ev, d) {
       d3.select(this).attr('opacity', 1);
@@ -60,41 +64,53 @@ function _wrDraw() {
       d3.select(this).attr('opacity', d.pos === 1 ? 1 : 0.72);
       _wrTip.style('opacity', 0);
     })
-    .transition().duration(dur)
+    .transition().duration(dur).ease(ease)
+    .delay((d, i) => i * 120)                   // staggered entry
     .attr('x', d => _wrX(d.pos)).attr('width', _wrX.bandwidth())
     .attr('y', d => _wrY(d.Count)).attr('height', d => _WR_IH - _wrY(d.Count))
     .attr('fill', fill).attr('opacity', d => d.pos === 1 ? 1 : 0.72);
 
-  // ── Count labels ──────────────────────────────────────────────────────────
+  // ── Count labels — count up from 0 ────────────────────────────────────────
   const counts = g.selectAll('.wr-count').data(top3, d => d.Competitor);
   counts.exit().remove();
   counts.enter().append('text').attr('class', 'wr-count')
     .attr('text-anchor', 'middle').attr('font-size', 24).attr('font-weight', '700')
-    .attr('y', _WR_IH).merge(counts)
-    .transition().duration(dur)
+    .attr('opacity', 0).attr('y', _WR_IH)
+    .merge(counts)
+    .transition().duration(dur).ease(ease)
+    .delay((d, i) => i * 120)
     .attr('x', d => _wrX(d.pos) + _wrX.bandwidth() / 2)
     .attr('y', d => _wrY(d.Count) - 10)
-    .attr('fill', dark).text(d => d.Count);
+    .attr('fill', dark).attr('opacity', 1)
+    .tween('text', function(d) {                // count-up animation
+      const interp = d3.interpolate(0, d.Count);
+      return t => { this.textContent = Math.round(interp(t)); };
+    });
 
   // ── Medals ────────────────────────────────────────────────────────────────
-  const MEDALS = {1: '🥇', 2: '🥈', 3: '🥉'};
+  const MEDALS = {1:'🥇', 2:'🥈', 3:'🥉'};
   const meds = g.selectAll('.wr-medal').data(top3, d => d.Competitor);
   meds.exit().remove();
   meds.enter().append('text').attr('class', 'wr-medal')
-    .attr('text-anchor', 'middle').attr('font-size', 22).attr('y', _WR_IH + 24)
-    .merge(meds).transition().duration(dur)
+    .attr('text-anchor', 'middle').attr('font-size', 22)
+    .attr('opacity', 0).attr('y', _WR_IH + 24)
+    .merge(meds)
+    .transition().duration(dur).ease(ease)
+    .delay((d, i) => i * 120 + 200)
     .attr('x', d => _wrX(d.pos) + _wrX.bandwidth() / 2)
-    .attr('y', _WR_IH + 24).text(d => MEDALS[d.pos]);
+    .attr('y', _WR_IH + 24).attr('opacity', 1).text(d => MEDALS[d.pos]);
 
   // ── Name labels ───────────────────────────────────────────────────────────
   const names = g.selectAll('.wr-name').data(top3, d => d.Competitor);
   names.exit().remove();
   names.enter().append('text').attr('class', 'wr-name')
     .attr('text-anchor', 'middle').attr('font-size', 12).attr('font-weight', '600')
-    .attr('fill', '#f0ede8').attr('y', _WR_IH + 24)
-    .merge(names).transition().duration(dur)
+    .attr('fill', '#f0ede8').attr('opacity', 0).attr('y', _WR_IH + 24)
+    .merge(names)
+    .transition().duration(dur).ease(ease)
+    .delay((d, i) => i * 120 + 200)
     .attr('x', d => _wrX(d.pos) + _wrX.bandwidth() / 2)
-    .attr('y', _WR_IH + 54).text(d => d.Competitor);
+    .attr('y', _WR_IH + 54).attr('opacity', 1).text(d => d.Competitor);
 }
 
 function setWrGender(btn, gender) {
@@ -113,11 +129,20 @@ function setWrGender(btn, gender) {
 function goWorldRecords() {
   clearInterval(idleTimer);
   idleTimer = null;
-  document.getElementById('s4').scrollIntoView({ behavior: 'smooth' });
 
-  if (_wrData) { _wrInit(); _wrDraw(); return; }
+  const s4 = document.getElementById('s4');
+  s4.classList.add('wr-entering');             // fade out instantly
+  s4.scrollIntoView({ behavior: 'smooth' });
+
+  const show = () => {
+    s4.classList.remove('wr-entering');        // fade back in
+    _wrInit();
+    _wrDraw();
+  };
+
+  if (_wrData) { setTimeout(show, 320); return; }
 
   d3.json('records.json')
-    .then(data => { _wrData = data; _wrInit(); _wrDraw(); })
-    .catch(err  => console.error('[WR] records.json failed to load:', err));
+    .then(data => { _wrData = data; setTimeout(show, 320); })
+    .catch(err  => console.error('[WR] records.json failed:', err));
 }

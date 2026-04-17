@@ -6,6 +6,7 @@
   <title>World Athletics — Choose Your Athlete</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script src="https://unpkg.com/topojson@3"></script>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Figtree:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -58,6 +59,15 @@
       </div>
 
       <button class="btn-go" id="btn-go" onclick="goRun()">GO! ▶</button>
+      <button class="btn-skip" onclick="goWorldRecords()">
+        <span>skip — just show me the world records</span>
+        <span class="skip-arrow">→</span>
+      </button>
+      <button class="btn-skip" onclick="goWorldMap()"
+        style="border-left-color:var(--lime);margin-top:.5rem">
+        <span>skip — show me the world map</span>
+        <span class="skip-arrow">→</span>
+      </button>
     </div>
   </section>
 
@@ -89,6 +99,8 @@
     <div class="s3-footer">
       <button class="btn-back" onclick="goBack()">◀ PICK AGAIN</button>
       <button class="btn-back btn-wr-link" onclick="goWorldRecords()">🏆 RECORDS</button>
+      <button class="btn-back btn-wr-link" onclick="goWorldMap()"
+              style="color:var(--lime);border-color:var(--lime)">🗺 MAP</button>
     </div>
   </section>
 
@@ -110,7 +122,37 @@
     <div class="wr-chart-wrap">
       <svg id="svg-podium"></svg>
     </div>
-    <button class="btn-back" onclick="goBack()">◀ PICK AGAIN</button>
+    <div class="s3-footer">
+      <button class="btn-back btn-wr-link" onclick="goWorldMap()"
+              style="color:var(--lime);border-color:var(--lime)">🗺 MAP</button>
+    </div>
+  </section>
+
+  <!-- SCREEN 5: WORLD MAP -->
+  <section id="s5" class="screen">
+    <div id="map-container">
+      <div id="map-wrap-male" class="map-wrapper-half">
+        <span class="map-sex-label" id="map-label-male">♂ Men</span>
+        <svg id="svg-male"></svg>
+      </div>
+      <div id="map-wrap-female" class="map-wrapper-half">
+        <span class="map-sex-label" id="map-label-female">♀ Women</span>
+        <svg id="svg-female"></svg>
+      </div>
+      <div id="map-sep"></div>
+    </div>
+    <div id="map-controls">
+      <button class="btn-back" onclick="goBack()" style="flex-shrink:0;margin:0">◀</button>
+      <div id="map-timeline">
+        <button id="map-play"><span class="mpi">&#9654;</span></button>
+        <div id="map-year"></div>
+        <input type="range" id="map-slider">
+      </div>
+      <div id="map-leg">
+        <div class="map-leg-title">Records held</div>
+        <svg id="map-legend-svg" width="180" height="28"></svg>
+      </div>
+    </div>
   </section>
 
   <script src="js/config.js"></script>
@@ -122,5 +164,6 @@
   <script src="js/podium.js"></script>
   <script src="js/main.js"></script>
   <script src="js/worldrecords.js"></script>
+  <script src="js/worldmap.js"></script>
 </body>
 </html>
