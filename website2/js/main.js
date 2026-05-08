@@ -77,7 +77,7 @@ const renderHeroTexts = () => {
   const canDraw = getCanDraw();
   elements.heroStatusText.textContent = getHeroStatus();
   elements.heroMicroText.textContent = canDraw
-    ? "Balblablabla"
+    ? "Set the filters, then draw an athlete from the dataset."
     : "Please wait until real data is ready.";
 };
 

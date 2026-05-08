@@ -1,13 +1,16 @@
-import {
+﻿import {
   escapeHtml,
   formatDelta,
-  formatSecondsDisplay,
+  formatPerformanceWithUnit,
   getAverageGap,
   getAverageHeadline,
   getGapToRecord,
   getPrimeNarrative,
   getRecordProgressRatio
 } from "./utils.js";
+import { initWorldMap } from "./world-map.js";
+import { initWorldRecordPodium } from "./world-record-podium.js";
+import { initRecordReigns } from "./record-reigns.js";
 
 
 const TARGET_YEAR = 2026;
@@ -21,30 +24,80 @@ const sectionShell = (id, innerHtml, extraClass = "") => `
   </section>
 `;
 
+const renderLeaderboardRow = (entry) => `
+  <div class="leaderboard-row${entry.isSelected ? " is-selected" : ""}">
+    <span class="leaderboard-rank">#${escapeHtml(entry.position)}</span>
+    <span class="leaderboard-athlete">
+      <span>${escapeHtml(entry.name)}</span>
+      <span>${escapeHtml(entry.flag)} ${escapeHtml(entry.country)} - ${escapeHtml(entry.date)}</span>
+    </span>
+    <span class="leaderboard-mark">${escapeHtml(entry.mark)}</span>
+  </div>
+`;
+
+const renderLeaderboardRows = (athlete) => {
+  const rows = athlete.leaderboardTop || [];
+  const selectedInTop = rows.some((entry) => entry.isSelected);
+  const selectedEntry = athlete.leaderboardAthleteEntry;
+  const visibleRows = rows.map(renderLeaderboardRow).join("");
+  const selectedRow =
+    !selectedInTop && selectedEntry
+      ? `
+        <div class="leaderboard-gap">Where this athlete stands</div>
+        ${renderLeaderboardRow(selectedEntry)}
+      `
+      : "";
+
+  return visibleRows + selectedRow;
+};
+
 // Section 1
 const renderAthleteIntroSection = (athlete) =>
   sectionShell(
     "athlete-intro",
     `
       <div class="athlete-intro-layout">
-        <div class="story-grid">
-          <p class="label-xs">Athlete</p>
-          <h2 class="title-display title-lg">${escapeHtml(athlete.name)}</h2>
-          <div class="athlete-meta">
-            <span>Age ${escapeHtml(athlete.age)}</span>
-            <span>${escapeHtml(athlete.sex)}</span>
-            <span>${escapeHtml(athlete.country)}</span>
-            <span>${escapeHtml(athlete.discipline)}</span>
-          </div>
-        </div>
+        <div class="athlete-intro-track">
+          <div class="athlete-intro-page">
+            <div class="story-grid">
+              <p class="label-xs">Athlete</p>
+              <h2 class="title-display title-lg">${escapeHtml(athlete.name)}</h2>
+              <div class="athlete-meta">
+                <span>Age ${escapeHtml(athlete.age)}</span>
+                <span>${escapeHtml(athlete.sex)}</span>
+                <span>${escapeHtml(athlete.country)}</span>
+                <span>${escapeHtml(athlete.discipline)}</span>
+              </div>
+              <div class="athlete-intro-actions">
+                <button class="leaderboard-toggle" type="button" aria-expanded="false" aria-controls="athlete-leaderboard-panel">
+                  See Leaderboard
+                </button>
+              </div>
+            </div>
 
-        <div class="athlete-visual">
-          <div class="athlete-image-shell">
-            <img src="${escapeHtml(athlete.athleteImage)}" alt="${escapeHtml(athlete.name)} silhouette" />
-            <div class="athlete-flag">${escapeHtml(athlete.flag)}</div>
-            <div class="athlete-overlay"></div>
-            <div class="athlete-discipline-chip">${escapeHtml(athlete.discipline)}</div>
+            <div class="athlete-visual">
+              <div class="athlete-image-shell">
+                <img src="${escapeHtml(athlete.athleteImage)}" alt="${escapeHtml(athlete.name)} silhouette" />
+                <div class="athlete-flag">${escapeHtml(athlete.flag)}</div>
+                <div class="athlete-overlay"></div>
+                <div class="athlete-discipline-chip">${escapeHtml(athlete.discipline)}</div>
+              </div>
+            </div>
           </div>
+
+          <aside id="athlete-leaderboard-panel" class="leaderboard-panel" aria-hidden="true">
+            <div class="leaderboard-panel-head">
+              <div>
+                <p class="label-xs">Leaderboard</p>
+                <h3>${escapeHtml(athlete.discipline)}</h3>
+                <p>${escapeHtml(athlete.sex)} - best marks in the dataset</p>
+              </div>
+              <button class="leaderboard-close" type="button" aria-label="Return to athlete profile">Athlete Profile</button>
+            </div>
+            <div class="leaderboard-list">
+              ${renderLeaderboardRows(athlete)}
+            </div>
+          </aside>
         </div>
       </div>
     `
@@ -59,7 +112,7 @@ const renderBestPerformanceSection = (athlete) =>
         <p class="label-xs">Best Performance</p>
         <div class="story-grid">
           <p class="best-performance-value">${escapeHtml(athlete.bestPerformance)}</p>
-          <p class="serif-italic headline-serif accent-text">${escapeHtml(athlete.bestPerformanceLabel.toUpperCase())}</p>
+          <p class="best-performance-discipline">In ${escapeHtml(athlete.discipline)}</p>
         </div>
       </div>
     `
@@ -71,7 +124,7 @@ const renderWorldRecordSection = (athlete) => {
   const ratio = getRecordProgressRatio(athlete);
   const athletePosition = 18 + ((ratio - 0.7) / 0.3) * 58;
   const statement =
-    athlete.performanceUnit === "meters" ? `${gap.toFixed(2)}M FROM THE WORLD RECORD` : formatDelta(gap, "seconds");
+    athlete.performanceUnit === "meters" ? `${gap.toFixed(2)} m FROM THE WORLD RECORD` : formatDelta(gap, "seconds");
 
   return sectionShell(
     "world-record-comparison",
@@ -82,6 +135,7 @@ const renderWorldRecordSection = (athlete) => {
           <br />
           World Record
         </h3>
+        <p class="record-discipline">In ${escapeHtml(athlete.discipline)}</p>
 
         <div class="record-line-shell">
           <div class="record-line">
@@ -91,8 +145,14 @@ const renderWorldRecordSection = (athlete) => {
           </div>
 
           <div class="record-line-meta">
-            <span>${escapeHtml(athlete.name)}</span>
-            <span>World Record</span>
+            <span class="record-line-person">
+              <span>${escapeHtml(athlete.name)}</span>
+              <span>${escapeHtml(athlete.bestPerformanceDate)}</span>
+            </span>
+            <span class="record-line-person">
+              <span>${escapeHtml(athlete.worldRecordHolder)}</span>
+              <span>${escapeHtml(athlete.worldRecordDate)}</span>
+            </span>
           </div>
 
           <div class="record-line-values">
@@ -115,8 +175,8 @@ const renderAverageComparisonSection = (athlete) => {
   const absGap = Math.abs(gap);
   const delta =
     athlete.performanceUnit === "meters"
-      ? `${absGap.toFixed(2)}M ${betterThanAverage ? "BETTER THAN" : "BEHIND"} CATEGORY AVERAGE`
-      : `${absGap.toFixed(2)} SECONDS ${betterThanAverage ? "BETTER THAN" : "BEHIND"} CATEGORY AVERAGE`;
+      ? `${absGap.toFixed(2)} m ${betterThanAverage ? "BETTER THAN" : "BEHIND"} CATEGORY AVERAGE`
+      : `${absGap.toFixed(2)} sec ${betterThanAverage ? "BETTER THAN" : "BEHIND"} CATEGORY AVERAGE`;
   const athleteDominance = Math.min(92, Math.max(54, 58 + (Math.abs(gap) * 26) / Math.max(1, athlete.averagePerformanceValue)));
 
   return sectionShell(
@@ -199,7 +259,7 @@ const renderHistoricalSection = (athlete) => {
     return padding + normalized * (height - padding * 2);
   };
 
-  const formatValue = (value) => (athlete.lowerIsBetter ? formatSecondsDisplay(value) : `${value.toFixed(2)}m`);
+  const formatValue = (value) => formatPerformanceWithUnit(value, athlete.lowerIsBetter);
   const pathD = projectedHistory
     .map((point, index) => `${index === 0 ? "M" : "L"} ${xForYear(point.year)} ${yForValue(point.value)}`)
     .join(" ");
@@ -345,6 +405,108 @@ const renderPeakAgeSection = (athlete) => {
   );
 };
 
+// Section 7
+const renderGlobalRecordMapSection = () =>
+  sectionShell(
+    "global-record-map",
+    `
+      <div class="story-grid">
+        <div class="world-map-heading">
+          <h3 class="title-display title-lg">
+            Where Records
+            <br />
+            Live
+          </h3>
+          <p class="record-discipline">Men on the left, women on the right</p>
+        </div>
+
+        <div class="world-map-shell">
+          <div class="world-map-layer world-map-layer-male">
+            <span class="world-map-sex-label world-map-sex-label-male">Men</span>
+            <svg class="world-map-svg world-map-svg-male"></svg>
+          </div>
+          <div class="world-map-layer world-map-layer-female">
+            <span class="world-map-sex-label world-map-sex-label-female">Women</span>
+            <svg class="world-map-svg world-map-svg-female"></svg>
+          </div>
+          <div class="world-map-separator" aria-hidden="true"></div>
+          <div class="world-map-tooltip"></div>
+          <p class="world-map-status"></p>
+        </div>
+
+        <div class="world-map-controls">
+          <button class="world-map-play" type="button">Play</button>
+          <span class="world-map-year"></span>
+          <input class="world-map-slider" type="range" />
+          <div class="world-map-legend">
+            <span>Records held</span>
+            <div class="world-map-legend-labels">
+              <span>Women</span>
+              <span>Men</span>
+            </div>
+            <span class="world-map-neutral-note">Pale countries have none for that side/year</span>
+            <svg class="world-map-legend-svg" viewBox="0 0 160 24" aria-hidden="true"></svg>
+          </div>
+        </div>
+      </div>
+    `
+  );
+
+// Section 8
+const renderWorldRecordPodiumSection = () =>
+  sectionShell(
+    "world-record-podium",
+    `
+      <div class="story-grid">
+        <div class="wr-podium-heading">
+          <div>
+            <p class="label-xs">World Athletics</p>
+            <h3 class="title-display title-lg">
+              World Record
+              <br />
+              Podium
+            </h3>
+            <p class="wr-podium-subtitle">Athletes holding the most current world records</p>
+          </div>
+          <div class="wr-podium-controls" aria-label="Select podium category">
+            <button class="wr-podium-toggle is-active" type="button" data-sex="M">Men</button>
+            <button class="wr-podium-toggle" type="button" data-sex="F">Women</button>
+          </div>
+        </div>
+
+        <div class="wr-podium-chart">
+          <svg class="wr-podium-svg" aria-label="World record holders podium"></svg>
+          <div class="wr-podium-tooltip"></div>
+          <p class="wr-podium-status">Loading podium...</p>
+        </div>
+      </div>
+    `
+  );
+
+// Section 9
+const renderRecordReignsSection = () =>
+  sectionShell(
+    "record-reigns",
+    `
+      <div class="record-reigns-layout">
+        <div class="story-grid">
+          <p class="label-xs">Record Longevity</p>
+          <h3 class="title-display title-lg">
+            Longest
+            <br />
+            Reigns
+          </h3>
+          <p class="wr-podium-subtitle">Who held history for the longest time</p>
+        </div>
+
+        <div class="record-reigns-panel">
+          <div class="record-reigns-list"></div>
+          <p class="record-reigns-status">Loading record reigns...</p>
+        </div>
+      </div>
+    `
+  );
+
 
 const initHistoricalInteractions = (root) => {
   const section = root.querySelector("#historical-perspective");
@@ -397,6 +559,48 @@ const initHistoricalInteractions = (root) => {
 };
 
 
+const initLeaderboardInteractions = (root) => {
+  const section = root.querySelector("#athlete-intro");
+  if (!section) {
+    return;
+  }
+
+  const toggle = section.querySelector(".leaderboard-toggle");
+  const track = section.querySelector(".athlete-intro-track");
+  const athletePage = section.querySelector(".athlete-intro-page");
+  const panel = section.querySelector("#athlete-leaderboard-panel");
+  const close = section.querySelector(".leaderboard-close");
+  if (!toggle || !track || !athletePage || !panel || !close) {
+    return;
+  }
+
+  const updateShift = () => {
+    const shift = panel.offsetLeft - athletePage.offsetLeft;
+    track.style.setProperty("--leaderboard-shift", `${-shift}px`);
+  };
+
+  const setOpen = (isOpen) => {
+    if (isOpen) {
+      updateShift();
+    } else {
+      track.style.setProperty("--leaderboard-shift", "0px");
+    }
+
+    section.classList.toggle("leaderboard-open", isOpen);
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    panel.setAttribute("aria-hidden", String(!isOpen));
+  };
+
+  toggle.addEventListener("click", () => setOpen(!section.classList.contains("leaderboard-open")));
+  close.addEventListener("click", () => setOpen(false));
+  window.addEventListener("resize", () => {
+    if (section.classList.contains("leaderboard-open")) {
+      updateShift();
+    }
+  });
+};
+
+
 const initWorldRecordAnimations = (root) => {
   const progressLine = root.querySelector("#world-record-comparison .record-progress");
   if (!progressLine) {
@@ -422,9 +626,16 @@ export const renderStorySections = (root, athlete) => {
       ${renderAverageComparisonSection(athlete)}
       ${renderHistoricalSection(athlete)}
       ${renderPeakAgeSection(athlete)}
+      ${renderGlobalRecordMapSection()}
+      ${renderWorldRecordPodiumSection()}
+      ${renderRecordReignsSection()}
     </div>
   `;
 
   initWorldRecordAnimations(root);
+  initLeaderboardInteractions(root);
   initHistoricalInteractions(root);
+  initWorldMap(root);
+  initWorldRecordPodium(root);
+  initRecordReigns(root);
 };

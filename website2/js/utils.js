@@ -63,17 +63,53 @@ export const formatSecondsDisplay = (seconds) => {
   return seconds.toFixed(2);
 };
 
+export const getPerformanceUnitShort = (lowerIsBetter) => (lowerIsBetter ? "sec" : "m");
+
+
+const shouldShowSecondsUnit = (formattedValue) => !formattedValue.includes(":");
+
+
+export const formatPerformanceWithUnit = (value, lowerIsBetter) => {
+  const formattedValue = lowerIsBetter ? formatSecondsDisplay(value) : value.toFixed(2);
+
+  if (lowerIsBetter && !shouldShowSecondsUnit(formattedValue)) {
+    return formattedValue;
+  }
+
+  return `${formattedValue} ${getPerformanceUnitShort(lowerIsBetter)}`;
+};
+
+
+export const ensurePerformanceUnit = (text, value, lowerIsBetter) => {
+  const fallback = formatPerformanceWithUnit(value, lowerIsBetter);
+  const cleanText = String(text || "").trim();
+
+  if (!cleanText) {
+    return fallback;
+  }
+
+  if (/(sec|s|m|meter|meters)\.?$/i.test(cleanText)) {
+    return cleanText;
+  }
+
+  if (lowerIsBetter && !shouldShowSecondsUnit(cleanText)) {
+    return cleanText;
+  }
+
+  return `${cleanText} ${getPerformanceUnitShort(lowerIsBetter)}`;
+};
+
 
 export const formatDelta = (value, unit) => {
   if (unit === "meters") {
-    return `${value.toFixed(2)}M`;
+    return `${value.toFixed(2)} m`;
   }
 
   if (value >= 60) {
     return `${formatSecondsDisplay(value)} FROM HISTORY`;
   }
 
-  return `${value.toFixed(2)} SECONDS FROM HISTORY`;
+  return `${value.toFixed(2)} sec FROM HISTORY`;
 };
 
 

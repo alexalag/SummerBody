@@ -1,4 +1,4 @@
-import { formatSecondsDisplay } from "./utils.js";
+import { ensurePerformanceUnit, formatPerformanceWithUnit } from "./utils.js";
 import { getCountryNameFromNat, getFlagFromNat } from "./nation-meta.js";
 
 // eviter la sur representation de certains groupes
@@ -15,6 +15,41 @@ const toNumber = (value) => {
 
   const parsed = Number.parseFloat(value);
   return Number.isFinite(parsed) ? parsed : null;
+};
+
+const parseTimeMark = (markText) => {
+  const cleanText = String(markText || "").trim();
+  if (!cleanText) {
+    return null;
+  }
+
+  const parts = cleanText.split(":");
+  if (parts.length === 1) {
+    return toNumber(cleanText);
+  }
+
+  const values = parts.map((part) => Number.parseFloat(part));
+  if (values.some((value) => !Number.isFinite(value))) {
+    return null;
+  }
+
+  if (values.length === 2) {
+    return values[0] * 60 + values[1];
+  }
+
+  if (values.length === 3) {
+    return values[0] * 3600 + values[1] * 60 + values[2];
+  }
+
+  return null;
+};
+
+const parseMarkValue = (markText, normalizedMarkValue, distEvent) => {
+  if (distEvent === "1") {
+    return toNumber(markText);
+  }
+
+  return toNumber(normalizedMarkValue) ?? parseTimeMark(markText);
 };
 
 const normalizeSex = (value) => {
@@ -41,6 +76,11 @@ const extractYear = (dateValue) => {
   return Number.isFinite(year) ? year : null;
 };
 
+const formatDateDisplay = (dateValue) => {
+  const dateText = String(dateValue || "").trim();
+  return dateText || "Date unknown";
+};
+
 // Priorite a l'age explicite
 const deriveAge = (rawAge, dob, dateValue) => {
   const explicit = toNumber(rawAge);
@@ -65,7 +105,18 @@ const isBetterMark = (candidate, current, lowerIsBetter) => (lowerIsBetter ? can
 
 const round2 = (value) => Math.round(value * 100) / 100;
 
-const formatPerformanceValue = (value, lowerIsBetter) => (lowerIsBetter ? formatSecondsDisplay(value) : `${value.toFixed(2)}m`);
+const formatPerformanceValue = (value, lowerIsBetter) => formatPerformanceWithUnit(value, lowerIsBetter);
+
+const formatLeaderboardEntry = (row, position, selectedAthleteId) => ({
+  position,
+  name: row.name,
+  country: getCountryNameFromNat(row.nat),
+  flag: getFlagFromNat(row.nat),
+  natCode: row.nat,
+  mark: ensurePerformanceUnit(row.markText, row.markValue, row.lowerIsBetter),
+  date: row.dateText,
+  isSelected: row.athleteId === selectedAthleteId
+});
 
 // id URL-friendly
 const slugify = (value) =>
@@ -108,9 +159,10 @@ const parseRow = (row) => {
   const nat = String(row.Nat || "").trim().toUpperCase();
   const event = String(row.Event || "").trim();
   const sex = normalizeSex(row.Sex);
-  const markValue = toNumber(row["Mark [meters or seconds]"]);
   const markText = String(row.Mark || "").trim();
   const distEvent = String(row.Dist_Event || "").trim();
+  const markValue = parseMarkValue(markText, row["Mark [meters or seconds]"], distEvent);
+  const dateText = formatDateDisplay(row.Date);
   const year = extractYear(row.Date);
 
   if (!name || !nat || !event || !sex || markValue === null || markValue <= 0 || (distEvent !== "0" && distEvent !== "1")) {
@@ -135,6 +187,7 @@ const parseRow = (row) => {
     markValue,
     lowerIsBetter,
     age,
+    dateText,
     year,
     resultsScore: score
   };
@@ -253,7 +306,9 @@ const buildEventStatsMap = (eventAggregates) => {
       event: eventAggregate.event,
       sex: eventAggregate.sex,
       lowerIsBetter: eventAggregate.lowerIsBetter,
-      worldRecordText: eventAggregate.worldBest.markText || formatPerformanceValue(worldRecordValue, eventAggregate.lowerIsBetter),
+      worldRecordHolder: eventAggregate.worldBest.name,
+      worldRecordDate: eventAggregate.worldBest.dateText,
+      worldRecordText: ensurePerformanceUnit(eventAggregate.worldBest.markText, worldRecordValue, eventAggregate.lowerIsBetter),
       worldRecordValue,
       averagePerformanceText: formatPerformanceValue(averagePerformanceValue, eventAggregate.lowerIsBetter),
       averagePerformanceValue,
@@ -269,12 +324,17 @@ const buildEventStatsMap = (eventAggregates) => {
 
 const buildAthleteStories = (eventStatsMap, athleteBestByEvent) => {
   const bestEventByAthlete = new Map();
+  const leaderboardRowsByEvent = new Map();
 
   for (const candidate of athleteBestByEvent.values()) {
     const eventStats = eventStatsMap.get(candidate.eventKey);
     if (!eventStats) {
       continue;
     }
+
+    const leaderboardRows = leaderboardRowsByEvent.get(candidate.eventKey) || [];
+    leaderboardRows.push(candidate);
+    leaderboardRowsByEvent.set(candidate.eventKey, leaderboardRows);
 
     const existing = bestEventByAthlete.get(candidate.athleteId);
     if (!existing) {
@@ -294,6 +354,18 @@ const buildAthleteStories = (eventStatsMap, athleteBestByEvent) => {
     if (candidateScore > existingScore) {
       bestEventByAthlete.set(candidate.athleteId, candidate);
     }
+  }
+
+  for (const rows of leaderboardRowsByEvent.values()) {
+    rows.sort((a, b) => {
+      if (isBetterMark(a.markValue, b.markValue, a.lowerIsBetter)) {
+        return -1;
+      }
+      if (isBetterMark(b.markValue, a.markValue, b.lowerIsBetter)) {
+        return 1;
+      }
+      return a.name.localeCompare(b.name);
+    });
   }
 
   const groupedByCountryAndSex = new Map();
@@ -344,6 +416,13 @@ const buildAthleteStories = (eventStatsMap, athleteBestByEvent) => {
       const pronoun = row.sex === "Female" ? "Her" : "His";
       const bestPerformanceLabel = row.lowerIsBetter ? `${pronoun} Fastest Race` : `${pronoun} Best Mark`;
       const age = Math.max(16, Math.min(45, Math.round((row.age || eventStats.peakAge))));
+      const eventLeaderboardRows = leaderboardRowsByEvent.get(row.eventKey) || [];
+      const athleteLeaderboardIndex = eventLeaderboardRows.findIndex((entry) => entry.athleteId === row.athleteId);
+      const leaderboardTop = eventLeaderboardRows.slice(0, 8).map((entry, index) => formatLeaderboardEntry(entry, index + 1, row.athleteId));
+      const leaderboardAthleteEntry =
+        athleteLeaderboardIndex >= 8
+          ? formatLeaderboardEntry(eventLeaderboardRows[athleteLeaderboardIndex], athleteLeaderboardIndex + 1, row.athleteId)
+          : null;
 
       return {
         // Payload final consomme directement par render-sections.js.
@@ -355,9 +434,12 @@ const buildAthleteStories = (eventStatsMap, athleteBestByEvent) => {
         country: getCountryNameFromNat(row.nat),
         flag: getFlagFromNat(row.nat),
         discipline: row.event,
-        bestPerformance: row.markText || formatPerformanceValue(row.markValue, row.lowerIsBetter),
+        bestPerformance: ensurePerformanceUnit(row.markText, row.markValue, row.lowerIsBetter),
         bestPerformanceValue: round2(row.markValue),
+        bestPerformanceDate: row.dateText,
         bestPerformanceLabel,
+        worldRecordHolder: eventStats.worldRecordHolder,
+        worldRecordDate: eventStats.worldRecordDate,
         worldRecord: eventStats.worldRecordText,
         worldRecordValue: round2(eventStats.worldRecordValue),
         averagePerformance: eventStats.averagePerformanceText,
@@ -368,6 +450,8 @@ const buildAthleteStories = (eventStatsMap, athleteBestByEvent) => {
         peakAge: eventStats.peakAge,
         athleteEraYear: row.year || 2025,
         athleteImage: "./assets/img/profile.png",
+        leaderboardTop,
+        leaderboardAthleteEntry,
         narrativeConclusion: getNarrativeConclusion(row, eventStats)
       };
     })
