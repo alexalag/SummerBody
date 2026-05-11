@@ -33,6 +33,27 @@ let parallaxTicking = false;
 
 const getCanDraw = () => !state.isLoadingData && state.athletes.length > 0;
 
+const getNbFilteredAthletes = () => {
+  return state.athletes.filter((athlete) => {
+    const genderMatch = state.sexFilter === "Any" || athlete.sex === state.sexFilter;
+    const countryMatch = state.countryFilter === "Any" || athlete.country === state.countryFilter;
+    const ageMatch = state.ageFilter === "Any" || (() => { const age = athlete.age;
+        switch (state.ageFilter) {
+          case "Under 23":
+            return age < 23;
+          case "23-27":
+            return age >= 23 && age <= 27;
+          case "28+":
+            return age >= 28;
+
+          default:
+            return true;
+        }
+      })();
+
+    return genderMatch && countryMatch && ageMatch;
+  });
+};
 
 const getHeroStatus = () => {
   if (state.selectedAthlete) {
@@ -44,12 +65,15 @@ const getHeroStatus = () => {
   if (state.dataError) {
     return "Data loading failed. Please check the CSV path and retry.";
   }
-  return `${state.athletes.length.toLocaleString()} real athlete stories are ready.`;
+
+  const filteredCount = getNbFilteredAthletes().length;
+  return `${filteredCount.toLocaleString()} real athlete stories are ready.`;
 };
 
 
 const renderCountryFilter = () => {
   const countries = getCountries(state.athletes);
+
   if (!countries.includes(state.countryFilter)) {
     state.countryFilter = "Any";
   }
@@ -58,7 +82,8 @@ const renderCountryFilter = () => {
     .map((country) => `<option value="${country.replaceAll('"', "&quot;")}">${country}</option>`)
     .join("");
   elements.countryFilter.value = state.countryFilter;
-};
+}
+;
 
 
 const syncButtons = () => {
@@ -176,14 +201,17 @@ const drawStory = () => {
 const wireEvents = () => {
   elements.ageFilter.addEventListener("change", (event) => {
     state.ageFilter = event.target.value;
+    updateControls();
   });
 
   elements.sexFilter.addEventListener("change", (event) => {
     state.sexFilter = event.target.value;
+    updateControls();
   });
 
   elements.countryFilter.addEventListener("change", (event) => {
     state.countryFilter = event.target.value;
+    updateControls();
   });
 
   if (elements.navDrawButton) {
@@ -208,6 +236,9 @@ const init = async () => {
 
     const athletes = await loadAthletesFromCsv(CSV_URL);
     state.athletes = athletes;
+    console.log(
+    [...new Set(state.athletes.map(a => a.country))].sort()
+  );
   } catch (error) {
     state.dataError = error instanceof Error ? error.message : "Failed to load athlete dataset.";
   } finally {
