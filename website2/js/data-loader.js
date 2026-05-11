@@ -164,8 +164,9 @@ const parseRow = (row) => {
   const markValue = parseMarkValue(markText, row["Mark [meters or seconds]"], distEvent);
   const dateText = formatDateDisplay(row.Date);
   const year = extractYear(row.Date);
+  const place = String(row.Place || "").trim();
 
-  if (!name || !nat || !event || !sex || markValue === null || markValue <= 0 || (distEvent !== "0" && distEvent !== "1")) {
+  if (!name || !nat || !event || !sex || !place || markValue === null || markValue <= 0 || (distEvent !== "0" && distEvent !== "1")) {
     return null;
   }
 
@@ -189,6 +190,7 @@ const parseRow = (row) => {
     age,
     dateText,
     year,
+    place,
     resultsScore: score
   };
 };
@@ -437,6 +439,7 @@ const buildAthleteStories = (eventStatsMap, athleteBestByEvent) => {
         bestPerformance: ensurePerformanceUnit(row.markText, row.markValue, row.lowerIsBetter),
         bestPerformanceValue: round2(row.markValue),
         bestPerformanceDate: row.dateText,
+        bestPerformancePlace: row.place,
         bestPerformanceLabel,
         worldRecordHolder: eventStats.worldRecordHolder,
         worldRecordDate: eventStats.worldRecordDate,

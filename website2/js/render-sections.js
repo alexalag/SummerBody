@@ -113,6 +113,7 @@ const renderBestPerformanceSection = (athlete) =>
         <div class="story-grid">
           <p class="best-performance-value">${escapeHtml(athlete.bestPerformance)}</p>
           <p class="best-performance-discipline">In ${escapeHtml(athlete.discipline)}</p>
+          <p class="serif-italic">${escapeHtml(athlete.bestPerformancePlace)} (${escapeHtml(athlete.bestPerformanceDate)})</p>
         </div>
       </div>
     `
