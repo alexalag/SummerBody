@@ -686,17 +686,20 @@ a {
 
 .record-line {
   position: relative;
-  height: 1px;
-  background: rgba(29, 29, 27, 0.4);
+  height: 3px;
+  background: rgba(29, 29, 27, 0.25);
+  overflow: visible;
 }
 
 .record-progress {
   position: absolute;
-  inset-block: 0;
   left: 0;
-  width: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 3px;
+  width: 0%;
   background: var(--accent);
-  transition: width 1.1s cubic-bezier(0.2, 1, 0.3, 1);
+  will-change: width;
 }
 
 .record-marker-athlete,
@@ -712,6 +715,7 @@ a {
   transform: translateX(-50%);
   border: 1px solid var(--accent);
   background: var(--paper);
+  left: 0%;
 }
 
 .record-marker-wr {
@@ -800,9 +804,18 @@ a {
 
 .silhouette-athlete .silhouette-shape {
   width: 5rem;
-  height: 9rem;
+  height: 0;                   
   border: 1px solid rgba(228, 79, 44, 0.7);
   background: rgba(228, 79, 44, 0.1);
+  opacity: 0;
+  transition: 
+    height 1.4s cubic-bezier(0.2, 1, 0.3, 1),
+    opacity 0.8s ease;
+}
+
+.silhouette-athlete .silhouette-shape.revealed {
+  height: 9rem;                
+  opacity: 1;
 }
 
 .silhouette-label {
@@ -1456,4 +1469,36 @@ a {
     font-size: clamp(2.2rem, 10vw, 3.8rem);
   }
 
+}
+
+/* Scrolling text animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(60px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#best-performance {
+  overflow: visible;
+}
+
+#best-performance .story-grid {
+  gap: 1.5rem;
+}
+
+
+.delay_str1 {
+  transition-delay: 0.2s;
+}
+
+.delay_str2 {
+  transition-delay: 0.5s;
 }

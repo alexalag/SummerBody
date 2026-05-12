@@ -1,5 +1,5 @@
 import { loadAthletesFromCsv } from "./data-loader.js";
-import { renderStorySections } from "./render-sections.js";
+import { renderStorySections, observer } from "./render-sections.js";
 import { drawAthlete, getCountries } from "./utils.js";
 
 const CSV_URL = "./assets/data/final_data.csv";
@@ -181,8 +181,12 @@ const drawStory = () => {
   });
 
   state.selectedAthlete = athlete;
+
   renderStorySections(elements.storyRoot, athlete);
   setupSectionEffects();
+  document.querySelectorAll(".fade-up").forEach((el) => {
+    observer.observe(el);
+  });
   syncButtons();
   renderHeroTexts();
 

@@ -112,12 +112,14 @@ const renderBestPerformanceSection = (athlete) =>
         <p class="label-xs">Best Performance</p>
         <div class="story-grid">
           <p class="best-performance-value">${escapeHtml(athlete.bestPerformance)}</p>
-          <p class="best-performance-discipline">In ${escapeHtml(athlete.discipline)}</p>
-          <p class="serif-italic">${escapeHtml(athlete.bestPerformancePlace)} (${escapeHtml(athlete.bestPerformanceDate)})</p>
+          <p class="best-performance-discipline fade-up delay_str1">In ${escapeHtml(athlete.discipline)}</p>
+          <p class="serif-italic fade-up delay_str2">${escapeHtml(athlete.bestPerformancePlace)} (${escapeHtml(athlete.bestPerformanceDate)})</p>
         </div>
       </div>
     `
   );
+
+
 
 // Section 3
 const renderWorldRecordSection = (athlete) => {
@@ -141,7 +143,7 @@ const renderWorldRecordSection = (athlete) => {
         <div class="record-line-shell">
           <div class="record-line">
             <div class="record-progress" data-target-width="${athletePosition.toFixed(4)}"></div>
-            <div class="record-marker-athlete" style="left:${athletePosition}%"></div>
+            <div class="record-marker-athlete" data-target-left="${athletePosition.toFixed(4)}"></div>
             <div class="record-marker-wr"></div>
           </div>
 
@@ -162,7 +164,7 @@ const renderWorldRecordSection = (athlete) => {
           </div>
         </div>
 
-        <p class="title-display title-md accent-text">${escapeHtml(statement)}</p>
+        <p class="title-display title-md accent-text fade-up delay_str1">${escapeHtml(statement)}</p>
       </div>
     `
   );
@@ -187,7 +189,7 @@ const renderAverageComparisonSection = (athlete) => {
         <div class="story-grid">
           <p class="label-xs">Comparison to average athlete</p>
           <h3 class="title-display title-lg">${escapeHtml(headline)}</h3>
-          <p class="serif-italic headline-serif accent-text">${escapeHtml(delta)}</p>
+          <p class="serif-italic headline-serif accent-text fade-up delay_str1">${escapeHtml(delta)}</p>
         </div>
 
         <div class="story-grid">
@@ -214,6 +216,54 @@ const renderAverageComparisonSection = (athlete) => {
 };
 
 // Section 5
+const initPeakAgeAnimation = (root) => {
+  const section = root.querySelector("#peak-age-analysis");
+  if (!section) return;
+
+  const motion = section.querySelector(".peak-dot-motion");
+  const ageLabel = section.querySelector(".peak-age-label");
+  if (!motion || !ageLabel) return;
+
+  const triggerAnimation = () => {
+    motion.beginElement();
+
+    setTimeout(() => {
+      const svg = section.querySelector("svg");
+      const traveler = section.querySelector(".peak-dot-traveler");
+      const bbox = traveler.getBoundingClientRect();
+      const svgRect = svg.getBoundingClientRect();
+      const scaleX = parseFloat(svg.getAttribute("viewBox").split(" ")[2]) / svgRect.width;
+      const scaleY = parseFloat(svg.getAttribute("viewBox").split(" ")[3]) / svgRect.height;
+      const vx = (bbox.left - svgRect.left + bbox.width / 2) * scaleX;
+      const vy = (bbox.top - svgRect.top + bbox.height / 2) * scaleY;
+
+      ageLabel.setAttribute("x", vx + 12);
+      ageLabel.setAttribute("y", vy + 20);
+      ageLabel.setAttribute("opacity", "1");
+    }, 3000);
+  };
+
+  if (section.classList.contains("in-view")) {
+    requestAnimationFrame(triggerAnimation);
+    return;
+  }
+
+  const mo = new MutationObserver((mutations, observer) => {
+    for (const mutation of mutations) {
+      if (
+        mutation.type === "attributes" &&
+        mutation.attributeName === "class" &&
+        section.classList.contains("in-view")
+      ) {
+        observer.disconnect();
+        requestAnimationFrame(triggerAnimation);
+      }
+    }
+  });
+
+  mo.observe(section, { attributes: true, attributeFilter: ["class"] });
+};
+
 const renderHistoricalSection = (athlete) => {
   const width = 1080;
   const height = 360;
@@ -369,6 +419,8 @@ const renderPeakAgeSection = (athlete) => {
   const peakX = xForAge(athlete.peakAge);
   const peakY = yForCurve(athlete.peakAge);
 
+  const athleteRatio = (Math.min(maxAge, Math.max(minAge, athlete.age)) - minAge) / ageRange;
+
   return sectionShell(
     "peak-age-analysis",
     `
@@ -382,14 +434,20 @@ const renderPeakAgeSection = (athlete) => {
         <div class="peak-shell">
           <svg viewBox="0 0 ${width} ${height}">
             <path d="${curvePath}" fill="none" stroke="rgba(29,29,27,0.65)" stroke-width="2" />
+            <path id="peak-motion-path" d="${curvePath}" fill="none" stroke="none" />
+
+            <circle class="peak-dot-traveler" r="7" fill="#f3f1ed" stroke="#e44f2c" stroke-width="2.2">
+              <animateMotion class="peak-dot-motion" dur="3.0s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.2 1 0.3 1" keyPoints="0;${athleteRatio.toFixed(4)}" begin="indefinite">
+                <mpath href="#peak-motion-path" />
+              </animateMotion>
+            </circle>
 
             <circle cx="${peakX}" cy="${peakY}" r="6" fill="#f3f1ed" stroke="rgba(29,29,27,0.8)" stroke-width="2" />
-            <circle cx="${athleteX}" cy="${athleteY}" r="7" fill="#f3f1ed" stroke="#e44f2c" stroke-width="2.2" />
 
             <text x="${peakX + 12}" y="${peakY - 8}" fill="rgba(29,29,27,0.7)" font-size="11" letter-spacing="3">
               PEAK ${escapeHtml(athlete.peakAge)}
             </text>
-            <text x="${athleteX + 12}" y="${athleteY + 20}" fill="#e44f2c" font-size="11" letter-spacing="3">
+            <text class="peak-age-label" x="0" y="0" fill="#e44f2c" font-size="11" letter-spacing="3" opacity="0">
               AGE ${escapeHtml(athlete.age)}
             </text>
           </svg>
@@ -400,7 +458,7 @@ const renderPeakAgeSection = (athlete) => {
           </div>
         </div>
 
-        <p class="title-display title-sm accent-text">${escapeHtml(getPrimeNarrative(athlete))}</p>
+        <p class="title-display title-sm accent-text fade-up delay_str1">${escapeHtml(getPrimeNarrative(athlete))}</p>
       </div>
     `
   );
@@ -604,19 +662,87 @@ const initLeaderboardInteractions = (root) => {
 
 const initWorldRecordAnimations = (root) => {
   const progressLine = root.querySelector("#world-record-comparison .record-progress");
-  if (!progressLine) {
+  const athleteMarker = root.querySelector("#world-record-comparison .record-marker-athlete");
+
+  if (!progressLine || !athleteMarker) return;
+
+  const targetWidth = Number.parseFloat(progressLine.getAttribute("data-target-width") || "0");
+  const targetLeft = Number.parseFloat(athleteMarker.getAttribute("data-target-left") || "0");
+
+  const section = progressLine.closest(".section");
+  if (!section) return;
+
+  const triggerAnimation = () => {
+    progressLine.style.transition = "none";
+    athleteMarker.style.transition = "none";
+    progressLine.style.width = "0%";
+    athleteMarker.style.left = "0%";
+
+    requestAnimationFrame(() => {
+      progressLine.offsetWidth;
+      progressLine.style.transition = "width 2.5s ease-out";
+      athleteMarker.style.transition = "left 2.5s ease-out";
+      progressLine.style.width = `${targetWidth}%`;
+      athleteMarker.style.left = `${targetLeft}%`;
+    });
+  };
+
+  if (section.classList.contains("in-view")) {
+    requestAnimationFrame(triggerAnimation);
     return;
   }
 
-  const targetWidth = Number.parseFloat(progressLine.getAttribute("data-target-width") || "0");
-  progressLine.style.width = "0%";
-  window.requestAnimationFrame(() => {
-    window.requestAnimationFrame(() => {
-      progressLine.style.width = `${targetWidth}%`;
-    });
+  const mo = new MutationObserver((mutations, observer) => {
+    for (const mutation of mutations) {
+      if (
+        mutation.type === "attributes" &&
+        mutation.attributeName === "class" &&
+        section.classList.contains("in-view")
+      ) {
+        observer.disconnect();
+        requestAnimationFrame(triggerAnimation);
+        return;
+      }
+    }
   });
+
+  mo.observe(section, { attributes: true, attributeFilter: ["class"] });
 };
 
+/* Comparison to avg athlete animation */
+const initImageReveal = (root) => {
+  const section = root.querySelector("#average-comparison");
+  if (!section) return;
+
+  const shell = section.querySelector(".silhouette-athlete .silhouette-shape");
+  if (!shell) return;
+
+  shell.classList.remove("revealed");
+
+  const triggerReveal = () => {
+    setTimeout(() => shell.classList.add("revealed"), 500);
+  };
+
+  if (section.classList.contains("in-view")) {
+    triggerReveal();
+    return;
+  }
+
+  const mo = new MutationObserver((mutations, observer) => {
+    for (const mutation of mutations) {
+      if (
+        mutation.type === "attributes" &&
+        mutation.attributeName === "class" &&
+        section.classList.contains("in-view")
+      ) {
+        observer.disconnect();
+        triggerReveal();
+      }
+    }
+  });
+
+  mo.observe(section, { attributes: true, attributeFilter: ["class"] });
+};
 
 export const renderStorySections = (root, athlete) => {
   root.innerHTML = `
@@ -639,4 +765,25 @@ export const renderStorySections = (root, athlete) => {
   initWorldMap(root);
   initWorldRecordPodium(root);
   initRecordReigns(root);
+  initImageReveal(root);
+  initPeakAgeAnimation(root);
 };
+
+
+// Scrolling & Text Effects
+export const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      } else {
+        entry.target.classList.remove("visible");
+      }
+
+    });
+  },
+  {
+    threshold: 0.25,
+  }
+);
