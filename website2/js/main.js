@@ -1,6 +1,7 @@
 import { loadAthletesFromCsv } from "./data-loader.js";
 import { renderStorySections, observer } from "./render-sections.js";
 import { drawAthlete, getCountries } from "./utils.js";
+import { renderDuelSection } from "./duel.js";
 
 const CSV_URL = "./assets/data/final_data.csv";
 
@@ -21,10 +22,15 @@ const elements = {
   sexFilter: document.getElementById("sex-filter"),
   countryFilter: document.getElementById("country-filter"),
   navDrawButton: document.getElementById("nav-draw-button"),
+  navDuelButton: document.getElementById("nav-duel-button"),
   heroDrawButton: document.getElementById("hero-draw-button"),
   heroStatusText: document.getElementById("hero-status-text"),
   heroMicroText: document.getElementById("hero-micro-text"),
-  storyRoot: document.getElementById("story-root")
+  storyRoot: document.getElementById("story-root"),
+  duelRoot: document.getElementById("duel-root"),
+  duelDrawer: document.getElementById("duel-drawer"),
+  duelDrawerBackdrop: document.getElementById("duel-drawer-backdrop"),
+  duelDrawerClose: document.getElementById("duel-drawer-close")
 };
 
 let revealObserver = null;
@@ -95,6 +101,7 @@ const syncButtons = () => {
   }
 
   elements.heroDrawButton.disabled = !canDraw;
+  if (elements.navDuelButton) elements.navDuelButton.disabled = !canDraw;
 };
 
 
@@ -202,6 +209,23 @@ const drawStory = () => {
 };
 
 
+const openDuel = () => {
+  if (!getCanDraw()) return;
+
+  renderDuelSection(elements.duelRoot, state.athletes, state.selectedAthlete);
+
+  elements.duelDrawer.classList.add("is-open");
+  elements.duelDrawer.setAttribute("aria-hidden", "false");
+  document.body.classList.add("duel-open");
+};
+
+const closeDuel = () => {
+  elements.duelDrawer.classList.remove("is-open");
+  elements.duelDrawer.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("duel-open");
+};
+
+
 const wireEvents = () => {
   elements.ageFilter.addEventListener("change", (event) => {
     state.ageFilter = event.target.value;
@@ -222,6 +246,22 @@ const wireEvents = () => {
     elements.navDrawButton.addEventListener("click", drawStory);
   }
   elements.heroDrawButton.addEventListener("click", drawStory);
+
+  if (elements.navDuelButton) {
+    elements.navDuelButton.addEventListener("click", openDuel);
+  }
+
+  if (elements.duelDrawerBackdrop) {
+    elements.duelDrawerBackdrop.addEventListener("click", closeDuel);
+  }
+
+  if (elements.duelDrawerClose) {
+    elements.duelDrawerClose.addEventListener("click", closeDuel);
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeDuel();
+  });
 
   window.addEventListener("scroll", requestParallax, { passive: true });
   window.addEventListener("resize", requestParallax);
