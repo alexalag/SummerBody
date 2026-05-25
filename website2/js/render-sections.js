@@ -349,8 +349,12 @@ const renderHistoricalSection = (athlete) => {
       const fill = isTargetPoint ? "#f3f1ed" : "#e44f2c";
       const stroke = isTargetPoint ? "#e44f2c" : "#f3f1ed";
       const strokeWidth = isTargetPoint ? 2 : 1.4;
+
+      if (isTargetPoint) {
+        return `<circle cx="${point.x}" cy="${point.y}" r="${radius}" fill="${fill}" stroke="${stroke}" stroke-width="${strokeWidth}" />`;
+      }
+
       return `
-        <!-- Point interactif: le tooltip lit les data-* associes. -->
         <g class="historical-point" data-point-id="${escapeHtml(point.id)}" data-point-label="${escapeHtml(point.label)}" data-x="${point.x}" data-y="${point.y}" data-point-name="${escapeHtml(point.name || "")}" data-point-flag="${escapeHtml(point.flag || "")}">
           <circle cx="${point.x}" cy="${point.y}" r="${radius}" fill="${fill}" stroke="${stroke}" stroke-width="${strokeWidth}" />
           <title>${escapeHtml(point.label)}</title>
