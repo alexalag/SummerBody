@@ -1808,6 +1808,18 @@ body.duel-open {
 .duel-discipline-stack {
   flex: 0 0 auto;
   min-width: 14rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+
+.duel-discipline-stack .input-stack {
+  flex: 1;
+}
+
+#duel-discipline-random {
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 /* Arena: slot | VS | slot */

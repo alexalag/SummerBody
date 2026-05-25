@@ -220,8 +220,10 @@ const wireEvents = (root) => {
   });
 
   // Discipline select
-  qs("#duel-discipline-select", root).addEventListener("change", (e) => {
-    state.discipline = e.target.value;
+  const applyDiscipline = (discipline) => {
+    state.discipline = discipline;
+    const select = qs("#duel-discipline-select", root);
+    if (select) select.value = discipline;
 
     if (state.athleteA && state.athleteA.discipline !== state.discipline) {
       state.athleteA = null;
@@ -234,6 +236,16 @@ const wireEvents = (root) => {
 
     hideResults(root);
     syncGoButton(root);
+  };
+
+  qs("#duel-discipline-select", root).addEventListener("change", (e) => {
+    applyDiscipline(e.target.value);
+  });
+
+  qs("#duel-discipline-random", root).addEventListener("click", () => {
+    const disciplines = getDisciplines(state.athletes);
+    const next = randomFrom(disciplines.filter((d) => d !== state.discipline));
+    if (next) applyDiscipline(next);
   });
 
   // Slot randomize buttons
@@ -302,10 +314,13 @@ export const renderDuelSection = (root, athletes, selectedAthlete) => {
           <h2 class="display-xl">Duel</h2>
         </div>
         <div class="wr-podium-controls duel-sex-controls">${sexButtons}</div>
-        <label class="input-stack duel-discipline-stack">
-          <span>Discipline</span>
-          <select id="duel-discipline-select">${disciplineOptions}</select>
-        </label>
+        <div class="duel-discipline-stack">
+          <label class="input-stack" for="duel-discipline-select">
+            <span>Discipline</span>
+            <select id="duel-discipline-select">${disciplineOptions}</select>
+          </label>
+          <button id="duel-discipline-random" class="draw-button draw-button-nav" type="button">Random</button>
+        </div>
       </div>
 
       <div class="duel-arena">
