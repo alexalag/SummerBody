@@ -851,7 +851,7 @@ a {
   border-radius: 0.4rem;
   border: 1px solid rgba(29, 29, 27, 0.15);
   background: var(--paper);
-  padding: 0.38rem 0.7rem;
+  padding: 0.42rem 0.75rem;
   font-size: 0.625rem;
   text-transform: uppercase;
   letter-spacing: var(--tracking-editorial);
@@ -859,6 +859,20 @@ a {
   box-shadow: 0 8px 22px rgba(18, 18, 18, 0.08);
   white-space: nowrap;
   transform: translate(-50%, -140%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.18rem;
+}
+
+.historical-tooltip-perf {
+  color: var(--ink);
+}
+
+.historical-tooltip-athlete {
+  color: var(--accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
 }
 
 .historical-axis-labels,
@@ -870,6 +884,55 @@ a {
   text-transform: uppercase;
   letter-spacing: var(--tracking-editorial);
   color: rgba(29, 29, 27, 0.5);
+}
+
+.peak-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.peak-tooltip {
+  position: absolute;
+  z-index: 20;
+  pointer-events: none;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(29, 29, 27, 0.15);
+  background: var(--paper);
+  padding: 0.42rem 0.75rem;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-editorial);
+  color: var(--ink);
+  box-shadow: 0 8px 22px rgba(18, 18, 18, 0.08);
+  white-space: nowrap;
+  transform: translate(-50%, -140%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.18rem;
+}
+
+.peak-athlete-dot {
+  cursor: default;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes peak-dot-pop {
+  0%   { opacity: 0; transform: scale(0); }
+  65%  { opacity: 1; transform: scale(1.35); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes peak-dot-hide {
+  0%   { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0); }
+}
+
+.peak-tooltip-rank {
+  color: rgba(29, 29, 27, 0.5);
+  font-size: 0.58rem;
 }
 
 .world-map-heading {
@@ -1510,6 +1573,18 @@ a {
    site-header sets pointer-events: none on itself but delegates to the nav. */
 #nav-duel-button {
   pointer-events: auto;
+}
+
+#nav-duel-button:not(:disabled) {
+  background: var(--accent);
+  color: var(--paper);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+#nav-duel-button:not(:disabled):hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
 }
 
 /* ── Duel drawer ─────────────────────────────────────────────────────────── */

@@ -223,14 +223,14 @@ const ingestRow = (row, eventAggregates, athleteBestByEvent) => {
 
   if (row.year !== null) {
     const currentYearBest = eventAggregate.yearBest.get(row.year);
-    if (currentYearBest === undefined || isBetterMark(row.markValue, currentYearBest, row.lowerIsBetter)) {
-      eventAggregate.yearBest.set(row.year, row.markValue);
+    if (currentYearBest === undefined || isBetterMark(row.markValue, currentYearBest.markValue, row.lowerIsBetter)) {
+      eventAggregate.yearBest.set(row.year, { markValue: row.markValue, name: row.name, nat: row.nat });
     }
   }
 
   const athleteEventBest = eventAggregate.athleteBest.get(row.athleteId);
   if (!athleteEventBest || isBetterMark(row.markValue, athleteEventBest.markValue, row.lowerIsBetter)) {
-    eventAggregate.athleteBest.set(row.athleteId, { markValue: row.markValue, age: row.age });
+    eventAggregate.athleteBest.set(row.athleteId, { markValue: row.markValue, age: row.age, name: row.name, nat: row.nat });
   }
 
   const athleteEventKey = `${row.athleteId}|${row.event}`;
@@ -245,25 +245,28 @@ const buildRecordHistory = (eventAggregate) => {
   const history = [];
   let runningRecord = null;
 
-  for (const [year, bestYearValue] of ordered) {
-    if (runningRecord === null || isBetterMark(bestYearValue, runningRecord, eventAggregate.lowerIsBetter)) {
-      runningRecord = bestYearValue;
-      history.push({ year, value: round2(runningRecord) });
+  for (const [year, yearEntry] of ordered) {
+    if (runningRecord === null || isBetterMark(yearEntry.markValue, runningRecord, eventAggregate.lowerIsBetter)) {
+      runningRecord = yearEntry.markValue;
+      history.push({ year, value: round2(runningRecord), name: yearEntry.name, nat: yearEntry.nat });
     }
   }
 
   if (history.length === 0 && eventAggregate.worldBest) {
     const anchorYear = eventAggregate.worldBest.year || 2025;
     const value = round2(eventAggregate.worldBest.markValue);
-    history.push({ year: anchorYear - 1, value });
-    history.push({ year: anchorYear, value });
+    const { name, nat } = eventAggregate.worldBest;
+    history.push({ year: anchorYear - 1, value, name, nat });
+    history.push({ year: anchorYear, value, name, nat });
     return history;
   }
 
   if (history.length === 1) {
     history.push({
       year: history[0].year + 1,
-      value: history[0].value
+      value: history[0].value,
+      name: history[0].name,
+      nat: history[0].nat
     });
   }
 
@@ -282,6 +285,12 @@ const buildPeakAge = (eventAggregate) => {
   const sample = athleteAgeEntries.slice(0, topCount);
   const meanAge = sample.reduce((sum, entry) => sum + entry.age, 0) / sample.length;
   return Math.round(meanAge);
+};
+
+const buildPeakAthletes = (eventAggregate, count = 8) => {
+  const entries = Array.from(eventAggregate.athleteBest.values()).filter((e) => e.age !== null);
+  entries.sort((a, b) => (isBetterMark(a.markValue, b.markValue, eventAggregate.lowerIsBetter) ? -1 : 1));
+  return entries.slice(0, count).map((e, i) => ({ name: e.name, nat: e.nat, age: e.age, markValue: e.markValue, rank: i + 1 }));
 };
 
 const buildAveragePerformanceValue = (eventAggregate) => {
@@ -315,7 +324,8 @@ const buildEventStatsMap = (eventAggregates) => {
       averagePerformanceText: formatPerformanceValue(averagePerformanceValue, eventAggregate.lowerIsBetter),
       averagePerformanceValue,
       recordHistory,
-      peakAge: buildPeakAge(eventAggregate)
+      peakAge: buildPeakAge(eventAggregate),
+      peakAthletes: buildPeakAthletes(eventAggregate)
     };
 
     statsMap.set(eventKey, stats);
@@ -451,6 +461,7 @@ const buildAthleteStories = (eventStatsMap, athleteBestByEvent) => {
         performanceUnit: eventStats.lowerIsBetter ? "seconds" : "meters",
         recordHistory: eventStats.recordHistory,
         peakAge: eventStats.peakAge,
+        peakAthletes: eventStats.peakAthletes,
         athleteEraYear: row.year || 2025,
         athleteImage: "./assets/img/profile.png",
         leaderboardTop,

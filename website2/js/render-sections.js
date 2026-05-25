@@ -11,6 +11,7 @@
 import { initWorldMap } from "./world-map.js";
 import { initWorldRecordPodium } from "./world-record-podium.js";
 import { initRecordReigns } from "./record-reigns.js";
+import { getFlagFromNat } from "./nation-meta.js";
 
 
 const TARGET_YEAR = 2026;
@@ -279,13 +280,16 @@ const renderHistoricalSection = (athlete) => {
         : [{ year: TARGET_YEAR - 1, value: athlete.worldRecordValue }];
 
   const hasPointAtTarget = effectiveHistory.some((point) => point.year === TARGET_YEAR);
+  const lastReal = effectiveHistory[effectiveHistory.length - 1];
   const projectedHistory = hasPointAtTarget
     ? [...effectiveHistory]
     : [
         ...effectiveHistory,
         {
           year: TARGET_YEAR,
-          value: effectiveHistory[effectiveHistory.length - 1]?.value ?? athlete.worldRecordValue
+          value: lastReal?.value ?? athlete.worldRecordValue,
+          name: lastReal?.name ?? null,
+          nat: lastReal?.nat ?? null
         }
       ];
 
@@ -323,7 +327,9 @@ const renderHistoricalSection = (athlete) => {
       year: point.year,
       x,
       y,
-      label: `${point.year} - ${formatValue(point.value)}`
+      label: `${point.year} — ${formatValue(point.value)}`,
+      name: point.name || null,
+      flag: point.nat ? getFlagFromNat(point.nat) : ""
     };
   });
 
@@ -345,7 +351,7 @@ const renderHistoricalSection = (athlete) => {
       const strokeWidth = isTargetPoint ? 2 : 1.4;
       return `
         <!-- Point interactif: le tooltip lit les data-* associes. -->
-        <g class="historical-point" data-point-id="${escapeHtml(point.id)}" data-point-label="${escapeHtml(point.label)}" data-x="${point.x}" data-y="${point.y}">
+        <g class="historical-point" data-point-id="${escapeHtml(point.id)}" data-point-label="${escapeHtml(point.label)}" data-x="${point.x}" data-y="${point.y}" data-point-name="${escapeHtml(point.name || "")}" data-point-flag="${escapeHtml(point.flag || "")}">
           <circle cx="${point.x}" cy="${point.y}" r="${radius}" fill="${fill}" stroke="${stroke}" stroke-width="${strokeWidth}" />
           <title>${escapeHtml(point.label)}</title>
         </g>
@@ -421,6 +427,33 @@ const renderPeakAgeSection = (athlete) => {
 
   const athleteRatio = (Math.min(maxAge, Math.max(minAge, athlete.age)) - minAge) / ageRange;
 
+  const peakAthletes = athlete.peakAthletes || [];
+
+  // Group athletes by age so we can spread overlapping dots horizontally
+  const ageBuckets = new Map();
+  peakAthletes.forEach((p) => {
+    const key = Math.min(maxAge, Math.max(minAge, p.age));
+    if (!ageBuckets.has(key)) ageBuckets.set(key, []);
+    ageBuckets.get(key).push(p);
+  });
+  const DOT_SPACING = 13;
+
+  const peakAthleteDotsMarkup = peakAthletes
+    .map((p) => {
+      const clampedAge = Math.min(maxAge, Math.max(minAge, p.age));
+      const bucket = ageBuckets.get(clampedAge);
+      const indexInBucket = bucket.indexOf(p);
+      const offset = (indexInBucket - (bucket.length - 1) / 2) * DOT_SPACING;
+      const cx = xForAge(clampedAge) + offset;
+      const cy = yForCurve(clampedAge);
+      const flag = getFlagFromNat(p.nat);
+      const formattedMark = formatPerformanceWithUnit(p.markValue, athlete.lowerIsBetter);
+      return `<g class="peak-athlete-dot" data-name="${escapeHtml(p.name)}" data-flag="${escapeHtml(flag)}" data-mark="${escapeHtml(formattedMark)}" data-age="${p.age}" data-rank="${p.rank}" data-cx="${cx}" data-cy="${cy}" style="opacity:0;transition:opacity 0.35s ease;">
+        <circle cx="${cx}" cy="${cy}" r="5" fill="rgba(29,29,27,0.78)" stroke="#f3f1ed" stroke-width="1.4" />
+      </g>`;
+    })
+    .join("");
+
   return sectionShell(
     "peak-age-analysis",
     `
@@ -435,6 +468,8 @@ const renderPeakAgeSection = (athlete) => {
           <svg viewBox="0 0 ${width} ${height}">
             <path d="${curvePath}" fill="none" stroke="rgba(29,29,27,0.65)" stroke-width="2" />
             <path id="peak-motion-path" d="${curvePath}" fill="none" stroke="none" />
+
+            <g class="peak-athletes-layer">${peakAthleteDotsMarkup}</g>
 
             <circle class="peak-dot-traveler" r="7" fill="#f3f1ed" stroke="#e44f2c" stroke-width="2.2">
               <animateMotion class="peak-dot-motion" dur="3.0s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.2 1 0.3 1" keyPoints="0;${athleteRatio.toFixed(4)}" begin="indefinite">
@@ -456,6 +491,14 @@ const renderPeakAgeSection = (athlete) => {
             <span>${minAge} Years</span>
             <span>${maxAge} Years</span>
           </div>
+
+          <div class="peak-tooltip" style="display:none"></div>
+        </div>
+
+        <div class="peak-controls">
+          <button class="peak-top-athletes-toggle draw-button draw-button-nav" type="button">
+            Show top athletes
+          </button>
         </div>
 
         <p class="title-display title-sm accent-text fade-up delay_str1">${escapeHtml(getPrimeNarrative(athlete))}</p>
@@ -581,6 +624,8 @@ const initHistoricalInteractions = (root) => {
 
   const showTooltip = (pointElement) => {
     const label = pointElement.getAttribute("data-point-label");
+    const name = pointElement.getAttribute("data-point-name");
+    const flag = pointElement.getAttribute("data-point-flag");
     const x = Number.parseFloat(pointElement.getAttribute("data-x") || "0");
     const y = Number.parseFloat(pointElement.getAttribute("data-y") || "0");
     const svg = pointElement.closest("svg");
@@ -592,7 +637,10 @@ const initHistoricalInteractions = (root) => {
     const leftPercent = (x / viewBox.width) * 100;
     const topPercent = (y / viewBox.height) * 100;
 
-    tooltip.textContent = label;
+    const athleteLine = name
+      ? `<span class="historical-tooltip-athlete">${flag ? flag + " " : ""}${name}</span>`
+      : "";
+    tooltip.innerHTML = `<span class="historical-tooltip-perf">${label}</span>${athleteLine}`;
     tooltip.style.left = `${leftPercent}%`;
     tooltip.style.top = `${topPercent}%`;
     tooltip.hidden = false;
@@ -744,6 +792,78 @@ const initImageReveal = (root) => {
   mo.observe(section, { attributes: true, attributeFilter: ["class"] });
 };
 
+const initPeakAthleteToggle = (root) => {
+  const section = root.querySelector("#peak-age-analysis");
+  if (!section) return;
+
+  const button = section.querySelector(".peak-top-athletes-toggle");
+  const dots = section.querySelectorAll(".peak-athlete-dot");
+  const tooltip = section.querySelector(".peak-tooltip");
+  if (!button || dots.length === 0) return;
+
+  let visible = false;
+
+  button.addEventListener("click", () => {
+    visible = !visible;
+    button.textContent = visible ? "Hide top athletes" : "Show top athletes";
+
+    if (!visible && tooltip) {
+      tooltip.style.display = "none";
+    }
+
+    dots.forEach((dot, i) => {
+      if (visible) {
+        dot.style.animation = "none";
+        dot.style.opacity = "0";
+        requestAnimationFrame(() => {
+          dot.style.animation = `peak-dot-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) ${i * 70}ms both`;
+          dot.style.opacity = "1";
+        });
+      } else {
+        dot.style.animation = `peak-dot-hide 0.2s ease ${i * 30}ms both`;
+        dot.style.opacity = "0";
+      }
+    });
+  });
+
+  if (!tooltip) return;
+
+  dots.forEach((dot) => {
+    const circle = dot.querySelector("circle");
+    const baseRadius = circle ? Number.parseFloat(circle.getAttribute("r") || "5") : 5;
+
+    dot.addEventListener("mouseenter", () => {
+      if (!visible) return;
+      if (circle) circle.setAttribute("r", String(baseRadius + 1.5));
+
+      const name = dot.getAttribute("data-name") || "";
+      const flag = dot.getAttribute("data-flag") || "";
+      const mark = dot.getAttribute("data-mark") || "";
+      const age = dot.getAttribute("data-age") || "";
+      const rank = dot.getAttribute("data-rank") || "";
+      const cx = Number.parseFloat(dot.getAttribute("data-cx") || "0");
+      const cy = Number.parseFloat(dot.getAttribute("data-cy") || "0");
+
+      const svg = dot.closest("svg");
+      if (!svg) return;
+      const viewBox = svg.viewBox.baseVal;
+      tooltip.innerHTML = `
+        <span class="historical-tooltip-athlete">${flag ? flag + " " : ""}${name}</span>
+        <span class="historical-tooltip-perf">${mark} · Age ${age}</span>
+        <span class="peak-tooltip-rank">World rank #${rank}</span>
+      `;
+      tooltip.style.left = `${(cx / viewBox.width) * 100}%`;
+      tooltip.style.top = `${(cy / viewBox.height) * 100}%`;
+      tooltip.style.display = "flex";
+    });
+
+    dot.addEventListener("mouseleave", () => {
+      if (circle) circle.setAttribute("r", String(baseRadius));
+      tooltip.style.display = "none";
+    });
+  });
+};
+
 export const renderStorySections = (root, athlete) => {
   root.innerHTML = `
     <div class="story-fade-enter">
@@ -762,6 +882,7 @@ export const renderStorySections = (root, athlete) => {
   initWorldRecordAnimations(root);
   initLeaderboardInteractions(root);
   initHistoricalInteractions(root);
+  initPeakAthleteToggle(root);
   initWorldMap(root);
   initWorldRecordPodium(root);
   initRecordReigns(root);
