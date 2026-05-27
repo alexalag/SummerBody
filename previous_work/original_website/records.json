@@ -1,0 +1,102 @@
+{
+  "M": [
+    {
+      "Competitor": "Joshua CHEPTEGEI",
+      "Count": 3,
+      "Details": [
+        {
+          "Year": 2018,
+          "Event": "15 Kilometres"
+        },
+        {
+          "Year": 2020,
+          "Event": "5000 Metres"
+        },
+        {
+          "Year": 2020,
+          "Event": "10000 Metres"
+        }
+      ]
+    },
+    {
+      "Competitor": "Hicham EL GUERROUJ",
+      "Count": 3,
+      "Details": [
+        {
+          "Year": 1998,
+          "Event": "1500 Metres"
+        },
+        {
+          "Year": 1999,
+          "Event": "One Mile"
+        },
+        {
+          "Year": 1999,
+          "Event": "2000 Metres"
+        }
+      ]
+    },
+    {
+      "Competitor": "Usain BOLT",
+      "Count": 2,
+      "Details": [
+        {
+          "Year": 2009,
+          "Event": "100 Metres"
+        },
+        {
+          "Year": 2009,
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  ],
+  "F": [
+    {
+      "Competitor": "Letesenbet GIDEY",
+      "Count": 3,
+      "Details": [
+        {
+          "Year": 2019,
+          "Event": "15 Kilometres"
+        },
+        {
+          "Year": 2021,
+          "Event": "10000 Metres"
+        },
+        {
+          "Year": 2021,
+          "Event": "Half Marathon"
+        }
+      ]
+    },
+    {
+      "Competitor": "Florence GRIFFITH-JOYNER",
+      "Count": 2,
+      "Details": [
+        {
+          "Year": 1988,
+          "Event": "100 Metres"
+        },
+        {
+          "Year": 1988,
+          "Event": "200 Metres"
+        }
+      ]
+    },
+    {
+      "Competitor": "Faith KIPYEGON",
+      "Count": 2,
+      "Details": [
+        {
+          "Year": 2023,
+          "Event": "1500 Metres"
+        },
+        {
+          "Year": 2023,
+          "Event": "5000 Metres"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6005 @@
+{
+  "1980": {
+    "M": {
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        }
+      ]
+    },
+    "F": {}
+  },
+  "1983": {
+    "M": {
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        }
+      ]
+    },
+    "F": {
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ]
+    }
+  },
+  "1985": {
+    "M": {
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        }
+      ]
+    },
+    "F": {
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ]
+    }
+  },
+  "1986": {
+    "M": {
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        }
+      ]
+    },
+    "F": {
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ]
+    }
+  },
+  "1987": {
+    "M": {
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ]
+    }
+  },
+  "1988": {
+    "M": {
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "1990": {
+    "M": {
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "1991": {
+    "M": {
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "1993": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "1994": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "1995": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "1996": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "1997": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "1998": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "1999": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "2000": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "2001": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "2006": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Vladimir KANAYKIN",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Kjersti TYSSE-PL\u00c4TZER",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "2007": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Vladimir KANAYKIN",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Meseret DEFAR",
+          "Event": "Two Miles"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Kjersti TYSSE-PL\u00c4TZER",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "2008": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Vladimir KANAYKIN",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Barbora \u0160POT\u00c1KOV\u00c1",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Meseret DEFAR",
+          "Event": "Two Miles"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Kjersti TYSSE-PL\u00c4TZER",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "2009": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "JAM": [
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "200 Metres"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Vladimir KANAYKIN",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Barbora \u0160POT\u00c1KOV\u00c1",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Meseret DEFAR",
+          "Event": "Two Miles"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Kjersti TYSSE-PL\u00c4TZER",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        },
+        {
+          "Competitor": "Yelena ISINBAYEVA",
+          "Event": "Pole Vault"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "2010": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ERI": [
+        {
+          "Competitor": "Zersenay TADESE",
+          "Event": "20 Kilometres"
+        }
+      ],
+      "FRA": [
+        {
+          "Competitor": "Mahiedine MEKHISSI",
+          "Event": "2000 Metres Steeplechase"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "JAM": [
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "200 Metres"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Vladimir KANAYKIN",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Barbora \u0160POT\u00c1KOV\u00c1",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Meseret DEFAR",
+          "Event": "Two Miles"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Kjersti TYSSE-PL\u00c4TZER",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        },
+        {
+          "Competitor": "Yelena ISINBAYEVA",
+          "Event": "Pole Vault"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "2012": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ERI": [
+        {
+          "Competitor": "Zersenay TADESE",
+          "Event": "20 Kilometres"
+        }
+      ],
+      "FRA": [
+        {
+          "Competitor": "Mahiedine MEKHISSI",
+          "Event": "2000 Metres Steeplechase"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "JAM": [
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "200 Metres"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "David RUDISHA",
+          "Event": "800 Metres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Vladimir KANAYKIN",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Aries MERRITT",
+          "Event": "110 Metres Hurdles"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Barbora \u0160POT\u00c1KOV\u00c1",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Meseret DEFAR",
+          "Event": "Two Miles"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Kjersti TYSSE-PL\u00c4TZER",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        },
+        {
+          "Competitor": "Yelena ISINBAYEVA",
+          "Event": "Pole Vault"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "2014": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ERI": [
+        {
+          "Competitor": "Zersenay TADESE",
+          "Event": "20 Kilometres"
+        }
+      ],
+      "FRA": [
+        {
+          "Competitor": "Mahiedine MEKHISSI",
+          "Event": "2000 Metres Steeplechase"
+        },
+        {
+          "Competitor": "Yohann DINIZ",
+          "Event": "50 Kilometres Race Walk"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "JAM": [
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "200 Metres"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "David RUDISHA",
+          "Event": "800 Metres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Vladimir KANAYKIN",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Aries MERRITT",
+          "Event": "110 Metres Hurdles"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Barbora \u0160POT\u00c1KOV\u00c1",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Meseret DEFAR",
+          "Event": "Two Miles"
+        }
+      ],
+      "ITA": [
+        {
+          "Competitor": "Eleonora Anna GIORGI",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Kjersti TYSSE-PL\u00c4TZER",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        },
+        {
+          "Competitor": "Yelena ISINBAYEVA",
+          "Event": "Pole Vault"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "2015": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ERI": [
+        {
+          "Competitor": "Zersenay TADESE",
+          "Event": "20 Kilometres"
+        }
+      ],
+      "FRA": [
+        {
+          "Competitor": "Mahiedine MEKHISSI",
+          "Event": "2000 Metres Steeplechase"
+        },
+        {
+          "Competitor": "Yohann DINIZ",
+          "Event": "50 Kilometres Race Walk"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "JAM": [
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "200 Metres"
+        }
+      ],
+      "JPN": [
+        {
+          "Competitor": "Yusuke SUZUKI",
+          "Event": "20 Kilometres Race Walk"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "David RUDISHA",
+          "Event": "800 Metres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Vladimir KANAYKIN",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Aries MERRITT",
+          "Event": "110 Metres Hurdles"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Barbora \u0160POT\u00c1KOV\u00c1",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Meseret DEFAR",
+          "Event": "Two Miles"
+        }
+      ],
+      "ITA": [
+        {
+          "Competitor": "Eleonora Anna GIORGI",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Kjersti TYSSE-PL\u00c4TZER",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        },
+        {
+          "Competitor": "Yelena ISINBAYEVA",
+          "Event": "Pole Vault"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "2016": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ERI": [
+        {
+          "Competitor": "Zersenay TADESE",
+          "Event": "20 Kilometres"
+        }
+      ],
+      "FRA": [
+        {
+          "Competitor": "Mahiedine MEKHISSI",
+          "Event": "2000 Metres Steeplechase"
+        },
+        {
+          "Competitor": "Yohann DINIZ",
+          "Event": "50 Kilometres Race Walk"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "JAM": [
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "200 Metres"
+        }
+      ],
+      "JPN": [
+        {
+          "Competitor": "Yusuke SUZUKI",
+          "Event": "20 Kilometres Race Walk"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "David RUDISHA",
+          "Event": "800 Metres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Vladimir KANAYKIN",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Aries MERRITT",
+          "Event": "110 Metres Hurdles"
+        }
+      ],
+      "ZAF": [
+        {
+          "Competitor": "Wayde VAN NIEKERK",
+          "Event": "400 Metres"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Barbora \u0160POT\u00c1KOV\u00c1",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Meseret DEFAR",
+          "Event": "Two Miles"
+        }
+      ],
+      "ITA": [
+        {
+          "Competitor": "Eleonora Anna GIORGI",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Kjersti TYSSE-PL\u00c4TZER",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Anita W\u0141ODARCZYK",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        },
+        {
+          "Competitor": "Yelena ISINBAYEVA",
+          "Event": "Pole Vault"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ]
+    }
+  },
+  "2017": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ERI": [
+        {
+          "Competitor": "Zersenay TADESE",
+          "Event": "20 Kilometres"
+        }
+      ],
+      "FRA": [
+        {
+          "Competitor": "Mahiedine MEKHISSI",
+          "Event": "2000 Metres Steeplechase"
+        },
+        {
+          "Competitor": "Yohann DINIZ",
+          "Event": "50 Kilometres Race Walk"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "JAM": [
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "200 Metres"
+        }
+      ],
+      "JPN": [
+        {
+          "Competitor": "Yusuke SUZUKI",
+          "Event": "20 Kilometres Race Walk"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "David RUDISHA",
+          "Event": "800 Metres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Vladimir KANAYKIN",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Aries MERRITT",
+          "Event": "110 Metres Hurdles"
+        }
+      ],
+      "ZAF": [
+        {
+          "Competitor": "Wayde VAN NIEKERK",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Wayde VAN NIEKERK",
+          "Event": "300 Metres"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Barbora \u0160POT\u00c1KOV\u00c1",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Meseret DEFAR",
+          "Event": "Two Miles"
+        }
+      ],
+      "ITA": [
+        {
+          "Competitor": "Eleonora Anna GIORGI",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Joyciline JEPKOSGEI",
+          "Event": "20 Kilometres"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Kjersti TYSSE-PL\u00c4TZER",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Anita W\u0141ODARCZYK",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        },
+        {
+          "Competitor": "Yelena ISINBAYEVA",
+          "Event": "Pole Vault"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ],
+      "ZAF": [
+        {
+          "Competitor": "Caster SEMENYA",
+          "Event": "600 Metres"
+        }
+      ]
+    }
+  },
+  "2018": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ERI": [
+        {
+          "Competitor": "Zersenay TADESE",
+          "Event": "20 Kilometres"
+        }
+      ],
+      "FRA": [
+        {
+          "Competitor": "Mahiedine MEKHISSI",
+          "Event": "2000 Metres Steeplechase"
+        },
+        {
+          "Competitor": "Yohann DINIZ",
+          "Event": "50 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Kevin MAYER",
+          "Event": "Decathlon"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        },
+        {
+          "Competitor": "Tom BOSWORTH",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "JAM": [
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "200 Metres"
+        }
+      ],
+      "JPN": [
+        {
+          "Competitor": "Yusuke SUZUKI",
+          "Event": "20 Kilometres Race Walk"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "David RUDISHA",
+          "Event": "800 Metres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Vladimir KANAYKIN",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "UGA": [
+        {
+          "Competitor": "Joshua CHEPTEGEI",
+          "Event": "15 Kilometres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Aries MERRITT",
+          "Event": "110 Metres Hurdles"
+        }
+      ],
+      "ZAF": [
+        {
+          "Competitor": "Wayde VAN NIEKERK",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Wayde VAN NIEKERK",
+          "Event": "300 Metres"
+        }
+      ]
+    },
+    "F": {
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Barbora \u0160POT\u00c1KOV\u00c1",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Meseret DEFAR",
+          "Event": "Two Miles"
+        }
+      ],
+      "ITA": [
+        {
+          "Competitor": "Eleonora Anna GIORGI",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Joyciline JEPKOSGEI",
+          "Event": "20 Kilometres"
+        },
+        {
+          "Competitor": "Beatrice CHEPKOECH",
+          "Event": "3000 Metres Steeplechase"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Kjersti TYSSE-PL\u00c4TZER",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Anita W\u0141ODARCZYK",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        },
+        {
+          "Competitor": "Yelena ISINBAYEVA",
+          "Event": "Pole Vault"
+        },
+        {
+          "Competitor": "Yelena LASHMANOVA",
+          "Event": "20 Kilometres Race Walk"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ],
+      "ZAF": [
+        {
+          "Competitor": "Caster SEMENYA",
+          "Event": "600 Metres"
+        }
+      ]
+    }
+  },
+  "2019": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ERI": [
+        {
+          "Competitor": "Zersenay TADESE",
+          "Event": "20 Kilometres"
+        }
+      ],
+      "FRA": [
+        {
+          "Competitor": "Mahiedine MEKHISSI",
+          "Event": "2000 Metres Steeplechase"
+        },
+        {
+          "Competitor": "Yohann DINIZ",
+          "Event": "50 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Kevin MAYER",
+          "Event": "Decathlon"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        },
+        {
+          "Competitor": "Tom BOSWORTH",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "JAM": [
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "200 Metres"
+        }
+      ],
+      "JPN": [
+        {
+          "Competitor": "Yusuke SUZUKI",
+          "Event": "20 Kilometres Race Walk"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "David RUDISHA",
+          "Event": "800 Metres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Vladimir KANAYKIN",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "UGA": [
+        {
+          "Competitor": "Joshua CHEPTEGEI",
+          "Event": "15 Kilometres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Aries MERRITT",
+          "Event": "110 Metres Hurdles"
+        }
+      ],
+      "ZAF": [
+        {
+          "Competitor": "Wayde VAN NIEKERK",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Wayde VAN NIEKERK",
+          "Event": "300 Metres"
+        }
+      ]
+    },
+    "F": {
+      "BAH": [
+        {
+          "Competitor": "Shaunae MILLER-UIBO",
+          "Event": "300 Metres"
+        }
+      ],
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Barbora \u0160POT\u00c1KOV\u00c1",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        },
+        {
+          "Competitor": "Gesa Felicitas KRAUSE",
+          "Event": "2000 Metres Steeplechase"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Meseret DEFAR",
+          "Event": "Two Miles"
+        },
+        {
+          "Competitor": "Letesenbet GIDEY",
+          "Event": "15 Kilometres"
+        }
+      ],
+      "ITA": [
+        {
+          "Competitor": "Eleonora Anna GIORGI",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Joyciline JEPKOSGEI",
+          "Event": "20 Kilometres"
+        },
+        {
+          "Competitor": "Beatrice CHEPKOECH",
+          "Event": "3000 Metres Steeplechase"
+        },
+        {
+          "Competitor": "Evaline CHIRCHIR",
+          "Event": "10 Miles Road"
+        },
+        {
+          "Competitor": "Brigid KOSGEI",
+          "Event": "Marathon"
+        }
+      ],
+      "NLD": [
+        {
+          "Competitor": "Sifan HASSAN",
+          "Event": "One Mile"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Kjersti TYSSE-PL\u00c4TZER",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Anita W\u0141ODARCZYK",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        },
+        {
+          "Competitor": "Yelena ISINBAYEVA",
+          "Event": "Pole Vault"
+        },
+        {
+          "Competitor": "Yelena LASHMANOVA",
+          "Event": "20 Kilometres Race Walk"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ],
+      "ZAF": [
+        {
+          "Competitor": "Caster SEMENYA",
+          "Event": "600 Metres"
+        }
+      ]
+    }
+  },
+  "2020": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ERI": [
+        {
+          "Competitor": "Zersenay TADESE",
+          "Event": "20 Kilometres"
+        }
+      ],
+      "FRA": [
+        {
+          "Competitor": "Mahiedine MEKHISSI",
+          "Event": "2000 Metres Steeplechase"
+        },
+        {
+          "Competitor": "Yohann DINIZ",
+          "Event": "50 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Kevin MAYER",
+          "Event": "Decathlon"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        },
+        {
+          "Competitor": "Tom BOSWORTH",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "JAM": [
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "200 Metres"
+        }
+      ],
+      "JPN": [
+        {
+          "Competitor": "Yusuke SUZUKI",
+          "Event": "20 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Eiki TAKAHASHI",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "David RUDISHA",
+          "Event": "800 Metres"
+        },
+        {
+          "Competitor": "Rhonex KIPRUTO",
+          "Event": "10 Kilometres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Vladimir KANAYKIN",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "UGA": [
+        {
+          "Competitor": "Joshua CHEPTEGEI",
+          "Event": "15 Kilometres"
+        },
+        {
+          "Competitor": "Joshua CHEPTEGEI",
+          "Event": "5000 Metres"
+        },
+        {
+          "Competitor": "Joshua CHEPTEGEI",
+          "Event": "10000 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Aries MERRITT",
+          "Event": "110 Metres Hurdles"
+        }
+      ],
+      "ZAF": [
+        {
+          "Competitor": "Wayde VAN NIEKERK",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Wayde VAN NIEKERK",
+          "Event": "300 Metres"
+        }
+      ]
+    },
+    "F": {
+      "BAH": [
+        {
+          "Competitor": "Shaunae MILLER-UIBO",
+          "Event": "300 Metres"
+        }
+      ],
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Barbora \u0160POT\u00c1KOV\u00c1",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        },
+        {
+          "Competitor": "Gesa Felicitas KRAUSE",
+          "Event": "2000 Metres Steeplechase"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Meseret DEFAR",
+          "Event": "Two Miles"
+        },
+        {
+          "Competitor": "Letesenbet GIDEY",
+          "Event": "15 Kilometres"
+        }
+      ],
+      "ITA": [
+        {
+          "Competitor": "Eleonora Anna GIORGI",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Joyciline JEPKOSGEI",
+          "Event": "20 Kilometres"
+        },
+        {
+          "Competitor": "Beatrice CHEPKOECH",
+          "Event": "3000 Metres Steeplechase"
+        },
+        {
+          "Competitor": "Evaline CHIRCHIR",
+          "Event": "10 Miles Road"
+        },
+        {
+          "Competitor": "Brigid KOSGEI",
+          "Event": "Marathon"
+        }
+      ],
+      "NLD": [
+        {
+          "Competitor": "Sifan HASSAN",
+          "Event": "One Mile"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Kjersti TYSSE-PL\u00c4TZER",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Anita W\u0141ODARCZYK",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        },
+        {
+          "Competitor": "Yelena ISINBAYEVA",
+          "Event": "Pole Vault"
+        },
+        {
+          "Competitor": "Yelena LASHMANOVA",
+          "Event": "20 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Yelena LASHMANOVA",
+          "Event": "50 Kilometres Race Walk"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ],
+      "ZAF": [
+        {
+          "Competitor": "Caster SEMENYA",
+          "Event": "600 Metres"
+        }
+      ]
+    }
+  },
+  "2021": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ERI": [
+        {
+          "Competitor": "Zersenay TADESE",
+          "Event": "20 Kilometres"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Berihu AREGAWI",
+          "Event": "5 Kilometres"
+        }
+      ],
+      "FRA": [
+        {
+          "Competitor": "Mahiedine MEKHISSI",
+          "Event": "2000 Metres Steeplechase"
+        },
+        {
+          "Competitor": "Yohann DINIZ",
+          "Event": "50 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Kevin MAYER",
+          "Event": "Decathlon"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        },
+        {
+          "Competitor": "Tom BOSWORTH",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "JAM": [
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "200 Metres"
+        }
+      ],
+      "JPN": [
+        {
+          "Competitor": "Yusuke SUZUKI",
+          "Event": "20 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Eiki TAKAHASHI",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "David RUDISHA",
+          "Event": "800 Metres"
+        },
+        {
+          "Competitor": "Rhonex KIPRUTO",
+          "Event": "10 Kilometres"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Karsten WARHOLM",
+          "Event": "400 Metres Hurdles"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Vladimir KANAYKIN",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "UGA": [
+        {
+          "Competitor": "Joshua CHEPTEGEI",
+          "Event": "15 Kilometres"
+        },
+        {
+          "Competitor": "Joshua CHEPTEGEI",
+          "Event": "5000 Metres"
+        },
+        {
+          "Competitor": "Joshua CHEPTEGEI",
+          "Event": "10000 Metres"
+        },
+        {
+          "Competitor": "Jacob KIPLIMO",
+          "Event": "Half Marathon"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Aries MERRITT",
+          "Event": "110 Metres Hurdles"
+        }
+      ],
+      "ZAF": [
+        {
+          "Competitor": "Wayde VAN NIEKERK",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Wayde VAN NIEKERK",
+          "Event": "300 Metres"
+        }
+      ]
+    },
+    "F": {
+      "BAH": [
+        {
+          "Competitor": "Shaunae MILLER-UIBO",
+          "Event": "300 Metres"
+        }
+      ],
+      "BDI": [
+        {
+          "Competitor": "Francine NIYONSABA",
+          "Event": "2000 Metres"
+        }
+      ],
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Barbora \u0160POT\u00c1KOV\u00c1",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        },
+        {
+          "Competitor": "Gesa Felicitas KRAUSE",
+          "Event": "2000 Metres Steeplechase"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Meseret DEFAR",
+          "Event": "Two Miles"
+        },
+        {
+          "Competitor": "Letesenbet GIDEY",
+          "Event": "15 Kilometres"
+        },
+        {
+          "Competitor": "Letesenbet GIDEY",
+          "Event": "10000 Metres"
+        },
+        {
+          "Competitor": "Letesenbet GIDEY",
+          "Event": "Half Marathon"
+        },
+        {
+          "Competitor": "Ejgayehu TAYE",
+          "Event": "5 Kilometres"
+        }
+      ],
+      "ITA": [
+        {
+          "Competitor": "Eleonora Anna GIORGI",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Joyciline JEPKOSGEI",
+          "Event": "20 Kilometres"
+        },
+        {
+          "Competitor": "Beatrice CHEPKOECH",
+          "Event": "3000 Metres Steeplechase"
+        },
+        {
+          "Competitor": "Evaline CHIRCHIR",
+          "Event": "10 Miles Road"
+        },
+        {
+          "Competitor": "Brigid KOSGEI",
+          "Event": "Marathon"
+        }
+      ],
+      "NLD": [
+        {
+          "Competitor": "Sifan HASSAN",
+          "Event": "One Mile"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Kjersti TYSSE-PL\u00c4TZER",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Anita W\u0141ODARCZYK",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        },
+        {
+          "Competitor": "Yelena ISINBAYEVA",
+          "Event": "Pole Vault"
+        },
+        {
+          "Competitor": "Yelena LASHMANOVA",
+          "Event": "20 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Yelena LASHMANOVA",
+          "Event": "50 Kilometres Race Walk"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        }
+      ],
+      "VEN": [
+        {
+          "Competitor": "Yulimar ROJAS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "ZAF": [
+        {
+          "Competitor": "Caster SEMENYA",
+          "Event": "600 Metres"
+        }
+      ]
+    }
+  },
+  "2022": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ERI": [
+        {
+          "Competitor": "Zersenay TADESE",
+          "Event": "20 Kilometres"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Berihu AREGAWI",
+          "Event": "5 Kilometres"
+        }
+      ],
+      "FRA": [
+        {
+          "Competitor": "Mahiedine MEKHISSI",
+          "Event": "2000 Metres Steeplechase"
+        },
+        {
+          "Competitor": "Yohann DINIZ",
+          "Event": "50 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Kevin MAYER",
+          "Event": "Decathlon"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        },
+        {
+          "Competitor": "Tom BOSWORTH",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "JAM": [
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "200 Metres"
+        }
+      ],
+      "JPN": [
+        {
+          "Competitor": "Yusuke SUZUKI",
+          "Event": "20 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Eiki TAKAHASHI",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "David RUDISHA",
+          "Event": "800 Metres"
+        },
+        {
+          "Competitor": "Rhonex KIPRUTO",
+          "Event": "10 Kilometres"
+        },
+        {
+          "Competitor": "Eliud KIPCHOGE",
+          "Event": "Marathon"
+        },
+        {
+          "Competitor": "Benard KIBET",
+          "Event": "10 Miles Road"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Karsten WARHOLM",
+          "Event": "400 Metres Hurdles"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Vladimir KANAYKIN",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "SWE": [
+        {
+          "Competitor": "Armand DUPLANTIS",
+          "Event": "Pole Vault"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "UGA": [
+        {
+          "Competitor": "Joshua CHEPTEGEI",
+          "Event": "15 Kilometres"
+        },
+        {
+          "Competitor": "Joshua CHEPTEGEI",
+          "Event": "5000 Metres"
+        },
+        {
+          "Competitor": "Joshua CHEPTEGEI",
+          "Event": "10000 Metres"
+        },
+        {
+          "Competitor": "Jacob KIPLIMO",
+          "Event": "Half Marathon"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Aries MERRITT",
+          "Event": "110 Metres Hurdles"
+        }
+      ],
+      "ZAF": [
+        {
+          "Competitor": "Wayde VAN NIEKERK",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Wayde VAN NIEKERK",
+          "Event": "300 Metres"
+        }
+      ]
+    },
+    "F": {
+      "BAH": [
+        {
+          "Competitor": "Shaunae MILLER-UIBO",
+          "Event": "300 Metres"
+        }
+      ],
+      "BDI": [
+        {
+          "Competitor": "Francine NIYONSABA",
+          "Event": "2000 Metres"
+        }
+      ],
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Barbora \u0160POT\u00c1KOV\u00c1",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        },
+        {
+          "Competitor": "Gesa Felicitas KRAUSE",
+          "Event": "2000 Metres Steeplechase"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Meseret DEFAR",
+          "Event": "Two Miles"
+        },
+        {
+          "Competitor": "Letesenbet GIDEY",
+          "Event": "15 Kilometres"
+        },
+        {
+          "Competitor": "Letesenbet GIDEY",
+          "Event": "10000 Metres"
+        },
+        {
+          "Competitor": "Letesenbet GIDEY",
+          "Event": "Half Marathon"
+        },
+        {
+          "Competitor": "Ejgayehu TAYE",
+          "Event": "5 Kilometres"
+        },
+        {
+          "Competitor": "Yalemzerf YEHUALAW",
+          "Event": "10 Kilometres"
+        }
+      ],
+      "ITA": [
+        {
+          "Competitor": "Eleonora Anna GIORGI",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Joyciline JEPKOSGEI",
+          "Event": "20 Kilometres"
+        },
+        {
+          "Competitor": "Beatrice CHEPKOECH",
+          "Event": "3000 Metres Steeplechase"
+        },
+        {
+          "Competitor": "Evaline CHIRCHIR",
+          "Event": "10 Miles Road"
+        },
+        {
+          "Competitor": "Brigid KOSGEI",
+          "Event": "Marathon"
+        }
+      ],
+      "NGA": [
+        {
+          "Competitor": "Tobi AMUSAN",
+          "Event": "100 Metres Hurdles"
+        }
+      ],
+      "NLD": [
+        {
+          "Competitor": "Sifan HASSAN",
+          "Event": "One Mile"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Kjersti TYSSE-PL\u00c4TZER",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Anita W\u0141ODARCZYK",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        },
+        {
+          "Competitor": "Yelena ISINBAYEVA",
+          "Event": "Pole Vault"
+        },
+        {
+          "Competitor": "Yelena LASHMANOVA",
+          "Event": "20 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Yelena LASHMANOVA",
+          "Event": "50 Kilometres Race Walk"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        },
+        {
+          "Competitor": "Sydney MCLAUGHLIN",
+          "Event": "400 Metres Hurdles"
+        }
+      ],
+      "VEN": [
+        {
+          "Competitor": "Yulimar ROJAS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "ZAF": [
+        {
+          "Competitor": "Caster SEMENYA",
+          "Event": "600 Metres"
+        }
+      ]
+    }
+  },
+  "2023": {
+    "M": {
+      "CUB": [
+        {
+          "Competitor": "Javier SOTOMAYOR",
+          "Event": "High Jump"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Jan \u017dELEZN\u00dd",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "J\u00fcrgen SCHULT",
+          "Event": "Discus Throw"
+        }
+      ],
+      "ERI": [
+        {
+          "Competitor": "Zersenay TADESE",
+          "Event": "20 Kilometres"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Berihu AREGAWI",
+          "Event": "5 Kilometres"
+        },
+        {
+          "Competitor": "Lamecha GIRMA",
+          "Event": "3000 Metres Steeplechase"
+        }
+      ],
+      "FRA": [
+        {
+          "Competitor": "Mahiedine MEKHISSI",
+          "Event": "2000 Metres Steeplechase"
+        },
+        {
+          "Competitor": "Yohann DINIZ",
+          "Event": "50 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Kevin MAYER",
+          "Event": "Decathlon"
+        }
+      ],
+      "GBR": [
+        {
+          "Competitor": "Jonathan EDWARDS",
+          "Event": "Triple Jump"
+        },
+        {
+          "Competitor": "Tom BOSWORTH",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "JAM": [
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Usain BOLT",
+          "Event": "200 Metres"
+        }
+      ],
+      "JPN": [
+        {
+          "Competitor": "Yusuke SUZUKI",
+          "Event": "20 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Eiki TAKAHASHI",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Daniel KOMEN",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Noah NGENY",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "David RUDISHA",
+          "Event": "800 Metres"
+        },
+        {
+          "Competitor": "Rhonex KIPRUTO",
+          "Event": "10 Kilometres"
+        },
+        {
+          "Competitor": "Eliud KIPCHOGE",
+          "Event": "Marathon"
+        },
+        {
+          "Competitor": "Benard KIBET",
+          "Event": "10 Miles Road"
+        }
+      ],
+      "MAR": [
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "One Mile"
+        },
+        {
+          "Competitor": "Hicham EL GUERROUJ",
+          "Event": "2000 Metres"
+        }
+      ],
+      "MEX": [
+        {
+          "Competitor": "Daniel BAUTISTA",
+          "Event": "30 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Bernardo SEGURA",
+          "Event": "20000 Metres Race Walk"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Karsten WARHOLM",
+          "Event": "400 Metres Hurdles"
+        },
+        {
+          "Competitor": "Jakob INGEBRIGTSEN",
+          "Event": "Two Miles"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Robert KORZENIOWSKI",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Yuriy SEDYKH",
+          "Event": "Hammer Throw"
+        },
+        {
+          "Competitor": "Roman RASSKAZOV",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Vladimir KANAYKIN",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "SWE": [
+        {
+          "Competitor": "Armand DUPLANTIS",
+          "Event": "Pole Vault"
+        }
+      ],
+      "TUN": [
+        {
+          "Competitor": "Hatem GHOULA",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "UGA": [
+        {
+          "Competitor": "Joshua CHEPTEGEI",
+          "Event": "15 Kilometres"
+        },
+        {
+          "Competitor": "Joshua CHEPTEGEI",
+          "Event": "5000 Metres"
+        },
+        {
+          "Competitor": "Joshua CHEPTEGEI",
+          "Event": "10000 Metres"
+        },
+        {
+          "Competitor": "Jacob KIPLIMO",
+          "Event": "Half Marathon"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Johnny GRAY",
+          "Event": "600 Metres"
+        },
+        {
+          "Competitor": "Mike POWELL",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Aries MERRITT",
+          "Event": "110 Metres Hurdles"
+        },
+        {
+          "Competitor": "Ryan CROUSER",
+          "Event": "Shot Put"
+        }
+      ],
+      "ZAF": [
+        {
+          "Competitor": "Wayde VAN NIEKERK",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Wayde VAN NIEKERK",
+          "Event": "300 Metres"
+        }
+      ]
+    },
+    "F": {
+      "BAH": [
+        {
+          "Competitor": "Shaunae MILLER-UIBO",
+          "Event": "300 Metres"
+        }
+      ],
+      "BDI": [
+        {
+          "Competitor": "Francine NIYONSABA",
+          "Event": "2000 Metres"
+        }
+      ],
+      "BUL": [
+        {
+          "Competitor": "Stefka KOSTADINOVA",
+          "Event": "High Jump"
+        }
+      ],
+      "CHN": [
+        {
+          "Competitor": "Junxia WANG",
+          "Event": "3000 Metres"
+        },
+        {
+          "Competitor": "Hongmiao GAO",
+          "Event": "10000 Metres Race Walk"
+        }
+      ],
+      "CZE": [
+        {
+          "Competitor": "Barbora \u0160POT\u00c1KOV\u00c1",
+          "Event": "Javelin Throw"
+        }
+      ],
+      "DEU": [
+        {
+          "Competitor": "Marita KOCH",
+          "Event": "400 Metres"
+        },
+        {
+          "Competitor": "Gabriele REINSCH",
+          "Event": "Discus Throw"
+        },
+        {
+          "Competitor": "Gesa Felicitas KRAUSE",
+          "Event": "2000 Metres Steeplechase"
+        }
+      ],
+      "ETH": [
+        {
+          "Competitor": "Meseret DEFAR",
+          "Event": "Two Miles"
+        },
+        {
+          "Competitor": "Letesenbet GIDEY",
+          "Event": "15 Kilometres"
+        },
+        {
+          "Competitor": "Letesenbet GIDEY",
+          "Event": "10000 Metres"
+        },
+        {
+          "Competitor": "Letesenbet GIDEY",
+          "Event": "Half Marathon"
+        },
+        {
+          "Competitor": "Ejgayehu TAYE",
+          "Event": "5 Kilometres"
+        },
+        {
+          "Competitor": "Yalemzerf YEHUALAW",
+          "Event": "10 Kilometres"
+        }
+      ],
+      "ITA": [
+        {
+          "Competitor": "Eleonora Anna GIORGI",
+          "Event": "5000 Metres Race Walk"
+        }
+      ],
+      "KEN": [
+        {
+          "Competitor": "Joyciline JEPKOSGEI",
+          "Event": "20 Kilometres"
+        },
+        {
+          "Competitor": "Beatrice CHEPKOECH",
+          "Event": "3000 Metres Steeplechase"
+        },
+        {
+          "Competitor": "Evaline CHIRCHIR",
+          "Event": "10 Miles Road"
+        },
+        {
+          "Competitor": "Brigid KOSGEI",
+          "Event": "Marathon"
+        },
+        {
+          "Competitor": "Faith KIPYEGON",
+          "Event": "1500 Metres"
+        },
+        {
+          "Competitor": "Faith KIPYEGON",
+          "Event": "5000 Metres"
+        }
+      ],
+      "NGA": [
+        {
+          "Competitor": "Tobi AMUSAN",
+          "Event": "100 Metres Hurdles"
+        }
+      ],
+      "NLD": [
+        {
+          "Competitor": "Sifan HASSAN",
+          "Event": "One Mile"
+        }
+      ],
+      "NOR": [
+        {
+          "Competitor": "Kjersti TYSSE-PL\u00c4TZER",
+          "Event": "5 Kilometres Race Walk"
+        }
+      ],
+      "POL": [
+        {
+          "Competitor": "Anita W\u0141ODARCZYK",
+          "Event": "Hammer Throw"
+        }
+      ],
+      "ROU": [
+        {
+          "Competitor": "Norica C\u00ceMPEAN",
+          "Event": "3000 Metres Race Walk"
+        }
+      ],
+      "RUS": [
+        {
+          "Competitor": "Natalya LISOVSKAYA",
+          "Event": "Shot Put"
+        },
+        {
+          "Competitor": "Galina CHISTYAKOVA",
+          "Event": "Long Jump"
+        },
+        {
+          "Competitor": "Yelena NIKOLAYEVA",
+          "Event": "10 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Svetlana MASTERKOVA",
+          "Event": "1000 Metres"
+        },
+        {
+          "Competitor": "Olimpiada IVANOVA",
+          "Event": "20000 Metres Race Walk"
+        },
+        {
+          "Competitor": "Yelena ISINBAYEVA",
+          "Event": "Pole Vault"
+        },
+        {
+          "Competitor": "Yelena LASHMANOVA",
+          "Event": "20 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Yelena LASHMANOVA",
+          "Event": "50 Kilometres Race Walk"
+        },
+        {
+          "Competitor": "Klavdiya AFANASYEVA",
+          "Event": "35 Kilometres Race Walk"
+        }
+      ],
+      "TCH": [
+        {
+          "Competitor": "Jarmila KRATOCHV\u00cdLOV\u00c1",
+          "Event": "800 Metres"
+        }
+      ],
+      "USA": [
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "100 Metres"
+        },
+        {
+          "Competitor": "Jackie JOYNER-KERSEE",
+          "Event": "Heptathlon"
+        },
+        {
+          "Competitor": "Florence GRIFFITH-JOYNER",
+          "Event": "200 Metres"
+        },
+        {
+          "Competitor": "Sydney MCLAUGHLIN",
+          "Event": "400 Metres Hurdles"
+        }
+      ],
+      "VEN": [
+        {
+          "Competitor": "Yulimar ROJAS",
+          "Event": "Triple Jump"
+        }
+      ],
+      "ZAF": [
+        {
+          "Competitor": "Caster SEMENYA",
+          "Event": "600 Metres"
+        }
+      ]
+    }
+  }
+}

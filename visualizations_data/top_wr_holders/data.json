@@ -37,16 +37,16 @@
       ]
     },
     {
-      "Competitor": "Usain BOLT",
+      "Competitor": "Wayde VAN NIEKERK",
       "Count": 2,
       "Details": [
         {
-          "Year": 2009,
-          "Event": "100 Metres"
+          "Year": 2016,
+          "Event": "400 Metres"
         },
         {
-          "Year": 2009,
-          "Event": "200 Metres"
+          "Year": 2017,
+          "Event": "300 Metres"
         }
       ]
     }
@@ -71,20 +71,6 @@
       ]
     },
     {
-      "Competitor": "Florence GRIFFITH-JOYNER",
-      "Count": 2,
-      "Details": [
-        {
-          "Year": 1988,
-          "Event": "100 Metres"
-        },
-        {
-          "Year": 1988,
-          "Event": "200 Metres"
-        }
-      ]
-    },
-    {
       "Competitor": "Faith KIPYEGON",
       "Count": 2,
       "Details": [
@@ -95,6 +81,20 @@
         {
           "Year": 2023,
           "Event": "5000 Metres"
+        }
+      ]
+    },
+    {
+      "Competitor": "Yelena LASHMANOVA",
+      "Count": 2,
+      "Details": [
+        {
+          "Year": 2018,
+          "Event": "20 Kilometres Race Walk"
+        },
+        {
+          "Year": 2020,
+          "Event": "50 Kilometres Race Walk"
         }
       ]
     }
