@@ -35,8 +35,10 @@ SummerBody/
 │       └── img/
 │
 ├── data/
-│   ├── raw/data.csv        
-│   └── processed/final_data.csv 
+│   ├── processed/final_data.csv        
+│   └── raw
+│       ├── final_data.csv
+│       └── worldrecords.csv 
 │
 ├── visualizations_data/
 │   ├── bar_graph_ath_nat/
