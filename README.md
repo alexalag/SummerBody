@@ -6,16 +6,17 @@
 | Loïc Misenta | 330593 |
 | Juliette Le Béchec | 346045 |
 
-[Milestone 1](Milestone1-SummerBody.pdf) • [Milestone 2](Milestone2-SummerBody.pdf) • [Milestone 3](#milestone-3)
+[Website](https://loicmisenta.github.io/SummerBody/) • [Milestone 1](Milestone1-SummerBody.pdf) • [Milestone 2](Milestone2-SummerBody.pdf) • [Milestone 3](#milestone-3)
 
-SummerBody explores the evolution of world athletics records through immersive and interactive data storytelling. The website aims to create a playful yet immersive visualization experience allowing users to contextualize athletic performances within larger historical, geographical, and human narratives.
+SummerBody explores the evolution of world athletics records through immersive and interactive data storytelling. The website aims to create a playful yet immersive visualization experience, allowing users to contextualize athletic performances within larger historical, geographical, and human narratives.
 
-Instead of presenting records as isolated statistics, the website highlights patterns linked to performance progression, explores the evolution of athletic achievements and displays patterns behind world records while showcasing promising athletes and lesser-known disciplines.
+Instead of presenting records as isolated statistics, the website highlights patterns linked to performance progression, explores the evolution of athletic achievements, and displays patterns behind world records while showcasing promising athletes and lesser-known disciplines.
 
-The final report and screencast of the video can be found here : [Milestone 3](#milestone-3).
+The final report and screencast can be found here: [Milestone 3](#milestone-3).
 
 ## Project Structure
-```
+
+```text
 SummerBody/
 ├── final_website/          
 │   ├── index.html
@@ -36,8 +37,8 @@ SummerBody/
 │
 ├── data/
 │   ├── processed/final_data.csv        
-│   └── raw
-│       ├── final_data.csv
+│   └── raw/
+│       ├── data.csv
 │       └── worldrecords.csv 
 │
 ├── visualizations_data/
@@ -64,20 +65,24 @@ SummerBody/
 ```
 
 ## Dataset
-The dataset was found on the [Kaggle Website](https://www.kaggle.com/datasets/mexwell/world-athletics-database?select=worldrecords.csv). Only the data.csv file was used, as it gathers all of the information of the 98 other files.
 
-The raw file [data.csv](data/raw/data.csv) was cleaned in Python in the [notebooks](previous_work/) to produce the csv: [final_data.csv](data/processed/final_data.csv).
-Computed fields such as athlete age were added, and a column gathering information about the "Venue" and the "Country" of the competed event into two.
+The dataset was found on the [Kaggle website](https://www.kaggle.com/datasets/mexwell/world-athletics-database?select=worldrecords.csv). Only the `data.csv` file was used, as it gathers all the relevant information from the original files.
+
+The raw file [`data.csv`](data/raw/data.csv) was cleaned in Python using the notebooks available in [`previous_work/`](previous_work/) to produce the final processed CSV file: [`final_data.csv`](data/processed/final_data.csv).
+
+Computed fields such as athlete age were added, and venue and country information was cleaned and standardized.
 
 ## Technical Information
+
 ### Technologies Used
-• HTML, CSS and Vanilla JS\
-• D3.js — for the visualizations\
-• PapaParse — CSV parsing in browser
+
+- HTML, CSS and Vanilla JavaScript
+- D3.js — for the visualizations
+- PapaParse — CSV parsing in the browser
 
 ## Running the Website
 
-The final website is intended to be accessible through GitHub Pages:
+The final website is available here:
 
 [SummerBody](https://loicmisenta.github.io/SummerBody/)
 
@@ -85,28 +90,28 @@ If the link is not available yet, it means that GitHub Pages has not been deploy
 
 ## Running the Project Locally
 
-No problem! To run the project locally, all you need to do is:
+To run the project locally:
 
-1. Clone the repository
+1. Clone the repository.
 
 ```bash
 git clone https://github.com/com-480-data-visualization/SummerBody.git
 cd SummerBody
 ```
 
-2. Go to the website folder
+2. Go to the website folder.
 
 ```bash
 cd final_website
 ```
 
-3. Start a local HTTP server
+3. Start a local HTTP server.
 
 ```bash
 python3 -m http.server 8000
 ```
 
-4. Open the website in your browser
+4. Open the website in your browser.
 
 ```text
 http://localhost:8000
