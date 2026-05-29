@@ -1,4 +1,6 @@
-# SummerBody - Project of Data Visualization (COM-480)
+# 🏃 SummerBody 🏃
+
+Project of Data Visualization (COM-480)
 
 | Student's name | SCIPER |
 | -------------- | ------ |
@@ -6,89 +8,45 @@
 | Loïc Misenta | 330593 |
 | Juliette Le Béchec | 346045 |
 
-[Website](https://loicmisenta.github.io/SummerBody/) • [Milestone 1](Milestone1-SummerBody.pdf) • [Milestone 2](Milestone2-SummerBody.pdf) • [Milestone 3](#milestone-3)
+[🌐 Website](https://loicmisenta.github.io/SummerBody/) • [📄 Process Book](#milestone-3) • [🎥 Screencast](#milestone-3)
 
-SummerBody explores the evolution of world athletics records through immersive and interactive data storytelling. The website aims to create a playful yet immersive visualization experience, allowing users to contextualize athletic performances within larger historical, geographical, and human narratives.
+## 🌟 What is SummerBody?
 
-Instead of presenting records as isolated statistics, the website highlights patterns linked to performance progression, explores the evolution of athletic achievements, and displays patterns behind world records while showcasing promising athletes and lesser-known disciplines.
+SummerBody is an interactive data visualization website exploring the evolution of world athletics records.
 
-The final report and screencast can be found here: [Milestone 3](#milestone-3).
+Rather than presenting records as isolated numbers, the project places athletic performances in a broader historical, geographical, and human context. Through interactive visualizations, users can explore how world records have evolved over time, where they were achieved, who held them, and which patterns emerge across disciplines, countries, genders, and generations of athletes.
 
-## Project Structure
+The goal is to create a playful yet immersive experience that makes athletics records easier to understand, compare, and contextualize.
 
-```text
-SummerBody/
-├── final_website/          
-│   ├── index.html
-│   ├── css/style.css
-│   ├── js/
-│   │   ├── main.js
-│   │   ├── duel.js
-│   │   ├── world-map.js
-│   │   ├── world-record-podium.js
-│   │   ├── record-reigns.js
-│   │   ├── render-sections.js
-│   │   ├── data-loader.js
-│   │   ├── nation-meta.js
-│   │   └── utils.js
-│   └── assets/
-│       ├── data/          
-│       └── img/
-│
-├── data/
-│   ├── processed/final_data.csv        
-│   └── raw/
-│       ├── data.csv
-│       └── worldrecords.csv 
-│
-├── visualizations_data/
-│   ├── bar_graph_ath_nat/
-│   ├── duel_athletes/
-│   ├── duel_years/
-│   ├── gap_record/
-│   ├── map_records/
-│   ├── mean_age/
-│   ├── pie_chart_gen/
-│   ├── record_progression/
-│   ├── side_by_side_bar_graph_age_gen/
-│   └── top_wr_holders/
-│
-├── previous_work/
-│   ├── notebook_alex.ipynb
-│   ├── notebook_lomimi.ipynb
-│   ├── notebook_ju.ipynb
-│   └── original_website/
-│
-├── Milestone1-SummerBody.pdf
-├── Milestone2-SummerBody.pdf
-└── worldrecords.csv
-```
+## 💭 Why SummerBody?
 
-## Dataset
+World records are often remembered as spectacular individual achievements: a name, a time, a distance, or a date. However, behind each record lies a richer story.
 
-The dataset was found on the [Kaggle website](https://www.kaggle.com/datasets/mexwell/world-athletics-database?select=worldrecords.csv). Only the `data.csv` file was used, as it gathers all the relevant information from the original files.
+SummerBody aims to reveal this hidden structure by showing:
 
-The raw file [`data.csv`](data/raw/data.csv) was cleaned in Python using the notebooks available in [`previous_work/`](previous_work/) to produce the final processed CSV file: [`final_data.csv`](data/processed/final_data.csv).
+- how performances progressed through time;
+- which countries and athletes appear most often in the history of world records;
+- how long some records remained unbeaten;
+- how age, gender, discipline, and geography relate to record-breaking performances;
+- which athletes and disciplines deserve more attention.
 
-Computed fields such as athlete age were added, and venue and country information was cleaned and standardized.
+By combining data analysis and interactive storytelling, SummerBody helps users go beyond the final result and explore the dynamics behind athletic excellence.
 
-## Technical Information
+## 🎯 Who is SummerBody for?
 
-### Technologies Used
+SummerBody is made for anyone interested in sports, athletics, world records, or data visualization.
 
-- HTML, CSS and Vanilla JavaScript
-- D3.js — for the visualizations
-- PapaParse — CSV parsing in the browser
+Casual users can discover impressive performances and surprising facts, while more curious users can explore deeper trends across time, countries, athletes, and disciplines.
 
-## Running the Website
+## 🚀 Website
 
 The final website is available here:
 
-[SummerBody](https://loicmisenta.github.io/SummerBody/)
+[🏃 Go to SummerBody 🏃](https://loicmisenta.github.io/SummerBody/)
 
-If the link is not available yet, it means that GitHub Pages has not been deployed for the repository.
+## 🛠️ Running the Project Locally
 
-## Running the Project Locally
+The website is static and can be run locally without installing a backend.
 
 To run the project locally:
 
@@ -117,4 +75,93 @@ python3 -m http.server 8000
 http://localhost:8000
 ```
 
-Using a local server is recommended because the website loads CSV files dynamically. Opening `index.html` directly from the filesystem may cause loading issues depending on the browser.
+
+## 📁 Project Structure
+
+```text
+SummerBody/
+├── final_website/          
+│   ├── index.html
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   ├── main.js
+│   │   ├── duel.js
+│   │   ├── world-map.js
+│   │   ├── world-record-podium.js
+│   │   ├── record-reigns.js
+│   │   ├── render-sections.js
+│   │   ├── data-loader.js
+│   │   ├── nation-meta.js
+│   │   └── utils.js
+│   └── assets/
+│       ├── data/          
+│       └── img/
+│
+├── data/
+│   ├── processed/
+│   │   └── final_data.csv        
+│   └── raw/
+│       ├── data.csv
+│       └── worldrecords.csv 
+│
+├── visualizations_data/
+│   ├── bar_graph_ath_nat/
+│   ├── duel_athletes/
+│   ├── duel_years/
+│   ├── gap_record/
+│   ├── map_records/
+│   ├── mean_age/
+│   ├── pie_chart_gen/
+│   ├── record_progression/
+│   ├── side_by_side_bar_graph_age_gen/
+│   └── top_wr_holders/
+│
+├── previous_work/
+│   ├── notebook_alex.ipynb
+│   ├── notebook_lomimi.ipynb
+│   ├── notebook_ju.ipynb
+│   └── original_website/
+│
+├── Milestone1-SummerBody.pdf
+├── Milestone2-SummerBody.pdf
+└── worldrecords.csv
+```
+
+## 📊 Dataset
+
+The dataset was found on the [Kaggle website](https://www.kaggle.com/datasets/mexwell/world-athletics-database?select=worldrecords.csv).
+
+Only the `data.csv` file was used, as it gathers the relevant information from the original athletics database files.
+
+The raw file [`data.csv`](data/raw/data.csv) was cleaned in Python using the notebooks available in [`previous_work/`](previous_work/) to produce the final processed CSV file: [`final_data.csv`](data/processed/final_data.csv).
+
+During preprocessing, additional computed fields were added, such as athlete age at the time of the performance. Some fields were also cleaned and standardized, including information about the venue and country of each competition.
+
+## 💻 Technical Information
+
+The website was built using:
+
+- HTML, CSS and Vanilla JavaScript
+- D3.js for the visualizations
+- PapaParse for CSV parsing in the browser
+- Python and Jupyter notebooks for data cleaning and preprocessing
+
+## 📍 Milestones
+
+- [Milestone 1](Milestone1-SummerBody.pdf): project proposal, dataset description, and initial ideas.
+- [Milestone 2](Milestone2-SummerBody.pdf): prototype, design choices, and planned visualizations.
+- [Milestone 3](#milestone-3): final report, website, and screencast.
+
+## 📄 Milestone 3
+
+The final submission includes the process book, the final website, and the screencast video.
+
+- [Process Book](Milestone3-SummerBody.pdf)
+- [Screencast](#)
+
+## 🤝 Authors
+
+- Alexandra Lagutova
+- Loïc Misenta
+- Juliette Le Béchec
