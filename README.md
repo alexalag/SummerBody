@@ -8,7 +8,7 @@ Project of Data Visualization (COM-480)
 | Loïc Misenta | 330593 |
 | Juliette Le Béchec | 346045 |
 
-[🌐 Website](https://loicmisenta.github.io/SummerBody/) • [📄 Process Book](#milestone-3) • [🎥 Screencast](https://youtu.be/UV-FhlS9w_w)
+[🌐 Website](https://loicmisenta.github.io/SummerBody/) • [📄 Process Book](ProcessBook.pdf) • [🎥 Screencast](https://youtu.be/UV-FhlS9w_w)
 
 ## 🌟 What is SummerBody?
 
@@ -125,6 +125,7 @@ SummerBody/
 │
 ├── Milestone1-SummerBody.pdf
 ├── Milestone2-SummerBody.pdf
+├── ProcessBook.pdf
 └── worldrecords.csv
 ```
 
@@ -157,8 +158,8 @@ The website was built using:
 
 The final submission includes the process book, the final website, and the screencast video.
 
-- [Process Book](Milestone3-SummerBody.pdf)
-- [Screencast](#)
+- [Process Book](ProcessBook.pdf)
+- [Screencast](https://youtu.be/UV-FhlS9w_w)
 
 ## 🤝 Authors
 
