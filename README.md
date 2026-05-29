@@ -79,7 +79,7 @@ Computed fields such as athlete age were added, and a column gathering informati
 
 The final website is intended to be accessible through GitHub Pages:
 
-[SummerBody](https://com-480-data-visualization.github.io/SummerBody/)
+[SummerBody](https://loicmisenta.github.io/SummerBody/)
 
 If the link is not available yet, it means that GitHub Pages has not been deployed for the repository.
 
