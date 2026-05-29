@@ -75,6 +75,41 @@ Computed fields such as athlete age were added, and a column gathering informati
 • D3.js — for the visualizations\
 • PapaParse — CSV parsing in browser
 
-### Running the Project
-[...]
+## Running the Website
 
+The final website is intended to be accessible through GitHub Pages:
+
+[SummerBody](https://com-480-data-visualization.github.io/SummerBody/)
+
+If the link is not available yet, it means that GitHub Pages has not been deployed for the repository.
+
+## Running the Project Locally
+
+No problem! To run the project locally, all you need to do is:
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/com-480-data-visualization/SummerBody.git
+cd SummerBody
+```
+
+2. Go to the website folder
+
+```bash
+cd final_website
+```
+
+3. Start a local HTTP server
+
+```bash
+python3 -m http.server 8000
+```
+
+4. Open the website in your browser
+
+```text
+http://localhost:8000
+```
+
+Using a local server is recommended because the website loads CSV files dynamically. Opening `index.html` directly from the filesystem may cause loading issues depending on the browser.
