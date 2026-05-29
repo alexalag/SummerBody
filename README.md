@@ -8,7 +8,7 @@ Project of Data Visualization (COM-480)
 | Loïc Misenta | 330593 |
 | Juliette Le Béchec | 346045 |
 
-[🌐 Website](https://loicmisenta.github.io/SummerBody/) • [📄 Process Book](#milestone-3) • [🎥 Screencast](Demo.mp4)
+[🌐 Website](https://loicmisenta.github.io/SummerBody/) • [📄 Process Book](#milestone-3) • [🎥 Screencast](https://youtu.be/UV-FhlS9w_w)
 
 ## 🌟 What is SummerBody?
 
